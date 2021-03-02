@@ -65,15 +65,6 @@ body {
       width: calc(100% - 17rem);
     }
   }
-<<<<<<< HEAD:AdminIndex.css
-  .py-5 {
-    padding-top: 3rem!important;
-    padding-bottom: 3rem!important;
-}
-*, ::after, ::before {
-  box-sizing: border-box;
-}
-=======
   
 .breadcrumb li a{
  text-decoration: none;
@@ -83,7 +74,7 @@ body {
   text-decoration: underline;
   color:rgb(255, 81, 0);
  }    
->>>>>>> c957f57b34e47e29059492f511a95bffaeb22719:Admin/AdminIndex.css
+
 .card .img-fluid{
   height: 350px !important;
   }
