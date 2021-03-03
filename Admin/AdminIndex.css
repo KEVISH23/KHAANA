@@ -78,4 +78,37 @@ body {
 .card .img-fluid{
   height: 350px !important;
   }
-
+.feedcont{
+  
+}
+.feedcol{
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-top:1px dotted white;
+  border-bottom:1px dotted white;
+  border-radius: 10px;
+  margin-top: 18px;
+  height: auto;
+}
+.feedrow{
+  margin-top: 10px;
+}
+.feedname{
+  font-size: 23px;
+  color: rgb(235, 231, 40);
+  font-style: italic;
+}
+.feedrow img{
+  border: 2px solid wheat;
+  border-radius: 50%;
+  width: 150px;
+  height: 80px;
+}
+.feeddet{
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: rgb(235, 173, 40);
+  font-style: bold;
+  text-align: center;
+}
