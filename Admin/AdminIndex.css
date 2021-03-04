@@ -78,7 +78,12 @@ body {
 .card .img-fluid{
   height: 350px !important;
   }
-
+/*FEEDBACK*/
+.feedpost{
+  font-style: italic;
+  color: rgb(230, 209, 21);
+  margin-top: -12px;
+}
 .feedcol{
   border-left: 1px solid white;
   border-right: 1px solid white;
@@ -90,6 +95,7 @@ body {
 }
 .feedrow{
   margin-top: 10px;
+  
 }
 .feedname{
   font-size: 23px;
@@ -98,9 +104,9 @@ body {
 }
 .feedrow img{
   border: 2px solid wheat;
-  border-radius: 50%;
-  width: 150px;
-  height: 80px;
+  border-radius: 50px;
+  width: 150px!important;
+  height: 100px!important;
 }
 .feeddet{
   margin-top: 5px;
