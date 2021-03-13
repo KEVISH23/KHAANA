@@ -1,0 +1,123 @@
+body {
+    background: #599fd9;
+    background-image: linear-gradient( 135.9deg,  rgb(6, 116, 112) 16.4%, rgb(20, 73, 87) 56.1% );
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+   .vertical-nav {
+    min-width: 17rem;
+    width: 17rem;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s;
+  }
+  .page-content {
+    width: calc(100% - 17rem);
+    margin-left: 17rem;
+    transition: all 0.4s;
+  } 
+  
+  #sidebar.active {
+    margin-left: -17rem;
+  }
+  
+  #content.active {
+    width: 100%;
+    margin: 0;
+  }
+  
+  .separator {
+    margin: 3rem 0;
+    border-bottom: 1px dashed #fff;
+  }
+  
+  .text-uppercase {
+    letter-spacing: 0.1em;
+  }
+  .text-gray {
+    color: #aaa;
+  }
+  .nav-link{
+      text-transform: capitalize;
+  }
+  .nav-link:hover{
+      background:#f3f2f2;
+  }
+  .text-primary{
+      color:#7579e7 !important;
+  }
+  @media (max-width: 768px) {
+    #sidebar {
+      margin-left: -17rem;
+    }
+    #sidebar.active {
+      margin-left: 0;
+    }
+    #content {
+      width: 100%;
+      margin: 0;
+    }
+    #content.active {
+      margin-left: 17rem;
+      width: calc(100% - 17rem);
+    }
+  }
+  
+.breadcrumb li a{
+ text-decoration: none;
+ color:rgb(255, 81, 0);
+}
+.breadcrumb li a:hover{
+  text-decoration: underline;
+  color:rgb(255, 81, 0);
+ }    
+
+.card .img-fluid{
+  height: 350px !important;
+  }
+
+/*FEEDBACK*/
+.feedpost{
+  font-style: italic;
+  color: rgb(230, 209, 21);
+  margin-top: -12px;
+}
+.feedcol{
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-top:1px dotted white;
+  border-bottom:1px dotted white;
+  border-radius: 10px;
+  margin-top: 18px;
+  height: auto;
+}
+.feedrow{
+  margin-top: 10px;
+  
+}
+.feedname{
+  font-size: 23px;
+  color: rgb(235, 231, 40);
+  font-style: italic;
+}
+.feedrow img{
+  border: 2px solid wheat;
+  border-radius: 50px;
+  width: 150px!important;
+  height: 100px!important;
+}
+.feeddet{
+  margin-top: 5px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: rgb(235, 173, 40);
+  font-style: bold;
+  text-align: center;
+}
+.flabel label{
+  font-size: 20px;
+  color: #000000;
+}
