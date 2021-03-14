@@ -18,6 +18,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="cookaboutus.css">
     <title>Cook</title>
   </head>
   <body>
@@ -30,11 +31,11 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="">About Us</a>
+      <li class="nav-item active ">
+        <a class="nav-link" href="#">About Us</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Contact Us</a>
@@ -179,10 +180,85 @@
 	</div>
 	</div>
 
+  
 
-
-
+	<div class="container text-center p-3">
+		<h3>About US</h3>
+	   </div>
 	
+
+
+<div class="container  p-3">
+<div class="row">
+		<img src="images/khaana.png" class="img-fluid  p-3" width=35% >
+		<div class="offset-md-2 p-3 col-md-4 col-sm-3 dbox">Name:Khaana</div>
+		
+		</div>	
+</div>
+
+
+<hr>
+
+
+<div class="container text-center p-3">
+	<h3>Team</h3>
+   </div>
+	  
+<div class="container">
+<div class="row ">
+<div class="col-md-4 col-sm-4">
+
+	<div class="card" style="width: 18rem;">
+		<img src="images/face1.jpg" class="card-img-top img-fluid"  alt="...">
+		
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item">Name :- abcd</li>
+		  <li class="list-group-item">Age :- 20</li>
+		  <li class="list-group-item">Post :- Employee</li>
+		</ul>
+		
+	  </div>
+
+</div>
+
+
+<div class="col-md-4 col-sm-4">
+
+	<div class="card" style="width: 18rem;">
+		<img src="images/face1.jpg" class="card-img-top img-fluid"  alt="...">
+		
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item">Name :- abcd</li>
+		  <li class="list-group-item">Age :- 20</li>
+		  <li class="list-group-item">Post :- Employee</li>
+		</ul>
+		
+	  </div>
+
+</div>
+
+<div class="col-md-4 col-sm-4">
+
+	<div class="card" style="width: 18rem;">
+		<img src="images/face1.jpg" class="card-img-top img-fluid"  alt="...">
+		
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item">Name :- abcd</li>
+		  <li class="list-group-item">Age :- 20</li>
+		  <li class="list-group-item">Post :- Employee</li>
+		</ul>
+		
+	  </div>
+
+</div>
+
+
+</div>
+
+<hr>
+
+
+</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
