@@ -35,7 +35,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About Us</a>
+        <a class="nav-link" href="">About Us</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Contact Us</a>
@@ -179,6 +179,7 @@
 		</div>
 	</div>
 	</div>
+<<<<<<< HEAD
 
 	<!--BANNER-->
 	<div class="banner">
@@ -190,6 +191,16 @@
 			</div>						
 		</div>
 	</div>
+=======
+<<<<<<< HEAD
+
+
+
+
+=======
+>>>>>>> 0811d98776167f7ee491dd7f7bcc1dcb2d05386e
+	
+>>>>>>> caa3043b7db1a36bc6bba40313352fae68d7e20e
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
