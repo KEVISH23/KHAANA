@@ -34,7 +34,7 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="">About Us</a>
+        <a class="nav-link" href="#">About Us</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Contact Us</a>
@@ -178,19 +178,50 @@
 		</div>
 	</div>
 	</div>
-<<<<<<< HEAD
+	<!-- logo and form -->
+	<div class="container cook"  >
+  
+  <div class="row">
+    <div class="col-sm-6 col-lg-6" >
+    <img class="img-fluid" src="images/KHHANA.jpg" width="auto" height="auto">
+    </div>
+    <div class="col-sm-6 col-lg-6" style="background-color:pink;">
+    <h2>CONTACT US</h2>
+	<div class="form-group">
+		<label for="usr">Name:</label>
+		<input type="text" class="form-control" id="usr" name="name" placeholder="enter your name">
+	  </div>
+	  <div class="form-group">
+		<label for="pwd">Email:</label>
+		<input type="email" class="form-control" id="email" name="email" placeholder="enter your email id">
+	  </div>
+	  <div class="form-group">
+		<label for="msg">Message</label>
+		<input type="text" class="form-control" id="msg" name="msg" placeholder="message">
+	  </div>
+	  
+		<button type="button" class="btn btn-primary active">submit</button>
+		<button type="button" class="btn btn-primary active">cancel</button>
+    </div>
+  </div>
 
+</div>
+	<!-- logo and form end-->
+	<div class="row">
+		<div class="col-sm-4 address"> Address </div>
+		<div class="col-sm-4 phn"> Phone no.</div>
+		<div class="col-sm-4 email">Email id</div>
+	  </div>
 
-
-
-=======
->>>>>>> 0811d98776167f7ee491dd7f7bcc1dcb2d05386e
-	
+	  <div class="row">
+		<div class="col-lg-4 "> bjdfsfsfdsjkghsfghgfhgfhdfhgfdhsfghfghf</div>
+		<div class="col-lg-4 "> 5151515151515</div>
+		<div class="col-lg-4 ">akhu@kt.com</div>
+	  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
-
 </html>
