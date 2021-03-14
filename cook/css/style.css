@@ -6,3 +6,16 @@
 .col-sm-6{
     background-color: blueviolet;
 }
+.banner{
+   background-image: url("../images/banner.jpg");
+   height: 100vh; 
+   background-position: center;
+   background-attachment: fixed;
+   background-repeat: no-repeat;  
+   background-size: cover;
+   width: auto;
+}
+
+.welcome{
+    height: 500px;
+}
