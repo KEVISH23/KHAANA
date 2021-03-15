@@ -185,7 +185,7 @@
     <div class="col-sm-6 col-lg-6" >
     <img class="img-fluid" src="images/KHHANA.jpg" width="auto" height="auto">
     </div>
-    <div class="col-sm-6 col-lg-6" style="background-color:pink;">
+    <div class="col-sm-6 col-lg-6"  id="grad1" >
     <h2>CONTACT US</h2>
 	<div class="form-group">
 		<label for="usr">Name:</label>
@@ -199,9 +199,14 @@
 		<label for="msg">Message</label>
 		<input type="text" class="form-control" id="msg" name="msg" placeholder="message">
 	  </div>
-	  
-		<button type="button" class="btn btn-primary active">submit</button>
-		<button type="button" class="btn btn-primary active">cancel</button>
+	  	<div class="row" style="margin: auto;">
+			  <div class="col-sm-6">
+				 <button type="button" class="btn btn-primary active">submit</button>
+			</div>
+			<div class="col-sm-6">
+			  <button type="button" class="btn btn-primary active">cancel</button>
+			</div>
+		</div>
     </div>
   </div>
 
@@ -210,8 +215,8 @@
 	<div class="row rowco">
 		<div class="col-sm-4 address"> Address 
 		<ul class="list-group list-group-flush">
-		  <li class="list-group-item address1">rcti.near gujrat high court</li>
-		  
+		  <li class="list-group-item address1">rcti.near gujrat high court <br> ahemdabad  </li>
+		
 		</ul>
 		</div>
 		<div class="col-sm-4 phn"> Phone no.
