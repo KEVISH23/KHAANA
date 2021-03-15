@@ -22,7 +22,7 @@
   </head>
   
   <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark ">
   <img src="images/khaana.png" class="logohere" alt="logo">
   <a class="navbar-brand" href="index.php">KHAANA</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,7 @@
         <a class="nav-link" href="contactcook.php">Contact Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Our Package Policy</a>
+        <a class="nav-link" href="package.php">Our Package Policy</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
