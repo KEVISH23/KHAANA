@@ -1,11 +1,4 @@
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 
 <!doctype html>
 <html lang="en">
@@ -17,7 +10,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/package.css">
     <title>Cook</title>
   </head>
   
@@ -31,7 +24,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item ">
         <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
@@ -40,8 +33,8 @@
       <li class="nav-item">
         <a class="nav-link" href="contactcook.php">Contact Us</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Our Package Policy</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="package.php">Our Package Policy</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
@@ -180,17 +173,10 @@
 	</div>
 	</div>
 
+    <div class="image-container">
+        <div class="text">PACKAGE</div>
+    </div>
 
-	<!--BANNER-->
-	<div class="banner">
-		<div class="container">
-			<div class=" d-flex flex-column justify-content-center align-items-center welcome">
-				<div><h1 class="display-3 text-white">Hey Chef!</h1></div>
-				<div><h1 class="display-3 text-white">Welcome To</h1></div>
-				<div><h1 class="display-3 text-white">Khaana</h1></div>
-			</div>						
-		</div>
-	</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
