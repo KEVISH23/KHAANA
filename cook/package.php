@@ -173,10 +173,48 @@
 	</div>
 	</div>
 
-    <div class="image-container">
+   <div class="image-container">
         <div class="text">PACKAGE</div>
     </div>
-
+   <!--  <div id="div3" class="ease">
+     -->   
+    </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center" style="position:inherit;">  
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="#section1">Section 1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#section2">Section 2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link"  href="#section3">Section 3</a>
+          
+        </ul>
+      </nav>
+      <div class="container" >
+      <div class="row">
+      <div id="section1" class="col-sm-12 nav1 " style="padding-top:70px;padding-bottom:70px">
+        <h1 style="text-align: center;">GOLD</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      </div>
+      </div>
+      <div class="row">
+      <div id="section2" class="col-sm-12 nav2" style="padding-top:70px;padding-bottom:70px">
+        <h1 style="text-align: center;">SILVER</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      </div>
+    </div>
+    <div class="row">
+      <div id="section3" class="col-sm-12 nav3" style="padding-top:70px;padding-bottom:70px">
+        <h1 style="text-align: center;">PRIMIUM</h1>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+      </div>
+    </div>
+      </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

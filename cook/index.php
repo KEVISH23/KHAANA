@@ -41,7 +41,7 @@
         <a class="nav-link" href="contactcook.php">Contact Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Our Package Policy</a>
+        <a class="nav-link" href="package.php">Our Package Policy</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">

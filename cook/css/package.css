@@ -51,7 +51,7 @@
     border-left: 0;
     border-radius: 50px;
     text-shadow: none;
-    background-color: darkseagreen;
+    background-color: rgb(125, 196, 125);
 }
 
 .welcome{
@@ -60,5 +60,33 @@
     color: #fff;
 }
 body {
-    background-color: rgba(255, 147, 232, 0.938);
+    background-color: rgba(170, 169, 169, 0.938);
+}
+.ease {
+    width: 200px;
+    height: 50px;
+    background-color: rgb(146, 255, 131);
+    font-weight: bold;
+    position: relative;
+    animation: mymove 8s infinite;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+
+@keyframes mymove {
+    from {left: 0px;}
+    to {left: 1140px;}
+  }
+
+#div3 {animation-timing-function: ease-in;}
+
+.nav1{
+    background-color: rgb(255, 181, 85);
+}
+.nav2{
+    background-color: rgb(255, 255, 255);
+}
+.nav3{
+    background-color: rgb(137, 255, 82);
 }
