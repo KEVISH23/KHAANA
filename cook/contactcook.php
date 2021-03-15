@@ -207,17 +207,29 @@
 
 </div>
 	<!-- logo and form end-->
-	<div class="row">
-		<div class="col-sm-4 address"> Address </div>
-		<div class="col-sm-4 phn"> Phone no.</div>
-		<div class="col-sm-4 email">Email id</div>
+	<div class="row rowco">
+		<div class="col-sm-4 address"> Address 
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item address1">rcti.near gujrat high court</li>
+		  
+		</ul>
+		</div>
+		<div class="col-sm-4 phn"> Phone no.
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item phn1"> 8155443322</li>
+		  
+		</ul>
+		</div>
+		<div class="col-sm-4 email">Email id
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item email1">tsf@gmail.com </li>
+		  
+		</ul>
+		</div>
+
 	  </div>
 
-	  <div class="row">
-		<div class="col-lg-4 "> bjdfsfsfdsjkghsfghgfhgfhdfhgfdhsfghfghf</div>
-		<div class="col-lg-4 "> 5151515151515</div>
-		<div class="col-lg-4 ">akhu@kt.com</div>
-	  </div>
+	 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
