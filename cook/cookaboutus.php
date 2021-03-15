@@ -189,7 +189,7 @@
 
 <div class="container  p-3">
 <div class="row">
-		<img src="images/khaana.png" class="img-fluid  p-3" width=35% >
+		<img src="images/KHHANA.jpg" class="img-fluid  p-3" width="35%" >
 		<div class="offset-md-2 p-3 col-md-4 col-sm-3 dbox">Name:Khaana</div>
 		
 		</div>	
@@ -204,7 +204,7 @@
    </div>
 	  
 <div class="container">
-<div class="row ">
+<div class="row Aboutus">
 <div class="col-md-4 col-sm-4">
 
 	<div class="card" style="width: 18rem;">
