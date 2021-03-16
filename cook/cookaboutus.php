@@ -189,7 +189,7 @@
 
 <div class="container p-3">
 <div class="row">
-    <div class="col-sm-6 col-lg-6" >
+    <div class="col-sm-6 col-lg-6 p-3" >
     <img class="img-fluid" src="images/khaana.png" width="auto" height="auto">
     </div>
     <div class="col-sm-6 col-lg-6"  id="grad1" >
