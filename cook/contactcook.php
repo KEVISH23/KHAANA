@@ -181,34 +181,34 @@
 	<!-- logo and form -->
 	<div class="container cook"  >
   
-  <div class="row">
-    <div class="col-sm-6 col-lg-6" >
-    <img class="img-fluid" src="images/KHHANA.jpg" width="auto" height="auto">
-    </div>
-    <div class="col-sm-6 col-lg-6"  id="grad1" >
-    <h2>CONTACT US</h2>
-	<div class="form-group">
-		<label for="usr">Name:</label>
-		<input type="text" class="form-control" id="usr" name="name" placeholder="enter your name">
-	  </div>
-	  <div class="form-group">
-		<label for="pwd">Email:</label>
-		<input type="email" class="form-control" id="email" name="email" placeholder="enter your email id">
-	  </div>
-	  <div class="form-group">
-		<label for="msg">Message</label>
-		<input type="text" class="form-control" id="msg" name="msg" placeholder="message">
-	  </div>
-	  	<div class="row" style="margin-left: 40px;">
-			  <div class="col-sm-6" >
-				 <button type="button" class="btn btn-primary active">submit</button>
-			</div>
-			<div class="col-sm-6">
-			  <button type="button" class="btn btn-primary active">cancel</button>
+	<div class="row">
+		<div class="col-sm-6 col-lg-6" >
+		<img class="img-fluid" src="images/KHHANA.jpg" width="auto" height="auto">
+		</div>
+		<div class="col-sm-6 col-lg-6"  id="grad1" >
+		<h2>CONTACT US</h2>
+		<div class="form-group">
+			<label for="usr">Name:</label>
+			<input type="text" class="form-control" id="usr" name="name" placeholder="enter your name">
+		</div>
+		<div class="form-group">
+			<label for="pwd">Email:</label>
+			<input type="email" class="form-control" id="email" name="email" placeholder="enter your email id">
+		</div>
+		<div class="form-group">
+			<label for="msg">Message</label>
+			<input type="text" class="form-control" id="msg" name="msg" placeholder="message">
+		</div>
+			<div class="row" style="margin-left: 40px;">
+				<div class="col-sm-6" >
+					<button type="button" class="btn btn-primary active">submit</button>
+				</div>
+				<div class="col-sm-6">
+				<button type="button" class="btn btn-primary active">cancel</button>
+				</div>
 			</div>
 		</div>
-    </div>
-  </div>
+	</div>
 
 </div>
 	<!-- logo and form end-->
