@@ -187,20 +187,25 @@
 	
 
 
-<div class="container  p-3">
+<div class="container p-3">
 <div class="row">
-		<img src="images/khaana.png" class="img-fluid  p-3" width=35% >
-		<div class="offset-md-2 p-3 col-md-4 col-sm-3 ">Name:Khaana</div>
-		
-		</div>	
-</div>
-
+    <div class="col-sm-6 col-lg-6" >
+    <img class="img-fluid" src="images/khaana.png" width="auto" height="auto">
+    </div>
+    <div class="col-sm-6 col-lg-6"  id="grad1" >
+    <h2>About US</h2>
+			<h4>Khaana was established in 2020-21</h4>
+			<h4>Khaana was made by kav</h4>
+			<h4>Khaana give home made food</h4>
+			<h4>dil ka dariya beh hi gaya</h4>
+  </div>
 
 <hr>
+	<hr>
 
 
-<div class="container text-center p-3">
-	<h3>Team</h3>
+<div class="container text-center">
+	<h3 class="p-5">Team</h3>
    </div>
 	  
 <div class="container">
