@@ -1,13 +1,3 @@
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
-<!doctype html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
@@ -187,17 +177,17 @@
 	
 
 
-<div class="container p-3">
+<div class="container">
 <div class="row">
-    <div class="col-sm-6 col-lg-6 p-3" >
+    <div class="col-sm-6 col-lg-6" >
     <img class="img-fluid" src="images/khaana.png" width="auto" height="auto">
     </div>
     <div class="col-sm-6 col-lg-6"  id="grad1" >
-    <h2>About US</h2>
-			<h4>Khaana was established in 2020-21</h4>
-			<h4>Khaana was made by kav</h4>
-			<h4>Khaana give home made food</h4>
-			<h4>dil ka dariya beh hi gaya</h4>
+    <h2 class="text-center">About US</h2>
+			<h4 class="text-center">Khaana was established in 2020-21</h4>
+			<h4 class="text-center">Khaana was made by kav</h4>
+			<h4 class="text-center">Khaana give home made food</h4>
+			<h4 class="text-center">dil ka dariya beh hi gaya</h4>
   </div>
 
 <hr>
@@ -205,63 +195,64 @@
 
 
 <div class="container text-center">
-	<h3 class="p-5">Team</h3>
+	<h3>Team</h3>
    </div>
 	  
-<div class="container">
-<div class="row ">
-<div class="col-md-4 col-sm-4">
-
-	<div class="card" style="width: 18rem;">
-		<img src="images/face1.jpg" class="card-img-top img-fluid"  alt="...">
-		
+<div class="row">
+	<div class="col-lg-4">
+			<div class="card" style="width: 18rem;">
+		<img class="card-img-top" src="images/face3.png" alt="Card image cap">
+		<div class="card-body">
+			<h5 class="card-title">Card title</h5>
+			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		</div>
 		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
-		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
+			<li class="list-group-item">Cras justo odio</li>
+			<li class="list-group-item">Dapibus ac facilisis in</li>
+			<li class="list-group-item">Vestibulum at eros</li>
 		</ul>
-		
-	  </div>
-
-</div>
-
-
-<div class="col-md-4 col-sm-4">
-
-	<div class="card" style="width: 18rem;">
-		<img src="images/face1.jpg" class="card-img-top img-fluid"  alt="...">
-		
+		<div class="card-body">
+			<a href="#" class="card-link">Card link</a>
+			<a href="#" class="card-link">Another link</a>
+		</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+			<div class="card" style="width: 18rem;">
+		<img class="card-img-top" src="images/face2.png" alt="Card image cap">
+		<div class="card-body">
+			<h5 class="card-title">Card title</h5>
+			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		</div>
 		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
-		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
+			<li class="list-group-item">Cras justo odio</li>
+			<li class="list-group-item">Dapibus ac facilisis in</li>
+			<li class="list-group-item">Vestibulum at eros</li>
 		</ul>
-		
-	  </div>
-
-</div>
-
-<div class="col-md-4 col-sm-4">
-
-	<div class="card" style="width: 18rem;">
-		<img src="images/face1.jpg" class="card-img-top img-fluid"  alt="...">
-		
+		<div class="card-body">
+			<a href="#" class="card-link">Card link</a>
+			<a href="#" class="card-link">Another link</a>
+		</div>
+		</div>
+	</div>
+	<div class="col-lg-4">
+			<div class="card" style="width: 18rem;">
+		<img class="card-img-top" src="images/face1.jpg" alt="Card image cap">
+		<div class="card-body">
+			<h5 class="card-title">Card title</h5>
+			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+		</div>
 		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
-		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
+			<li class="list-group-item">Cras justo odio</li>
+			<li class="list-group-item">Dapibus ac facilisis in</li>
+			<li class="list-group-item">Vestibulum at eros</li>
 		</ul>
-		
-	  </div>
-
-</div>
-
-
-</div>
-
-<hr>
-
-
+		<div class="card-body">
+			<a href="#" class="card-link">Card link</a>
+			<a href="#" class="card-link">Another link</a>
+		</div>
+		</div>
+	</div>
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
