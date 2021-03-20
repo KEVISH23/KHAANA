@@ -63,7 +63,13 @@ h2{
     text-shadow: none;
     background-color: darkseagreen;
 }
-
+.card img{
+    width: 300px imp !important;
+    height: 300px imp !important;
+}
+p{
+    color: blueviolet;
+}
 #grad1 {
     
     background-color: red; /* For browsers that do not support gradients */
