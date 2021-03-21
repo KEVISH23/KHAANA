@@ -63,6 +63,13 @@ h2{
     text-shadow: none;
     background-color: darkseagreen;
 }
+.card img{
+    width: 300px imp !important;
+    height: 300px imp !important;
+}
+p{
+    color: blueviolet;
+}
 #grad1 {
     
     background-color: red; /* For browsers that do not support gradients */
@@ -75,10 +82,7 @@ body{
 
     background-color: #F2CF1D;
 }
-.img-fluid{
-    border-radius: 80px; 
-    box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.459), 0 10px 10px 0 rgba(134, 134, 134, 0.19);
-}
+
 .Aboutus{
     background-color:none;
 }
