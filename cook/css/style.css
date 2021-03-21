@@ -81,7 +81,9 @@ body{
 }
 .Aboutus{
     background-color:none;
-}.welcome{
+}
+
+.welcome{
     float: left;
     font-size: 80px;
     color: #fff;
