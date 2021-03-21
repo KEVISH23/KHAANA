@@ -192,12 +192,10 @@
 
 <hr>
 	<hr>
-
-<p>Radhe Radhe</p>
-<div class="container text-center">
+<div class="container text-center p-5">
 	<h3>Team</h3>
    </div>
-<<<<<<< HEAD
+
 	  
 <div class="container">
 <div class="row ">
@@ -251,65 +249,7 @@
 <hr>
 
 
-=======
-<div class="container-fluid">	  
-	<div class="row">
-		<div class="col-lg-4">
-				<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="images/face3.png" alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			</div>
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item">Cras justo odio</li>
-				<li class="list-group-item">Dapibus ac facilisis in</li>
-				<li class="list-group-item">Vestibulum at eros</li>
-			</ul>
-			<div class="card-body">
-				<a href="#" class="card-link">Card link</a>
-				<a href="#" class="card-link">Another link</a>
-			</div>
-			</div>
-		</div>
-		<div class="col-lg-4">
-				<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="images/face2.png" alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			</div>
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item">Cras justo odio</li>
-				<li class="list-group-item">Dapibus ac facilisis in</li>
-				<li class="list-group-item">Vestibulum at eros</li>
-			</ul>
-			<div class="card-body">
-				<a href="#" class="card-link">Card link</a>
-				<a href="#" class="card-link">Another link</a>
-			</div>
-			</div>
-		</div>
-		<div class="col-lg-4">
-				<div class="card" style="width: 18rem;">
-			<img class="card-img-top" src="images/face1.jpg" alt="Card image cap">
-			<div class="card-body">
-				<h5 class="card-title">Card title</h5>
-				<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-			</div>
-			<ul class="list-group list-group-flush">
-				<li class="list-group-item">Cras justo odio</li>
-				<li class="list-group-item">Dapibus ac facilisis in</li>
-				<li class="list-group-item">Vestibulum at eros</li>
-			</ul>
-			<div class="card-body">
-				<a href="#" class="card-link">Card link</a>
-				<a href="#" class="card-link">Another link</a>
-			</div>
-			</div>
-		</div>
-	</div>
->>>>>>> b2c153d6199fd77c6131cc7eec9832a6e00b5ec0
+
 </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
