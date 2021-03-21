@@ -59,9 +59,9 @@ h2{
 .list-group-flush .list-group-item {
     border-right: 0;
     border-left: 0;
-    border-radius: 50px;
+    text-align: center;
     text-shadow: none;
-    background-color: darkseagreen;
+    
 }
 .card img{
     width: 300px imp !important;
@@ -80,7 +80,7 @@ p{
   }
 body{
 
-    background-color: #F2CF1D;
+    background-color:yellow;
 }
 
 .Aboutus{
