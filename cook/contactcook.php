@@ -212,6 +212,7 @@
 
 </div>
 	<!-- logo and form end-->
+<div class="container">
 	<div class="row rowco">
 		<div class="col-sm-4 address"> Address 
 		<ul class="list-group list-group-flush">
@@ -233,7 +234,7 @@
 		</div>
 
 	  </div>
-
+	  </div>
 	 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

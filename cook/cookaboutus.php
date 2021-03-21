@@ -171,18 +171,18 @@
 
   
 
-	<div class="container text-center p-3">
+	<div class="container text-center p-3 mt-4">
 		<h3>About US</h3>
 	   </div>
 	
 
 
-<div class="container">
+<div class="container mt-4">
 <div class="row">
-    <div class="col-sm-6 col-lg-6" >
+    <div class="col-sm-6 col-lg-6 mt-4 mb-2" >
     <img class="img-fluid" src="images/khaana.png" width="auto" height="auto">
     </div>
-    <div class="col-sm-6 col-lg-6"  id="grad1" >
+    <div class="col-sm-6 col-lg-6 mt-4 mb-2"  id="grad1" >
     <h2 class="text-center">About US</h2>
 			<h4 class="text-center">Khaana was established in 2020-21</h4>
 			<h4 class="text-center">Khaana was made by kav</h4>
@@ -192,7 +192,7 @@
 
 <hr>
 	<hr>
-<div class="container text-center p-5">
+<div class="container text-center p-5 mt-4">
 	<h3>Team</h3>
    </div>
 
