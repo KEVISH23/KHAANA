@@ -210,9 +210,9 @@
 	  
 <div class="container">
 <div class="row ">
-<div class="col-md-4 col-sm-4">
+<div class="col-md-4 col-sm-4 py-3 py-sm-0">
 
-	<div class="card" style="width: 18rem;">
+	<div class="card">
 		<img src="images/face1.jpg" class="card-img-top img-fluid"  alt="...">
 		
 		<ul class="list-group list-group-flush">
@@ -226,11 +226,9 @@
 </div>
 
 
-<div class="col-md-4 col-sm-4">
-
-	<div class="card" style="width: 18rem;">
-		<img src="images/face1.jpg" class="card-img-top img-fluid"  alt="...">
-		
+<div class="col-md-4 col-sm-4 py-3 py-sm-0">
+	<div class="card">
+		<img src="images/face1.jpg" class="card-img-top img-fluid "  alt="...">	
 		<ul class="list-group list-group-flush">
 		  <li class="list-group-item">Name :- abcd</li>
 		  <li class="list-group-item">Age :- 20</li>
@@ -241,9 +239,9 @@
 
 </div>
 
-<div class="col-md-4 col-sm-4">
+<div class="col-md-4 col-sm-4 py-3 py-sm-0">
 
-	<div class="card" style="width: 18rem;">
+	<div class="card">
 		<img src="images/face1.jpg" class="card-img-top img-fluid"  alt="...">
 		
 		<ul class="list-group list-group-flush">
