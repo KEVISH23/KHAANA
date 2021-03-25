@@ -83,9 +83,11 @@ body {
 
 .nav1{
     background-color: rgb(255, 181, 85);
+    margin-bottom: 50px;
 }
 .nav2{
     background-color: rgb(255, 255, 255);
+    margin-bottom: 50px;
 }
 .nav3{
     background-color: rgb(137, 255, 82);

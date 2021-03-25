@@ -20,27 +20,23 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item active ">
-        <a class="nav-link" href="cookaboutus.php">About Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="contactcook.php">Contact Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="package.php">Our Package Policy</a>
-      </li>
+        <li class="nav-item">
+            <a class="nav-link" href="lindex.php">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="lcookaboutus.php">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="lcontactcook.php">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="lpackage.php">Our Package Policy</a>
+          </li>
     </ul>
     <ul class="navbar-nav ml-auto">
-	  <li class="nav-item text-white">
-	  	<a class="nav-link" href="#">
-		 Welcome Guest 
-		 </a>
-		</li>
-	  <li class="nav-item" data-target="#login" data-toggle="modal"><a href="#" class="nav-link">Log In</a></li>
-      <li class="nav-item " data-target="#signin" data-toggle="modal"><a href="#" class="nav-link">Sign Up</a></li>      
+	 
+	  <li class="nav-item" data-target="#login" data-toggle="modal"><a href="#" class="nav-link">Log out</output></a></li>
+           
         </ul>
   </div>
 </nav>
