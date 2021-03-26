@@ -74,14 +74,16 @@ if (!isset($_SESSION['uname'])) {
 
 	<!--BANNER-->
 	<div class="banner">
-		<div class="container">
-			<div class=" d-flex flex-column justify-content-center align-items-center welcome">
+		<div class="container-fluid d-flex align-items-center justify-content-center welcome">
+			<div class=" d-flex flex-column justify-content-center align-items-center">
 				<div><h1 class="display-3 text-white">Hey Chef!</h1></div>
-				<div><h1 class="display-3 text-white">Welcome To</h1></div>
-				<div><h1 class="display-3 text-white">Khaana</h1></div>
+				<div><h1 class="display-3 text-white">Place Your</h1></div>
+        <div><h1 class="display-3 text-white">Menu</h1></div>
+				<div><a href="lmenu.php" class="btn btn-success menubtn">Click Here</a></div>
 			</div>						
 		</div>
 	</div>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
