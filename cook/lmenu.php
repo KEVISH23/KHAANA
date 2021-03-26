@@ -70,6 +70,88 @@ if (!isset($_SESSION['uname'])) {
 </nav>
 <!--END NAVBAR-->
     
-    <h1> i m menu </h1>
+<br><br>
+<nav aria-label="breadcrumb" >
+    <ol class="breadcrumb col-lg-2 offset-5" >
+    <li  class="breadcrumb-item active" >Add Menu</li>
+      <li class="breadcrumb-item" ><a href="#">View Menu</a></li>  
+    </ol>
+  </nav>
+
+<div class="container mt-5">
+     <div class="row">
+       <div class="col-lg-8 offset-2">
+        <form>
+          <div class="form-group flabel">
+            <label for="inputdelivery"style="color:yellow;">Dish Name</label>
+            <input type="text" class="form-control" id="inputdelivery"  placeholder="Enter Dish Name" required>
+          </div>
+             
+        </form>
+       </div>
+     </div>
+     <div class="col offset-2"></div>
+   </div>
+</div>
+
+<div class="container mt-5">
+     <div class="row">
+       <div class="col-lg-8 offset-2">
+        <form>
+          <div class="form-group flabel">
+            <label for="inputdelivery" style="color:yellow;">Dish Details</label>
+            <input type="text" class="form-control" id="inputdelivery"  placeholder="Enter Dish Details" required>
+          </div>
+             
+        </form>
+       </div>
+     </div>
+     <div class="col offset-2"></div>
+   </div>
+</div>
+
+<div class="container mt-5">
+     <div class="row">
+       <div class="col-lg-8 offset-2">
+        <form>
+          <div class="form-group flabel">
+            <label for="inputdelivery" style="color:yellow;">Dish Price</label>
+            <input type="text" class="form-control" id="inputdelivery"  placeholder="Enter Dish Price" required>
+          </div>
+             
+        </form>
+       </div>
+     </div>
+     <div class="col offset-2"></div>
+   </div>
+</div>
+
+<div class="container mt-5">
+     <div class="row">
+       <div class="col-lg-8 offset-2">
+        <form>
+          <div class="form-group flabel">
+            <label for="inputdelivery" style="color:yellow;">Dish Photo</label>
+            <input type="text" class="form-control" id="inputdelivery"  placeholder="Enter Dish Photo" required>
+          </div>
+             
+        </form>
+       </div>
+     </div>
+     <div class="col offset-2"></div>
+   </div>
+</div>
+<br>
+</div>
+			<div class="row" style="text-align:center;">
+				<div class="row-lg-2 offset-5" >
+					<button type="button" class="btn btn-primary active">submit</button>
+				</div>
+				<div class="col-sm-2">
+				<button type="button" class="btn btn-primary active">cancel</button>
+				</div>
+			</div>
+		</div>
+<hr>
 </body>
 </html>
