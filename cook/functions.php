@@ -1,5 +1,5 @@
 <?php
-include("includes/includes.php");
+include("includes.php");
 
 function cooksignin(){
     global $con;
@@ -34,7 +34,7 @@ function cooksignin(){
 		$cimage_tmp = $_FILES['c_img']['tmp_name'];
 		if(mysqli_stmt_execute($res)){
 			echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
-			<strong>Welcome Chef!</strong> You are signed in..
+			<strong>Welcome Chef!</strong> You are Registered as a chef...
 			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
 			  <span aria-hidden='true'>&times;</span>
 			</button>
@@ -52,7 +52,6 @@ function cooklogin(){
 	global $con;
 	$email = $_POST['s_email'];
 	$pass = $_POST['s_pass'];
-	
 	$qry = "Select * from cook where cook_email = ?";
 	$res = mysqli_prepare($con,$qry);
 	if ($res) {
@@ -60,28 +59,35 @@ function cooklogin(){
 		$cemail = $email;
 		mysqli_stmt_bind_result($res,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate);
 		if(mysqli_stmt_execute($res)){
+			
 			mysqli_stmt_store_result($res);
 				$rowcount = mysqli_stmt_num_rows($res);
 				if($rowcount>0){
-					$bol = password_verify($pass,$dbpass);
-					if($bol){
-						
-						echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
+					while(mysqli_stmt_fetch($res)){
+						if(password_verify($pass,$dbpass)){
+							
+							$_SESSION['uname'] = $dbemail;
+							#echo $_SESSION['uname'];
+							echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
 							<strong>Welcome Chef!</strong> You are Logged in succesfully..
 							<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
 							<span aria-hidden='true'>&times;</span>
 							</button>
 							</div>";
-					}
-					else {
-		
-						echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+							echo "<script>window.open('lindex.php','_self')</script>";
+							
+						}
+						else {
+							echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
 							<strong>Oops!</strong> Email or password must be wrong..
 							<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
 							<span aria-hidden='true'>&times;</span>
 							</button>
 							</div>";
+						}
+
 					}
+					
 				}
 				else {
 					echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
