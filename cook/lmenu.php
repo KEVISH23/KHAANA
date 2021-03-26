@@ -70,9 +70,9 @@ if (!isset($_SESSION['uname'])) {
 </nav>
 <!--END NAVBAR-->
     
-<br><br>
-<nav aria-label="breadcrumb" >
-    <ol class="breadcrumb col-lg-2 offset-5" >
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb" >
     <li  class="breadcrumb-item active" >Add Menu</li>
       <li class="breadcrumb-item" ><a href="#">View Menu</a></li>  
     </ol>
@@ -84,7 +84,7 @@ if (!isset($_SESSION['uname'])) {
         <form>
           <div class="form-group flabel">
             <label for="inputdelivery"style="color:yellow;">Dish Name</label>
-            <input type="text" class="form-control" id="inputdelivery"  placeholder="Enter Dish Name" required>
+            <input type="text" class="form-control" id="inputdelivery" name="dname" placeholder="Enter Dish Name" required>
           </div>
              
         </form>
@@ -100,7 +100,7 @@ if (!isset($_SESSION['uname'])) {
         <form>
           <div class="form-group flabel">
             <label for="inputdelivery" style="color:yellow;">Dish Details</label>
-            <input type="text" class="form-control" id="inputdelivery"  placeholder="Enter Dish Details" required>
+            <input type="text" class="form-control" id="inputdelivery" name="ddetails"  placeholder="Enter Dish Details" required>
           </div>
              
         </form>
@@ -116,7 +116,7 @@ if (!isset($_SESSION['uname'])) {
         <form>
           <div class="form-group flabel">
             <label for="inputdelivery" style="color:yellow;">Dish Price</label>
-            <input type="text" class="form-control" id="inputdelivery"  placeholder="Enter Dish Price" required>
+            <input type="text" class="form-control" id="inputdelivery" name="dprice" placeholder="Enter Dish Price" required>
           </div>
              
         </form>
@@ -132,7 +132,7 @@ if (!isset($_SESSION['uname'])) {
         <form>
           <div class="form-group flabel">
             <label for="inputdelivery" style="color:yellow;">Dish Photo</label>
-            <input type="text" class="form-control" id="inputdelivery"  placeholder="Enter Dish Photo" required>
+            <input type="text" class="form-control" id="inputdelivery" name="dphoto"  placeholder="Enter Dish Photo" required>
           </div>
              
         </form>
@@ -145,10 +145,10 @@ if (!isset($_SESSION['uname'])) {
 </div>
 			<div class="row" style="text-align:center;">
 				<div class="row-lg-2 offset-5" >
-					<button type="button" class="btn btn-primary active">submit</button>
+					<button type="submit" name="msub" class="btn btn-success active">Submit</button>
 				</div>
 				<div class="col-sm-2">
-				<button type="button" class="btn btn-primary active">cancel</button>
+				<button type="reset" name="mcan" class="btn btn-danger active">Cancel</button>
 				</div>
 			</div>
 		</div>
