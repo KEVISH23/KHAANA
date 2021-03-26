@@ -29,6 +29,13 @@
           <li class="nav-item">
             <a class="nav-link" href="lcontactcook.php">Contact Us</a>
           </li>
+		  <li class="nav-item">
+            <a class="nav-link" href="lmenu.php">menu</a>
+          </li>
+          
+          <li class="nav-item">
+            <a class="nav-link" href="lorder.php">order</a>
+          </li>
           <li class="nav-item">
             <a class="nav-link" href="lpackage.php">Our Package Policy</a>
           </li>
