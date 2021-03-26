@@ -191,7 +191,8 @@ include ("functions.php");
 		<div class="container-fluid d-flex align-items-center justify-content-center welcome">
 			<div class=" d-flex flex-column justify-content-center align-items-center">
 				<div><h1 class="display-3 text-white">Hey Chef!</h1></div>
-				<div><h1 class="display-3 text-white">Welcome To</h1></div>
+				<div><h1 class="display-3 text-white">Welcome</h1></div>
+				<div><h1 class="display-3 text-white">To</h1></div>
 				<div><h1 class="display-3 text-white">Khaana</h1></div>
 			</div>						
 		</div>
