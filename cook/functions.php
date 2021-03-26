@@ -1,6 +1,6 @@
 <?php
 include("includes.php");
-
+session_start();
 function cooksignin(){
     global $con;
 	$cpass = $_POST['c_pass'];
@@ -110,5 +110,73 @@ function cooklogin(){
 		echo "ERROR";
 	}
 	
+};
+function addmenu(){
+	global $con;
+	$email = $_SESSION['uname'];
+	$qry1 = "select * from cook where cook_email = ?";
+	$res1 = mysqli_prepare($con,$res1);
+	if ($res1) {
+		mysqli_stmt_bind_param($res1,'s',$cemail);
+		$cemail = $email;
+		mysqli_stmt_bind_result($res1,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate);
+		if(mysqli_stmt_execute($res)){
+			mysqli_stmt_store_result($res);
+			$rowcount = mysqli_stmt_num_rows($res);
+			if ($rowcount>0) {
+				while(mysqli_stmt_fetch($res)){
+					$cookid = $id;
+				}
+			else {
+				echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+			<strong>Chef!</strong> Something Went Wrong Please Try Again..
+			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+			  <span aria-hidden='true'>&times;</span>
+			</button>
+		  </div>";
+			}
+			}
+		}
+	}
+	else {
+		echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+			<strong>Chef!</strong> Something Went Wrong Please Try Again..
+			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+			  <span aria-hidden='true'>&times;</span>
+			</button>
+		  </div>";
+	}
+	$qry = "Insert into menu(cook_id,m_name,m_details,m_price,m_image,m_date) values (?,?,?,?,?)";
+	move_uploaded_file($cimage_tmp,"menuimages/$cimage");
+	$res = mysqli_prepare($con,$qry);
+	if ($res) {
+		mysqli_stmt_bind_param($res,'ississ',$cid,$dname,$ddetails,$dprice,$cimage,$date);
+		date_default_timezone_set('Asia/Kolkata'); 
+		$dname = $_POST['dname'];
+		$cid = $id;
+		$ddetails = $_POST['ddetails'];
+		$dprice = $_POST['dprice'];
+		$cimage = $_FILES['dphoto']['name'];
+		$cimage_tmp = $_FILES['dphoto']['tmp_name'];
+		$date = date('Y-m-d H:i:s', time());
+		if(mysqli_stmt_execute($res)){
+			echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
+			<strong>Chef!</strong> Dish Added Succesfully...
+			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+			  <span aria-hidden='true'>&times;</span>
+			</button>
+		  </div>";
+		}
+
+		}
+		else {
+			echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+			<strong>Chef!</strong> Something Went Wrong Please Try Again..
+			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+			  <span aria-hidden='true'>&times;</span>
+			</button>
+		  </div>";
+		}
+	}
 };
 ?>
