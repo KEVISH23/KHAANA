@@ -86,54 +86,30 @@ if (!isset($_SESSION['uname'])) {
             <label for="inputdelivery"style="color:yellow;">Dish Name</label>
             <input type="text" class="form-control"  id="inputdelivery" name="dname" placeholder="Enter Dish Name" required>
           </div>
-             
-        </form>
-       </div>
-     </div>
-     <div class="col offset-2"></div>
-   </div>
-</div>
 
-<div class="container mt-5">
-     <div class="row justify-content-center">
-       <div class="col-lg-8 ">
-        <form>
-          <div class="form-group flabel">
-            <label for="inputdelivery" style="color:yellow;">Dish Details</label>
-            <input type="text" class="form-control" id="inputdelivery" name="ddetails"  placeholder="Enter Dish Details" required>
+          <div class="form-group flabel mt-5" >
+            <label for="inputdelivery"style="color:yellow;">Dish Details</label>
+            <input type="text" class="form-control"  id="inputdelivery" name="dname" placeholder="Enter Dish Details" required>
           </div>
-             
-        </form>
-       </div>
-     </div>
-     <div class="col offset-2"></div>
-   </div>
-</div>
 
-<div class="container mt-5">
-     <div class="row justify-content-center">
-       <div class="col-lg-8 ">
-        <form>
-          <div class="form-group flabel">
-            <label for="inputdelivery" style="color:yellow;">Dish Price</label>
-            <input type="text" class="form-control" id="inputdelivery" name="dprice" placeholder="Enter Dish Price" required>
+          <div class="form-group flabel mt-5" >
+            <label for="inputdelivery"style="color:yellow;">Dish Price</label>
+            <input type="text" class="form-control"  id="inputdelivery" name="dname" placeholder="Enter Dish Price" required>
           </div>
-             
-        </form>
-       </div>
-     </div>
-     <div class="col offset-2"></div>
-   </div>
-</div>
 
-<div class="container mt-5">
-     <div class="row justify-content-center ">
-       <div class="col-lg-8 ">
-        <form>
-          <div class="form-group flabel">
-            <label for="inputdelivery" style="color:yellow;">Dish Photo</label>
+          <div class="form-group flabel mt-5" >
+            <label for="inputdelivery"style="color:yellow;">Dish Photo</label>
             <input type="file" class="form-control" id="inputimg" name="c_img" required>
           </div>
+
+          <div class="form-row">
+								<div class="form-group col-md-6  text-center">
+									<button type="submit" class="btn btn-success" name="csubmit">Submit</button>
+								</div>
+								<div class="form-group col-md-6 text-center">
+									<button type="cancel" class="btn btn-danger" name="ccancel" data-dismiss="modal">Cancel</button>
+								</div>
+							</div>
              
         </form>
        </div>
@@ -142,17 +118,11 @@ if (!isset($_SESSION['uname'])) {
    </div>
 </div>
 
-<br>
- </div>
-			<div class="row justify-content-center" >
-				<div class="row-lg-2 " >
-					<button type="submit" name="msub" class="btn btn-success active">Submit</button>
-				</div>
-				<div class="row-lg-2 offset-1">
-				<button type="reset" name="mcan" class="btn btn-danger active">Cancel</button>
-				</div>
-			</div>
-		</div> 
+
+
+
+
+
 <hr>
 
 
