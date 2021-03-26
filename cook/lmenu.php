@@ -132,7 +132,7 @@ if (!isset($_SESSION['uname'])) {
         <form>
           <div class="form-group flabel">
             <label for="inputdelivery" style="color:yellow;">Dish Photo</label>
-            <input type="text" class="form-control" id="inputdelivery" name="dphoto"  placeholder="Enter Dish Photo" required>
+            <input type="file" class="form-control" id="inputimg" name="c_img" required>
           </div>
              
         </form>
@@ -141,8 +141,9 @@ if (!isset($_SESSION['uname'])) {
      <div class="col offset-2"></div>
    </div>
 </div>
+
 <br>
-</div>
+ </div>
 			<div class="row justify-content-center" >
 				<div class="row-lg-2 " >
 					<button type="submit" name="msub" class="btn btn-success active">Submit</button>
@@ -151,7 +152,10 @@ if (!isset($_SESSION['uname'])) {
 				<button type="reset" name="mcan" class="btn btn-danger active">Cancel</button>
 				</div>
 			</div>
-		</div>
+		</div> 
 <hr>
+
+
+
 </body>
 </html>
