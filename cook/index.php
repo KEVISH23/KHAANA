@@ -209,4 +209,9 @@ include ("functions/functions.php");
 if(isset($_POST['csubmit'])){
 	cooksignin();
 }
+#login
+if (isset($_POST['ssubmit'])) {
+	cooklogin();
+}
+
 ?>
