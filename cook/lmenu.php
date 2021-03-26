@@ -4,14 +4,9 @@ if (!isset($_SESSION['uname'])) {
 
 	echo "<script>window.open('index.php','_self')</script>";
 }
+include ("includes.php");
+include ("functions.php");
 ?>
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 
 <!doctype html>
 <html lang="en">
@@ -81,7 +76,7 @@ if (!isset($_SESSION['uname'])) {
 <div class="container mt-5" >
      <div class="row justify-content-center" >
        <div class="col-lg-8" >
-        <form>
+       <form action="lmenu.php" method="post" enctype="multipart/form-data">
           <div class="form-group flabel" >
             <label for="inputdelivery"style="color:yellow;">Dish Name</label>
             <input type="text" class="form-control"  id="inputdelivery" name="dname" placeholder="Enter Dish Name" required>
@@ -89,25 +84,25 @@ if (!isset($_SESSION['uname'])) {
 
           <div class="form-group flabel mt-5" >
             <label for="inputdelivery"style="color:yellow;">Dish Details</label>
-            <input type="text" class="form-control"  id="inputdelivery" name="dname" placeholder="Enter Dish Details" required>
+            <input type="text" class="form-control"  id="inputdelivery" name="ddetails" placeholder="Enter Dish Details" required>
           </div>
 
           <div class="form-group flabel mt-5" >
             <label for="inputdelivery"style="color:yellow;">Dish Price</label>
-            <input type="text" class="form-control"  id="inputdelivery" name="dname" placeholder="Enter Dish Price" required>
+            <input type="text" class="form-control"  id="inputdelivery" name="dprice" placeholder="Enter Dish Price" required>
           </div>
 
           <div class="form-group flabel mt-5" >
             <label for="inputdelivery"style="color:yellow;">Dish Photo</label>
-            <input type="file" class="form-control" id="inputimg" name="c_img" required>
+            <input type="file" class="form-control" id="inputimg" name="dphoto" required>
           </div>
 
           <div class="form-row">
 								<div class="form-group col-md-6  text-center">
-									<button type="submit" class="btn btn-success" name="csubmit">Submit</button>
+									<button type="submit" class="btn btn-success" name="msub">Submit</button>
 								</div>
 								<div class="form-group col-md-6 text-center">
-									<button type="cancel" class="btn btn-danger" name="ccancel" data-dismiss="modal">Cancel</button>
+									<button type="cancel" class="btn btn-danger" name="mcancel">Cancel</button>
 								</div>
 							</div>
              
@@ -126,6 +121,16 @@ if (!isset($_SESSION['uname'])) {
 <hr>
 
 
-
+ <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
+
 </html>
+<?php
+if (isset($_POST['msub'])) {
+  addmenu();
+}
+?>

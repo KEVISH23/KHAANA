@@ -1,6 +1,6 @@
 <?php
 include("includes.php");
-session_start();
+#session_start();
 function cooksignin(){
     global $con;
 	$cpass = $_POST['c_pass'];
@@ -115,38 +115,46 @@ function addmenu(){
 	global $con;
 	$email = $_SESSION['uname'];
 	$qry1 = "select * from cook where cook_email = ?";
-	$res1 = mysqli_prepare($con,$res1);
+	$res1 = mysqli_prepare($con,$qry1);
 	if ($res1) {
 		mysqli_stmt_bind_param($res1,'s',$cemail);
 		$cemail = $email;
 		mysqli_stmt_bind_result($res1,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate);
-		if(mysqli_stmt_execute($res)){
-			mysqli_stmt_store_result($res);
-			$rowcount = mysqli_stmt_num_rows($res);
+		if(mysqli_stmt_execute($res1)){
+			mysqli_stmt_store_result($res1);
+			$rowcount = mysqli_stmt_num_rows($res1);
 			if ($rowcount>0) {
-				while(mysqli_stmt_fetch($res)){
+				while(mysqli_stmt_fetch($res1)){
 					$cookid = $id;
 				}
+			}
 			else {
 				echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
-			<strong>Chef!</strong> Something Went Wrong Please Try Again..
+			<strong>Chef!</strong> Something Went Wrong Please Try Again1..
 			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
 			  <span aria-hidden='true'>&times;</span>
 			</button>
 		  </div>";
-			}
 			}
 		}
 	}
+
 	else {
 		echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
-			<strong>Chef!</strong> Something Went Wrong Please Try Again..
+			<strong>Chef!</strong> Something Went Wrong Please Try Again2..
 			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
 			  <span aria-hidden='true'>&times;</span>
 			</button>
 		  </div>";
 	}
-	$qry = "Insert into menu(cook_id,m_name,m_details,m_price,m_image,m_date) values (?,?,?,?,?)";
+	$dname = $_POST['dname'];
+	$ddetails = $_POST['ddetails'];
+	$dprice = $_POST['dprice'];
+	$cimage = $_FILES['dphoto']['name'];
+	$cimage_tmp = $_FILES['dphoto']['tmp_name'];
+	$qry = "Insert into menu(cook_id,m_name,m_details,m_price,m_image,m_date) values (?,?,?,?,?,?)";
+	$cimage = $_FILES['dphoto']['name'];
+	$cimage_tmp = $_FILES['dphoto']['tmp_name'];
 	move_uploaded_file($cimage_tmp,"menuimages/$cimage");
 	$res = mysqli_prepare($con,$qry);
 	if ($res) {
@@ -161,7 +169,7 @@ function addmenu(){
 		$date = date('Y-m-d H:i:s', time());
 		if(mysqli_stmt_execute($res)){
 			echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
-			<strong>Chef!</strong> Dish Added Succesfully...
+			<strong>Wohoo!</strong>Menu Added SUccesfully..
 			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
 			  <span aria-hidden='true'>&times;</span>
 			</button>
@@ -170,13 +178,14 @@ function addmenu(){
 
 		}
 		else {
+
 			echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
-			<strong>Chef!</strong> Something Went Wrong Please Try Again..
+			<strong>Chef!</strong> Something Went Wrong Please Try Again3..
 			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
 			  <span aria-hidden='true'>&times;</span>
 			</button>
 		  </div>";
 		}
-	}
+	
 };
 ?>
