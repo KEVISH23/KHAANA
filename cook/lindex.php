@@ -47,11 +47,11 @@ if (!isset($_SESSION['uname'])) {
         <a class="nav-link" href="lcontactcook.php">Contact Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="lmenu.php">menu</a>
+        <a class="nav-link" href="lmenu.php">Menu</a>
       </li>
 	  
       <li class="nav-item">
-        <a class="nav-link" href="lorder.php">order</a>
+        <a class="nav-link" href="lorder.php">Order</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="lpackage.php">Our Package Policy</a>
