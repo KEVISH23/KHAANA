@@ -71,20 +71,20 @@ if (!isset($_SESSION['uname'])) {
 <!--END NAVBAR-->
     
 
-<nav aria-label="breadcrumb">
-    <ol class="breadcrumb" >
-    <li  class="breadcrumb-item active" >Add Menu</li>
+<nav aria-label="breadcrumb ">
+    <ol class="breadcrumb justify-content-center " >
+    <li  class="breadcrumb-item active " >Add Menu</li>
       <li class="breadcrumb-item" ><a href="#">View Menu</a></li>  
     </ol>
   </nav>
 
-<div class="container mt-5">
-     <div class="row">
-       <div class="col-lg-8 offset-2">
+<div class="container mt-5" >
+     <div class="row justify-content-center" >
+       <div class="col-lg-8" >
         <form>
-          <div class="form-group flabel">
+          <div class="form-group flabel" >
             <label for="inputdelivery"style="color:yellow;">Dish Name</label>
-            <input type="text" class="form-control" id="inputdelivery" name="dname" placeholder="Enter Dish Name" required>
+            <input type="text" class="form-control"  id="inputdelivery" name="dname" placeholder="Enter Dish Name" required>
           </div>
              
         </form>
@@ -95,8 +95,8 @@ if (!isset($_SESSION['uname'])) {
 </div>
 
 <div class="container mt-5">
-     <div class="row">
-       <div class="col-lg-8 offset-2">
+     <div class="row justify-content-center">
+       <div class="col-lg-8 ">
         <form>
           <div class="form-group flabel">
             <label for="inputdelivery" style="color:yellow;">Dish Details</label>
@@ -111,8 +111,8 @@ if (!isset($_SESSION['uname'])) {
 </div>
 
 <div class="container mt-5">
-     <div class="row">
-       <div class="col-lg-8 offset-2">
+     <div class="row justify-content-center">
+       <div class="col-lg-8 ">
         <form>
           <div class="form-group flabel">
             <label for="inputdelivery" style="color:yellow;">Dish Price</label>
@@ -127,8 +127,8 @@ if (!isset($_SESSION['uname'])) {
 </div>
 
 <div class="container mt-5">
-     <div class="row">
-       <div class="col-lg-8 offset-2">
+     <div class="row justify-content-center ">
+       <div class="col-lg-8 ">
         <form>
           <div class="form-group flabel">
             <label for="inputdelivery" style="color:yellow;">Dish Photo</label>
@@ -143,11 +143,11 @@ if (!isset($_SESSION['uname'])) {
 </div>
 <br>
 </div>
-			<div class="row" style="text-align:center;">
-				<div class="row-lg-2 offset-5" >
+			<div class="row justify-content-center" >
+				<div class="row-lg-2 " >
 					<button type="submit" name="msub" class="btn btn-success active">Submit</button>
 				</div>
-				<div class="col-sm-2">
+				<div class="row-lg-2 offset-1">
 				<button type="reset" name="mcan" class="btn btn-danger active">Cancel</button>
 				</div>
 			</div>
