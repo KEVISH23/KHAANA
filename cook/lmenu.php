@@ -98,10 +98,10 @@ include ("functions.php");
           </div>
 
           <div class="form-row">
-								<div class="form-group col-md-6  text-center">
+								<div class="form-group row-md-6 offset-3">
 									<button type="submit" class="btn btn-success" name="msub">Submit</button>
 								</div>
-								<div class="form-group col-md-6 text-center">
+								<div class="form-group row-md-6 offset-2">
 									<button type="cancel" class="btn btn-danger" name="mcancel">Cancel</button>
 								</div>
 							</div>
