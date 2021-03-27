@@ -165,10 +165,10 @@ include ("functions.php");
 						
 
 							<div class="form-row">
-								<div class="form-group col-md-6 col-10 text-center">
+								<div class="form-group row-md-6  offset-3">
 									<button type="submit" class="btn btn-success" name="ssubmit">Submit</button>
 								</div>
-								<div class="form-group col-md-6 col-10 text-center">
+								<div class="form-group row-md-6  offset-2">
 									<button type="cancel" class="btn btn-danger" name="scancel" data-dismiss="modal">Cancel</button>
 								</div>
 							</div>
