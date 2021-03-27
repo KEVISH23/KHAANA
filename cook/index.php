@@ -122,10 +122,10 @@ include ("functions.php");
 							<input type="password" class="form-control" id="inputcpass" name="c_cpass" placeholder="Confirm Password" required>
 						</div>
 						<div class="form-row">
-								<div class="form-group col-md-6  text-center">
+								<div class="form-group row-md-6  offset-3">
 									<button type="submit" class="btn btn-success" name="csubmit">Submit</button>
 								</div>
-								<div class="form-group col-md-6 text-center">
+								<div class="form-group row-md-6 offset-2">
 									<button type="cancel" class="btn btn-danger" name="ccancel" data-dismiss="modal">Cancel</button>
 								</div>
 							</div>
