@@ -104,10 +104,9 @@ include ("functions.php");
               <label for="title">Dish Price</label>
               <input type="text" class="form-control" id="dpriceEdit" name="dpriceEdit" aria-describedby="emailHelp">
             </div>
-            <button type="submit" class="btn btn-primary">Save changes</button>
+            <button type="submit" name="update" class="btn btn-primary">Save changes</button>
             </form>
           <div class="modal-footer d-block mr-auto">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             
           </div>
        
@@ -151,3 +150,23 @@ include ("functions.php");
 </body>
 
 </html>
+<?php
+if (isset($_POST['update'])) {
+    $id = $_POST['snoEdit'];
+    $name = $_POST['dnameEdit'];
+    $details = $_POST['ddetailsEdit'];
+    $price = $_POST['dpriceEdit'];
+    global $con;
+    $sql = "update menu set m_name=?,m_details=?,m_price=?,m_date=? where m_id=?";
+    $res = mysqli_prepare($con,$sql);
+    if ($res) {
+        mysqli_stmt_bind_param($res,'ssis',$name,$ddetails,$price,$date);
+        $name = $_POST['dnameEdit'];
+        $details = $_POST['ddetailsEdit'];
+        $price = $_POST['dpriceEdit'];
+        date_default_timezone_set('Asia/Kolkata');
+        $date = date('Y-m-d H:i:s', time());
+        mysqli_stmt_execute($res);
+    }
+}
+?>
