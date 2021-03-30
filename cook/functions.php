@@ -260,7 +260,7 @@ function cookviewmenu(){
 					<td scope='col'>$menuname</td>
 					<td scope='col'>$menudetails</td>
 					<td scope='col'>$price</td>
-					<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-primary' name='edit' data-toggle='modal' data-target='#exampleModal'>Edit</button></div> <div class='col-md-6 col-sm-6'><button class='btn btn-danger' name='del'>Delete</button></div></div></td>
+					<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-primary edit' name='edit' id='$menuid' data-target='#exampleModal'>Edit</button></div> <div class='col-md-6 col-sm-6'><button class='btn btn-danger' name='del'>Delete</button></div></div></td>
 				  </tr>
 				  
 				  ";

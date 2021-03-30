@@ -67,6 +67,7 @@ include ("functions.php");
 </nav>
 <!--END NAVBAR-->
 
+
 <nav aria-label="breadcrumb ">
     <ol class="breadcrumb justify-content-center " >
     <li  class="breadcrumb-item " ><a href="lmenu.php"> Add Menu </a></li>
@@ -79,6 +80,40 @@ include ("functions.php");
     cookviewmenu();
   ?>
 </div>
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit this Note</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <form action="lviewmenu.php" method="POST">
+          <div class="modal-body">
+            <input type="hidden" name="snoEdit" id="snoEdit">
+            <div class="form-group">
+              <label for="title">Dish Name</label>
+              <input type="text" class="form-control" id="dnameEdit" name="dnameEdit" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+              <label for="title">Dish Details</label>
+              <input type="text" class="form-control" id="ddetailsEdit" name="ddetailsEdit" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+              <label for="title">Dish Price</label>
+              <input type="text" class="form-control" id="dpriceEdit" name="dpriceEdit" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" class="btn btn-primary">Save changes</button>
+            </form>
+          <div class="modal-footer d-block mr-auto">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            
+          </div>
+       
+      </div>
+    </div>
+  </div>
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -91,9 +126,28 @@ include ("functions.php");
         $('#myTable').DataTable();
         } );
 </script>
+<script>
+    edits = document.getElementsByClassName('edit');
+    Array.from(edits).forEach((element) => {
+      element.addEventListener("click", (e) => {
+        console.log("edit ");
+        tr = e.target.parentNode.parentNode.parentNode.parentNode;
+        console.log(tr);
+        dname = tr.getElementsByTagName("td")[1].innerText;
+        ddetails = tr.getElementsByTagName("td")[2].innerText;
+        dprice = tr.getElementsByTagName("td")[3].innerText;
+        console.log(dname, ddetails,dprice);
+        dnameEdit.value = dname;
+        ddetailsEdit.value = ddetails;
+        dpriceEdit.value = dprice;
+        snoEdit.value = e.target.id;
+        console.log(e.target.id)
+        $('#editModal').modal('toggle');
+      })
+    })
+
+    
+  </script>
 </body>
 
 </html>
-<?php
-
-?>
