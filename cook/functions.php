@@ -188,4 +188,92 @@ function addmenu(){
 		}
 	
 };
+function cookviewmenu(){
+	echo "<table class='table table-stripped' id='myTable'>
+	<thead>
+	  <tr class='text-white'>
+		<th scope='col'>Id</th>
+		<th scope='col'>Dish Name</th>
+		<th scope='col'>Dish Details</th>
+		<th scope='col'>Dish Price</th>
+		<th scope='col'>Action</th>
+	  </tr>
+	</thead>
+	<tbody>";
+	  
+	global $con;
+	$email = $_SESSION['uname'];
+	$qry1 = "select * from cook where cook_email = ?";
+	$res1 = mysqli_prepare($con,$qry1);
+	if ($res1) {
+		mysqli_stmt_bind_param($res1,'s',$cemail);
+		$cemail = $email;
+		mysqli_stmt_bind_result($res1,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate);
+		if(mysqli_stmt_execute($res1)){
+			mysqli_stmt_store_result($res1);
+			$rowcount = mysqli_stmt_num_rows($res1);
+			if ($rowcount>0) {
+				while(mysqli_stmt_fetch($res1)){
+					$cookid = $id;
+				}
+			}
+			else {
+				echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+			<strong>Chef!</strong> Something Went Wrong Please Try Again1..
+			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+			  <span aria-hidden='true'>&times;</span>
+			</button>
+		  </div>";
+			}
+		}
+	}
+
+	else {
+		echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+			<strong>Chef!</strong> Something Went Wrong Please Try Again2..
+			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+			  <span aria-hidden='true'>&times;</span>
+			</button>
+		  </div>";
+	} 
+	$qry = "select * from menu where cook_id = ?";
+	$res = mysqli_prepare($con,$qry);
+	$srno = 0;
+	if ($res) {
+		mysqli_stmt_bind_param($res,'i',$cid);
+		$cid = $cookid;
+		mysqli_stmt_bind_result($res,$idd,$coid,$dname,$ddetails,$dprice,$dimage,$date);
+		if(mysqli_stmt_execute($res)){
+			mysqli_stmt_store_result($res);
+			$rowcount = mysqli_stmt_num_rows($res);
+			if ($rowcount>0) {
+				while(mysqli_stmt_fetch($res)){
+					$srno+=1;
+					$menuid = $idd;
+					$menucook = $coid;
+					$menuname = $dname;
+					$menudetails = $ddetails;
+					$price = $dprice;
+					$mdate = $date;
+					echo "<tr>
+					<td scope='col'>$srno</td>
+					<td scope='col'>$menuname</td>
+					<td scope='col'>$menudetails</td>
+					<td scope='col'>$price</td>
+					<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-primary' name='edit' data-toggle='modal' data-target='#exampleModal'>Edit</button></div> <div class='col-md-6 col-sm-6'><button class='btn btn-danger' name='del'>Delete</button></div></div></td>
+				  </tr>
+				  
+				  ";
+				}
+			}
+			else {
+				echo "<div class'display-1 text-center'>No Data Available</div>";
+			}
+	}
+}
+#<button class='btn btn-primary' name='edit'>Edit</button><button class='btn btn-danger' name='del'>Delete</button>	  
+	  echo "
+	</tbody>
+  </table>";
+};
 ?>

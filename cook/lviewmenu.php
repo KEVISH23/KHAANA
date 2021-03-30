@@ -19,6 +19,8 @@ include ("functions.php");
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/lstyle.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"> 
+
     <title>Cook</title>
   </head>
   
@@ -64,73 +66,34 @@ include ("functions.php");
   </div>
 </nav>
 <!--END NAVBAR-->
-    
 
 <nav aria-label="breadcrumb ">
     <ol class="breadcrumb justify-content-center " >
-    <li  class="breadcrumb-item active " >Add Menu</li>
-      <li class="breadcrumb-item" ><a href="lviewmenu.php">View Menu</a></li>  
+    <li  class="breadcrumb-item " ><a href="lmenu.php"> Add Menu </a></li>
+      <li class="breadcrumb-item active" >View Menu</li>  
     </ol>
   </nav>
+<div class="container mt-4">
 
-<div class="container mt-5" >
-     <div class="row justify-content-center" >
-       <div class="col-lg-8" >
-       <form action="lmenu.php" method="post" enctype="multipart/form-data">
-          <div class="form-group flabel" >
-            <label for="inputdelivery"style="color:yellow;">Dish Name</label>
-            <input type="text" class="form-control"  id="inputdelivery" name="dname" placeholder="Enter Dish Name" required>
-          </div>
-
-          <div class="form-group flabel mt-5" >
-            <label for="inputdelivery"style="color:yellow;">Dish Details</label>
-            <input type="text" class="form-control"  id="inputdelivery" name="ddetails" placeholder="Enter Dish Details" required>
-          </div>
-
-          <div class="form-group flabel mt-5" >
-            <label for="inputdelivery"style="color:yellow;">Dish Price</label>
-            <input type="text" class="form-control"  id="inputdelivery" name="dprice" placeholder="Enter Dish Price" required>
-          </div>
-
-          <div class="form-group flabel mt-5" >
-            <label for="inputdelivery"style="color:yellow;">Dish Photo</label>
-            <input type="file" class="form-control" id="inputimg" name="dphoto" required>
-          </div>
-
-          <div class="form-row">
-								<div class="form-group row-md-6 offset-3">
-									<button type="submit" class="btn btn-success" name="msub">Submit</button>
-								</div>
-								<div class="form-group row-md-6 offset-2">
-									<button type="cancel" class="btn btn-danger" name="mcancel">Cancel</button>
-								</div>
-							</div>
-             
-        </form>
-       </div>
-     </div>
-     <div class="col offset-2"></div>
-   </div>
+  <?php
+    cookviewmenu();
+  ?>
 </div>
-
-
-
-
-
-
-<hr>
-
-
  <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   
+    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready( function () {
+        $('#myTable').DataTable();
+        } );
+</script>
 </body>
 
 </html>
 <?php
-if (isset($_POST['msub'])) {
-  addmenu();
-}
+
 ?>
