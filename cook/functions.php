@@ -267,7 +267,7 @@ function cookviewmenu(){
 				}
 			}
 			else {
-				echo "<div class'display-1 text-center'>No Data Available</div>";
+				echo "";
 			}
 	}
 }
