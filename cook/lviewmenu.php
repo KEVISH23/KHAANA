@@ -89,7 +89,7 @@ include ("functions.php");
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <form action="lviewmenu.php" method="POST">
+        <form action="lviewmenu.php" method="post" enctype="multipart/form-data">
           <div class="modal-body">
             <input type="hidden" name="snoEdit" id="snoEdit">
             <div class="form-group">
@@ -144,19 +144,35 @@ include ("functions.php");
         $('#editModal').modal('toggle');
       })
     })
+    deletes = document.getElementsByClassName('delete');
+    Array.from(deletes).forEach((element) => {
+      element.addEventListener("click", (e) => {
+        console.log("edit ");
+        sno = e.target.id;
 
+        if (confirm("Are you sure you want to delete this note!")) {
+          console.log("yes");
+          window.location = `lviewmenu.php?delete=${sno}`;
+          // TODO: Create a form and use post request to submit a form
+        }
+        else {
+          console.log("no");
+        }
+      })
+    })
     
   </script>
 </body>
 
 </html>
 <?php
+global $con;
 if (isset($_POST['update'])) {
     $id = $_POST['snoEdit'];
     $name = $_POST['dnameEdit'];
     $details = $_POST['ddetailsEdit'];
     $price = $_POST['dpriceEdit'];
-    global $con;
+    #global $con;
     $sql = "update menu set m_name=?,m_details=?,m_price=?,m_date=? where m_id=?";
     $res = mysqli_prepare($con,$sql);
     if ($res) {
@@ -168,5 +184,12 @@ if (isset($_POST['update'])) {
         $date = date('Y-m-d H:i:s', time());
         mysqli_stmt_execute($res);
     }
+}
+if(isset($_GET['delete'])){
+  $sno = $_GET['delete'];
+  $delete = true;
+  $sql = "DELETE FROM menu WHERE m_id = $sno";
+  $result = mysqli_query($con, $sql);
+  echo "<script>window.open('lviewmenu.php','_self')</script>";
 }
 ?>
