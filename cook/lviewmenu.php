@@ -89,8 +89,9 @@ include ("functions.php");
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <form action="lviewmenu.php" method="post" enctype="multipart/form-data">
+        
           <div class="modal-body">
+          <form method="post">
             <input type="hidden" name="snoEdit" id="snoEdit">
             <div class="form-group">
               <label for="title">Dish Name</label>
@@ -106,6 +107,7 @@ include ("functions.php");
             </div>
             <button type="submit" name="update" class="btn btn-primary">Save changes</button>
             </form>
+            </div>
           <div class="modal-footer d-block mr-auto">
             
           </div>
@@ -168,6 +170,7 @@ include ("functions.php");
 <?php
 global $con;
 if (isset($_POST['update'])) {
+    echo "HEHE AAYOOOO";
     $id = $_POST['snoEdit'];
     $name = $_POST['dnameEdit'];
     $details = $_POST['ddetailsEdit'];
@@ -176,15 +179,28 @@ if (isset($_POST['update'])) {
     $sql = "update menu set m_name=?,m_details=?,m_price=?,m_date=? where m_id=?";
     $res = mysqli_prepare($con,$sql);
     if ($res) {
-        mysqli_stmt_bind_param($res,'ssis',$name,$ddetails,$price,$date);
+        mysqli_stmt_bind_param($res,'ssisi',$name,$details,$price,$date,$id);
         $name = $_POST['dnameEdit'];
         $details = $_POST['ddetailsEdit'];
         $price = $_POST['dpriceEdit'];
         date_default_timezone_set('Asia/Kolkata');
         $date = date('Y-m-d H:i:s', time());
-        mysqli_stmt_execute($res);
+        $id = $_POST['snoEdit'];
+        if(mysqli_stmt_execute($res)){
+          echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
+        <strong>Wohoo!</strong>Menu Updated SUccesfully..
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <span aria-hidden='true'>&times;</span>
+        </button>
+        </div>";
+        echo "<script>window.open('lviewmenu.php','_self')</script>";
+        }
+    }
+    else{
+      echo "res not set";
     }
 }
+
 if(isset($_GET['delete'])){
   $sno = $_GET['delete'];
   $delete = true;
