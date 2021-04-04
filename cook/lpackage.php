@@ -37,8 +37,8 @@ if (!isset($_SESSION['uname'])) {
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="lindex.php">Home <span class="sr-only">(current)</span></a>
+      
+        <a class="nav-link" href="lindex.php">Home </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="lcookaboutus.php">About Us</a>
@@ -54,7 +54,8 @@ if (!isset($_SESSION['uname'])) {
         <a class="nav-link" href="lorder.php">Order</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="lpackage.php">Our Package Policy</a>
+      <li class="nav-item active">
+        <a class="nav-link" href="lpackage.php">Our Package Policy<span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
