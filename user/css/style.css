@@ -9,8 +9,19 @@
         width:  100% !important;
         
     }
-
+    body {
+        background: #99cdf8;
+        background-image: linear-gradient( 135.9deg,  rgb(88, 240, 235) 16.4%, rgb(7, 75, 94) 56.1% );
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+    .logohere{
+        height: 69px;
+        width: 148px;
+        margin-right: 10px;
+    }
     
-
-  
+    
+    
+    
 
