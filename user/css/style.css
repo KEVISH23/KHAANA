@@ -1,14 +1,81 @@
 
+.slider{
+	background-color: #6e6e6b;
+	height: 100vh;
+}
 
-    .carousel-inner{
-       height: 300px;
-    }
+nav{
+	background-color: #b0f3aa;
 
-    .item, img{
-        height: 100% !important;
-        width:  100% !important;
-        
-    }
+}
+.logohere{
+    height: 69px;
+    width: 148px;
+    margin-right: 10px;
+}
+.carousel-item img{
+	border: 2px solid #262626;
+	border-radius: 5px;
+}
+.subbtn{
+	margin-top: 10px;
+}
+.card img{
+	height: 200px;
+}
+.carding{
+	padding-left: 50px;
+	padding-bottom: 50px;
+}
+.teamcont{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.teamcont h3, .teamcont h4{
+	margin-bottom: 10px;
+	word-spacing: 5px;
+}
+.teams{
+	background-color: #404040;
+	margin-top: 0px;
+}
+.footer{
+	background-color: #262825;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.footer h4{
+	word-spacing: 5px;
+	color: white;
+}
+.service {
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
+}
+.service p{
+	word-spacing: 5px;
+	padding-top: 3px;
+	font-style: italic;
+	padding-bottom: 15px;
+}
+.rowsetting{
+	margin-top: 40px;
+}
+.imgsetting{
+	height: 100px;
+	width: 100px;
+	border-radius: 50%;
+}
+.imgsetting i{
+	margin-top: 25px;
+}
+.colsetting h2{
+	margin-top: 10px;
+	font-style: bold;
+}
+.rform{
+	padding-top: 50px;
+}
 
     
 
