@@ -189,7 +189,8 @@ function addmenu(){
 	
 };
 function cookviewmenu(){
-	echo "<table class='table table-stripped' id='myTable'>
+	echo "<div class='container'>
+	<table class='table table-stripped' id='myTable'>
 	<thead>
 	  <tr class='text-white'>
 		<th scope='col'>Id</th>
@@ -274,6 +275,7 @@ function cookviewmenu(){
 #<button class='btn btn-primary' name='edit'>Edit</button><button class='btn btn-danger' name='del'>Delete</button>	  
 	  echo "
 	</tbody>
-  </table>";
+  </table>
+  </div>";
 };
 ?>
