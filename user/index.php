@@ -1,11 +1,10 @@
-<<<<<<< HEAD
-=======
+
 <?php
 session_start();
 include ("includes.php");
 include ("functions.php");
 ?>
->>>>>>> 8ae13afd307a51f283000bd45ad59260d5cffa17
+
 <html>
 <head>
 	<title>user</title>
@@ -245,7 +244,56 @@ include ("functions.php");
 <div class="teams text-center">
 	<div class="container text-center teamcont">
 		<h3 class="text-white">Menu</h3>
-		<h4 class="text-white">BEST PLACE TO GET TASTE OF HAME MADE FOOD</h4>
+		<h4 class="text-white">BEST PLACE TO GET TASTE OF HAME MADE FOOD</h4><br>
+
+		<div class="container">
+<div class="row ">
+<div class="col-md-4 col-sm-4 py-3 py-sm-0">
+
+	<div class="card p-1">
+		<img src="images/khaman.jpg" class="card-img-top img-fluid"  alt="...">
+		
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item">Name :- KHAMAN</li>
+		  <li class="list-group-item">Price :- 100</li>
+		</ul>
+		
+	  </div>
+
+</div>
+
+
+<div class="col-md-4 col-sm-4 py-3 py-sm-0">
+	<div class="card p-1">
+		<img src="images/gj.jpg" class="card-img-top img-fluid "  alt="...">	
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item">Name :- Gulab Jamun</li>
+		  <li class="list-group-item">Price :- 250</li>
+		  
+		</ul>
+		
+	  </div>
+
+</div>
+
+<div class="col-md-4 col-sm-4 py-3 py-sm-0">
+
+	<div class="card p-1">
+		<img src="images/ghughra.jpg" class="card-img-top img-fluid"  alt="...">
+		
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item">Name :- Ghughra</li>
+		  <li class="list-group-item">Price :- 150</li>
+		</ul>
+		
+	  </div>
+
+</div>
+
+
+</div>
+
+
 	</div>
 	<div class="container">
 		<div class="row text-center"></div>
@@ -261,9 +309,9 @@ include ("functions.php");
 
 </body>
 </html>
-<<<<<<< HEAD
+
 <!--php code to signin a customer-->
-=======
+
 <!--php code to signin a customer-->
 <?php
 if (isset($_POST['usubmit'])) {
@@ -273,4 +321,4 @@ if (isset($_POST['ssubmit'])) {
 	userlogin();
 }
 ?>
->>>>>>> 8ae13afd307a51f283000bd45ad59260d5cffa17
+
