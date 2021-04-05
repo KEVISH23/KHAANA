@@ -65,8 +65,8 @@ function cooklogin(){
 				if($rowcount>0){
 					while(mysqli_stmt_fetch($res)){
 						if(password_verify($pass,$dbpass)){
-							
-							$_SESSION['uname'] = $dbemail;
+							$_SESSION['uname'] = $dbname;
+							$_SESSION['uemail'] = $dbemail;
 							#echo $_SESSION['uname'];
 							echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
 							<strong>Welcome Chef!</strong> You are Logged in succesfully..
