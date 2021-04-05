@@ -1,33 +1,11 @@
-
-.slider{
-	background-color: #6e6e6b;
-	height: 100vh;
+.slider {
+    background-color: #ffc107;
+    height: 100vh;
 }
 
 nav{
 	background-color: #b0f3aa;
 
-<<<<<<< HEAD
-    .item, img{
-        height: 100% !important;
-        width:  100% !important;
-        
-    }
-    body {
-        background: #99cdf8;
-        background-image: linear-gradient( 135.9deg,  rgb(88, 240, 235) 16.4%, rgb(7, 75, 94) 56.1% );
-        min-height: 100vh;
-        overflow-x: hidden;
-      }
-    .logohere{
-        height: 69px;
-        width: 148px;
-        margin-right: 10px;
-    }
-    
-    
-    
-=======
 }
 .logohere{
     height: 69px;
@@ -98,6 +76,5 @@ nav{
 	padding-top: 50px;
 }
 
->>>>>>> 475ee7d643a3b03b047cd9c75abedc10ef1a7948
     
 
