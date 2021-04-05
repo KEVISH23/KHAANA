@@ -71,15 +71,15 @@ include ("functions.php");
 <nav aria-label="breadcrumb ">
     <ol class="breadcrumb justify-content-center " >
     <li  class="breadcrumb-item " ><a href="lmenu.php"> Add Menu </a></li>
-      <li class="breadcrumb-item active" >View Menu</li> 
+      <li class="breadcrumb-item" ><a href="lviewmenu.php">View Menu</a></li> 
       <li class="breadcrumb-item" ><a href="lpackmenu.php">Upgrade Menu</a></li>
-      <li class="breadcrumb-item" ><a href="lviewpackmenu.php">View Upgraded Menu</a></li> 
+      <li class="breadcrumb-item active" >View Upgraded Menu</li> 
     </ol>
   </nav>
 <div class="container mt-4">
 
   <?php
-    cookviewmenu();
+    cookviewupgrademenu();
   ?>
 </div>
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -97,15 +97,33 @@ include ("functions.php");
             <input type="hidden" name="snoEdit" id="snoEdit">
             <div class="form-group">
               <label for="title">Dish Name</label>
-              <input type="text" class="form-control" id="dnameEdit" name="dnameEdit" aria-describedby="emailHelp">
+              <input type="text" class="form-control" id="dnameEdit" name="dnameEdit" aria-describedby="emailHelp" readonly>
             </div>
             <div class="form-group">
-              <label for="title">Dish Details</label>
-              <input type="text" class="form-control" id="ddetailsEdit" name="ddetailsEdit" aria-describedby="emailHelp">
+              <label for="title">Package Days</label>
+              <input type="text" class="form-control" id="ddetailsEdit" name="ddetailsEdit" aria-describedby="emailHelp" readonly>
             </div>
             <div class="form-group">
               <label for="title">Dish Price</label>
               <input type="text" class="form-control" id="dpriceEdit" name="dpriceEdit" aria-describedby="emailHelp">
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="1 week" name="pack" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                1 Week
+            </label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="1 month" name="pack" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                1 Month
+            </label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="3 month" name="pack" id="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault">
+                3 Month
+            </label>
             </div>
             <button type="submit" name="update" class="btn btn-primary">Save changes</button>
             </form>
@@ -154,9 +172,9 @@ include ("functions.php");
         console.log("edit ");
         sno = e.target.id;
 
-        if (confirm("Are you sure you want to delete this note!")) {
+        if (confirm("Are you sure you want to delete this package!")) {
           console.log("yes");
-          window.location = `lviewmenu.php?delete=${sno}`;
+          window.location = `lviewpackmenu.php?delete=${sno}`;
           // TODO: Create a form and use post request to submit a form
         }
         else {
@@ -172,30 +190,57 @@ include ("functions.php");
 <?php
 global $con;
 if (isset($_POST['update'])) {
-    echo "HEHE AAYOOOO";
-    $id = $_POST['snoEdit'];
+    global $con;
+	$email = $_SESSION['uemail'];
+	$qry1 = "select * from cook where cook_email = ?";
+	$res1 = mysqli_prepare($con,$qry1);
+	if ($res1) {
+		mysqli_stmt_bind_param($res1,'s',$cemail);
+		$cemail = $email;
+		mysqli_stmt_bind_result($res1,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate);
+		if(mysqli_stmt_execute($res1)){
+			mysqli_stmt_store_result($res1);
+			$rowcount = mysqli_stmt_num_rows($res1);
+			if ($rowcount>0) {
+				while(mysqli_stmt_fetch($res1)){
+					$cookid = $id;
+				}
+			}
+			else {
+				echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+			<strong>Chef!</strong> Something Went Wrong Please Try Again1..
+			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+			  <span aria-hidden='true'>&times;</span>
+			</button>
+		  </div>";
+			}
+		}
+	}
+    $sid = $_POST['snoEdit'];
     $name = $_POST['dnameEdit'];
     $details = $_POST['ddetailsEdit'];
     $price = $_POST['dpriceEdit'];
+    $pack = $_POST['pack'];
     #global $con;
-    $sql = "update menu set m_name=?,m_details=?,m_price=?,m_date=? where m_id=?";
+    $sql = "update package set cook_id=?,menu_id=?,menu_name=?,package_days=?,package_price=?,package_date=? where menu_id=?";
     $res = mysqli_prepare($con,$sql);
     if ($res) {
-        mysqli_stmt_bind_param($res,'ssisi',$name,$details,$price,$date,$id);
+        mysqli_stmt_bind_param($res,'iissisi',$cookid,$sid,$name,$pack,$price,$date,$sid);
+        $cookid = $id;
         $name = $_POST['dnameEdit'];
-        $details = $_POST['ddetailsEdit'];
         $price = $_POST['dpriceEdit'];
+        $pack = $_POST['pack'];
         date_default_timezone_set('Asia/Kolkata');
         $date = date('Y-m-d H:i:s', time());
-        $id = $_POST['snoEdit'];
+        $sid = $_POST['snoEdit'];
         if(mysqli_stmt_execute($res)){
           echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
-        <strong>Wohoo!</strong>Menu Updated SUccesfully..
+        <strong>Wohoo!</strong>Package Updated Succesfully..
         <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
           <span aria-hidden='true'>&times;</span>
         </button>
         </div>";
-        echo "<script>window.open('lviewmenu.php','_self')</script>";
+        echo "<script>window.open('lviewpackmenu.php','_self')</script>";
         }
     }
     else{
@@ -206,8 +251,8 @@ if (isset($_POST['update'])) {
 if(isset($_GET['delete'])){
   $sno = $_GET['delete'];
   $delete = true;
-  $sql = "DELETE FROM menu WHERE m_id = $sno";
+  $sql = "DELETE FROM package WHERE menu_id = $sno";
   $result = mysqli_query($con, $sql);
-  echo "<script>window.open('lviewmenu.php','_self')</script>";
+  echo "<script>window.open('lviewpackmenu.php','_self')</script>";
 }
 ?>

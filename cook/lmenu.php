@@ -70,7 +70,9 @@ include ("functions.php");
 <nav aria-label="breadcrumb ">
     <ol class="breadcrumb justify-content-center " >
     <li  class="breadcrumb-item active " >Add Menu</li>
-      <li class="breadcrumb-item" ><a href="lviewmenu.php">View Menu</a></li>  
+      <li class="breadcrumb-item" ><a href="lviewmenu.php">View Menu</a></li>
+      <li class="breadcrumb-item" ><a href="lpackmenu.php">Upgrade Menu</a></li>
+      <li class="breadcrumb-item" ><a href="lviewpackmenu.php">View Upgraded Menu</a></li>   
     </ol>
   </nav>
 
