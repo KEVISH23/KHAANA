@@ -70,57 +70,54 @@
 					<form action="index.php" method="post" enctype="multipart/form-data">
 						<div class="form-group">
 							<label for="inputName">Name</label>
-							<input type="text" class="form-control" id="inputName" name="c_name" placeholder="Enter Name" required>
+							<input type="text" class="form-control" id="inputName" name="u_name" placeholder="Enter Name" required>
 						</div>
 						<div class="form-group">
 							<label for="inputEmail">Email</label>
-							<input type="email" class="form-control" id="inputEmail" name="c_email" placeholder="Enter Email" required>
+							<input type="email" class="form-control" id="inputEmail" name="u_email" placeholder="Enter Email" required>
 						</div>
 						<div class="form-group">
 							<label for="Phnno">Phone No.</label>
-							<input type="text" class="form-control" id="Phnno" name="c_phone" placeholder="Enter Phone No." required>
+							<input type="text" class="form-control" id="Phnno" name="u_phone" placeholder="Enter Phone No." required>
 						</div>
 						<div class="form-group">
 							<label for="inputimg">Image</label>
-							<input type="file" class="form-control" id="inputimg" name="c_img" required>
+							<input type="file" class="form-control" id="inputimg" name="u_img" required>
 						</div>
 						<div class="form-group">
 							<label for="inputadd">Address</label>
-							<input type="text" class="form-control" id="inputadd" name="c_add" placeholder="Enter Address" required>
+							<input type="text" class="form-control" id="inputadd" name="u_add" placeholder="Enter Address" required>
 						</div>
                         <div class="form-group">
 							<label for="inputadd">Gender</label>
                             <div class="form-check">
-                            <input class="form-check-input" type="radio" name="c_gen" id="flexRadioDefault1" value="Male">
+                            <input class="form-check-input" type="radio" name="u_gen" id="flexRadioDefault1" value="Male">
                             <label class="form-check-label" for="flexRadioDefault1">
                             Male
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="c_gen" id="flexRadioDefault1" value="Female">
+                            <input class="form-check-input" type="radio" name="u_gen" id="flexRadioDefault1" value="Female">
                             <label class="form-check-label" for="flexRadioDefault1">
                             Female
                             </label>
                         </div>
                         </div>
-						<div class="form-group">
-							<label for="inputadd">Expertise</label>
-							<input type="text" class="form-control" id="inputadd" name="c_speciality" placeholder="Enter Your Expertise" required>
-						</div>
+						
 						<div class="form-group">
 							<label for="inputpass">Password</label>
-							<input type="password" class="form-control" id="inputpass" name="c_pass" placeholder="Enter Password" required>
+							<input type="password" class="form-control" id="inputpass" name="u_pass" placeholder="Enter Password" required>
 						</div>
 						<div class="form-group">
 							<label for="inputcpass">Confirm Password</label>
-							<input type="password" class="form-control" id="inputcpass" name="c_cpass" placeholder="Confirm Password" required>
+							<input type="password" class="form-control" id="inputcpass" name="u_cpass" placeholder="Confirm Password" required>
 						</div>
 						<div class="form-row">
-								<div class="form-group col-md-6  text-center">
-									<button type="submit" class="btn btn-success" name="csubmit">Submit</button>
+								<div class="form-group row-md-6  offset-3">
+									<button type="submit" class="btn btn-success" name="usubmit">Submit</button>
 								</div>
-								<div class="form-group col-md-6 text-center">
-									<button type="cancel" class="btn btn-danger" name="ccancel" data-dismiss="modal">Cancel</button>
+								<div class="form-group row-md-6 offset-2">
+									<button type="cancel" class="btn btn-danger" name="ucancel" data-dismiss="modal">Cancel</button>
 								</div>
 							</div>
 							<div class="form-row">
@@ -134,7 +131,7 @@
 			</div>
 		</div>
 	</div>
-	</div>	
+	</div>
 <!--Login MODAL-->
 <div class="container">
 	<div class="modal" id="login">
