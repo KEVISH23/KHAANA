@@ -1,6 +1,6 @@
 body {
-    background: #93cfff;
-    background-image: linear-gradient( 135.9deg,  rgb(6, 116, 112) 16.4%, rgb(20, 73, 87) 56.1% );
+    background: #ced4da;
+     background-image: linear-gradient( 135.9deg,  rgb(6, 116, 112) 16.4%, rgb(20, 73, 87) 56.1% );
     min-height: 100vh;
     overflow-x: hidden;
   }
@@ -11,7 +11,7 @@ body {
 }
 
 .banner{
-   background-image: url("../images/bg.jpg");
+   background-image: url("../images/thali.jpg");
    height: 100vh; 
    background-position: center;
    background-attachment: fixed;
@@ -19,7 +19,6 @@ body {
    background-size: cover;
    width: auto;
 }
-
 .welcome{
     height: 500px;
 }

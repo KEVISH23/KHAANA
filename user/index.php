@@ -1,8 +1,11 @@
+<<<<<<< HEAD
+=======
 <?php
 session_start();
 include ("includes.php");
 include ("functions.php");
 ?>
+>>>>>>> 8ae13afd307a51f283000bd45ad59260d5cffa17
 <html>
 <head>
 	<title>user</title>
@@ -258,6 +261,9 @@ include ("functions.php");
 
 </body>
 </html>
+<<<<<<< HEAD
+<!--php code to signin a customer-->
+=======
 <!--php code to signin a customer-->
 <?php
 if (isset($_POST['usubmit'])) {
@@ -267,3 +273,4 @@ if (isset($_POST['ssubmit'])) {
 	userlogin();
 }
 ?>
+>>>>>>> 8ae13afd307a51f283000bd45ad59260d5cffa17
