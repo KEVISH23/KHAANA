@@ -1,4 +1,12 @@
+<?php
+session_start();
+include ("includes.php");
+include ("functions.php");
+if (!isset($_SESSION['uname'])) {
 
+echo "<script>window.open('index.php','_self')</script>";
+} 
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -49,10 +57,17 @@
     <ul class="navbar-nav ml-auto">
 	  <li class="nav-item text-white">
 	  	<a class="nav-link" href="#">
-		 Welcome Guest 
+		  <?php
+		 	if(isset($_SESSION['uname'])){
+			 echo "Welcome," . $_SESSION['uname'];
+			 }
+			 else{
+				 echo "Welcome Guest";
+			 }
+		 ?>  
 		 </a>
 		</li>
-      <li class="nav-item " data-target="#" data-toggle="modal"><a href="#" class="nav-link">Logout</a></li>      
+      <li class="nav-item " data-target="#" data-toggle="modal"><a href="logout.php" class="nav-link">Logout</a></li>      
         </ul>
   </div>
 </nav>

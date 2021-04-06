@@ -3,6 +3,10 @@
 session_start();
 include ("includes.php");
 include ("functions.php");
+if (!isset($_SESSION['uname'])) {
+
+	echo "<script>window.open('index.php','_self')</script>";
+} 
 ?>
 
 <html>
@@ -43,8 +47,8 @@ include ("functions.php");
 	  <li class="nav-item text-white">
 	  	<a class="nav-link" href="#">
 		 <?php
-		 	if(isset($_SESSION['cemail'])){
-			 echo "Welcome," . $_SESSION['cemail'];
+		 	if(isset($_SESSION['uname'])){
+			 echo "Welcome," . $_SESSION['uname'];
 			 }
 			 else{
 				 echo "Welcome Guest";
@@ -56,7 +60,7 @@ include ("functions.php");
 		
 		
 	?>
-      	<li class="nav-item " data-target="#" data-toggle="modal"><a href="#" class="nav-link">Logout</a></li>      </ul>
+      	<li class="nav-item " data-target="#" data-toggle="modal"><a href="logout.php" class="nav-link">Logout</a></li>      </ul>
   </div>
 </nav>
 <!-- Carousel -->
