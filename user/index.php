@@ -222,21 +222,21 @@ include ("functions.php");
       <i class="fa fa-calendar fa-3x text-white" aria-hidden="true"></i>
 			</div>
 			<h2>1 WEEK</h2>
-			<p>BOOK A TIFFIN FOR  1 WEEK AND ENJOY YOUR DAILY TIFFIN PROVIDED BY OUR COOKS. COST MAY VARRY BY COOKS</p>
+			<p>BOOK A TIFFIN FOR  <b> 1 WEEK </b> AND ENJOY YOUR DAILY TIFFIN PROVIDED BY OUR COOKS. COST MAY VARRY BY COOKS</p>
 		</div>
 		<div class="col-mg-4 col-md-4 col-sm-4 col-1o d-block m-auto colsetting">
 			<div class="imgsetting d-block m-auto bg-warning">
 			<i class="fa fa-calendar fa-3x text-white" aria-hidden="true"></i>
 			</div>
 			<h2>1 MONTH</h2>
-			<p>BOOK A TIFFIN FOR  1 WEEK AND ENJOY YOUR DAILY TIFFIN PROVIDED BY OUR COOKS. COST MAY VARRY BY COOKS</p>
+			<p>BOOK A TIFFIN FOR  <b>1 MONTH</b> AND ENJOY YOUR DAILY TIFFIN PROVIDED BY OUR COOKS. COST MAY VARRY BY COOKS</p>
 		</div>
 		<div class="col-mg-4 col-md-4 col-sm-4 col-1o d-block m-auto colsetting">
 			<div class="imgsetting d-block m-auto bg-warning">
       <i class="fa fa-calendar fa-3x text-white" aria-hidden="true"></i>
 			</div>
 			<h2>3 MONTH</h2>
-			<p>BOOK A TIFFIN FOR  1 WEEK AND ENJOY YOUR DAILY TIFFIN PROVIDED BY OUR COOKS. COST MAY VARRY BY COOKS</p>
+			<p>BOOK A TIFFIN FOR <b> 3 MONTH </b>  AND ENJOY YOUR DAILY TIFFIN PROVIDED BY OUR COOKS. COST MAY VARRY BY COOKS</p>
 		</div>
 	</div>
 </section>
@@ -303,6 +303,7 @@ include ("functions.php");
 <div class="container-fluid footer text-center">
 	<h4>&copy; Copyright section khaana.com</h4>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
