@@ -12,8 +12,8 @@ nav{
     width: 148px;
     margin-right: 10px;
 }
-.user{
-    margin-top: 10px;
+.cook{
+    margin-top: 10px !important;
     padding: 0px;
 }
 h2{
