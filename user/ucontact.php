@@ -59,7 +59,7 @@ echo "<script>window.open('index.php','_self')</script>";
 	  	<a class="nav-link" href="#">
 		  <?php
 		 	if(isset($_SESSION['uname'])){
-			 echo "Welcome," . $_SESSION['uname'];
+			 echo "Welcome " . $_SESSION['uname'];
 			 }
 			 else{
 				 echo "Welcome Guest";
