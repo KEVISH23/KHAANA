@@ -113,7 +113,7 @@ function cooklogin(){
 };
 function addmenu(){
 	global $con;
-	$email = $_SESSION['uname'];
+	$email = $_SESSION['uemail'];
 	$qry1 = "select * from cook where cook_email = ?";
 	$res1 = mysqli_prepare($con,$qry1);
 	if ($res1) {
