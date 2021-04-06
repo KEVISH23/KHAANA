@@ -346,6 +346,9 @@ function  cookupgrademenu(){
 					$menudetails = $ddetails;
 					$price = $dprice;
 					$mdate = $date;
+					$q = "select * from package where menu_id = $menuid";
+					$r = mysqli_query($con, $q);
+					if (mysqli_num_rows($r) != 1) {
 					echo "<tr>
 					<td scope='col'>$srno</td>
 					<td scope='col'>$menuname</td>
@@ -355,6 +358,7 @@ function  cookupgrademenu(){
 				  </tr>
 				  
 				  ";
+				}
 				}
 			}
 			else {
