@@ -2,7 +2,7 @@
 session_start();
 include ("includes.php");
 include ("functions.php");
-if (!isset($_SESSION['uname'])) {
+if (!isset($_SESSION['cname'])) {
 
 echo "<script>window.open('index.php','_self')</script>";
 } 
