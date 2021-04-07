@@ -92,10 +92,10 @@ if (!isset($_SESSION['uname'])) {
 			<input type="text" class="form-control" id="msg" name="msg" placeholder="message">
 		</div>
 			<div class="row" style="margin-left: 40px;">
-				<div class="col-sm-6" >
+				<div class="row-sm-6 offset-2" >
 					<button type="button" class="btn btn-primary active">submit</button>
 				</div>
-				<div class="col-sm-6">
+				<div class="row-sm-6 offset-2">
 				<button type="button" class="btn btn-primary active">cancel</button>
 				</div>
 			</div>
