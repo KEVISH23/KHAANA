@@ -8,9 +8,11 @@ include ("functions.php");
 <html>
 <head>
 	<title>user</title>
+	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
 </head>
 <body>
 				<!-- navigation bar -->
@@ -185,7 +187,7 @@ include ("functions.php");
 <!-- Carousel -->
 <div class="container-fluid slider">
 
-	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="">
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
 	  <ol class="carousel-indicators">
 	    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
 	    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -303,6 +305,8 @@ include ("functions.php");
 <div class="container-fluid footer text-center">
 	<h4>&copy; Copyright section khaana.com</h4>
 </div>
+
+<h1> hello hunny bunny </h1>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
