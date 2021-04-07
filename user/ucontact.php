@@ -58,8 +58,8 @@ echo "<script>window.open('index.php','_self')</script>";
 	  <li class="nav-item text-white">
 	  	<a class="nav-link" href="#">
 		  <?php
-		 	if(isset($_SESSION['uname'])){
-			 echo "Welcome " . $_SESSION['uname'];
+		 	if(isset($_SESSION['cname'])){
+			 echo "Welcome " . $_SESSION['cname'];
 			 }
 			 else{
 				 echo "Welcome Guest";

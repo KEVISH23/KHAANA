@@ -43,7 +43,7 @@ include ("functions.php");
 	  	<a class="nav-link" href="#">
 		 <?php
 		 	if(isset($_SESSION['cemail'])){
-			 echo "Welcome," . $_SESSION['cemail'];
+			 echo "Welcome," . $_SESSION['cname'];
 			 }
 			 else{
 				 echo "Welcome Guest";
