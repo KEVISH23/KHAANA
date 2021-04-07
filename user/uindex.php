@@ -100,21 +100,21 @@ if (!isset($_SESSION['uname'])) {
 	<div class="row rowsetting">
 		<div class="col-mg-4 col-md-4 col-sm-4 col-1o d-block m-auto colsetting">
 			<div class="imgsetting d-block m-auto bg-warning">
-      <i class="fa fa-calendar fa-3x text-white" aria-hidden="true"></i>
+      <i class="fa fa-calendar fa-2x text-white" aria-hidden="true"></i>
 			</div>
 			<h2>1 WEEK</h2>
 			<p>BOOK A TIFFIN FOR  1 WEEK AND ENJOY YOUR DAILY TIFFIN PROVIDED BY OUR COOKS. COST MAY VARRY BY COOKS</p>
 		</div>
 		<div class="col-mg-4 col-md-4 col-sm-4 col-1o d-block m-auto colsetting">
 			<div class="imgsetting d-block m-auto bg-warning">
-			<i class="fa fa-calendar fa-3x text-white" aria-hidden="true"></i>
+			<i class="fa fa-calendar fa-2x text-white" aria-hidden="true"></i>
 			</div>
 			<h2>1 MONTH</h2>
 			<p>BOOK A TIFFIN FOR  1 WEEK AND ENJOY YOUR DAILY TIFFIN PROVIDED BY OUR COOKS. COST MAY VARRY BY COOKS</p>
 		</div>
 		<div class="col-mg-4 col-md-4 col-sm-4 col-1o d-block m-auto colsetting">
 			<div class="imgsetting d-block m-auto bg-warning">
-      <i class="fa fa-calendar fa-3x text-white" aria-hidden="true"></i>
+      <i class="fa fa-calendar fa-2x text-white" aria-hidden="true"></i>
 			</div>
 			<h2>3 MONTH</h2>
 			<p>BOOK A TIFFIN FOR  1 WEEK AND ENJOY YOUR DAILY TIFFIN PROVIDED BY OUR COOKS. COST MAY VARRY BY COOKS</p>
