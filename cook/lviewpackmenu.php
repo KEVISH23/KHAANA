@@ -76,12 +76,12 @@ include ("functions.php");
       <li class="breadcrumb-item active" >View Upgraded Menu</li> 
     </ol>
   </nav>
-<div class="container mt-4">
+
 
   <?php
     cookviewupgrademenu();
   ?>
-</div>
+
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
