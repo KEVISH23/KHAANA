@@ -74,8 +74,8 @@ function userlogin(){
 							<span aria-hidden='true'>&times;</span>
 							</button>
 							</div>";
-							#echo "<script>window.open('index.php','_self')</script>";
-                            echo " Logged inn";
+							echo "<script>window.open('uindex.php','_self')</script>";
+                            
 							
 						}
 						else {

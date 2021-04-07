@@ -21,7 +21,7 @@
     <title>User</title>
   </head>
   <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light">
   <img src="images/khaana.png" class="logohere" alt="logo">
   <a class="navbar-brand" href="index.php">KHAANA</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -177,7 +177,7 @@
 	</div>
 	<!-- logo and form -->
 	<div class="container cook"  >
-  
+	
 	<div class="row">
 		<div class="col-sm-6 col-lg-6" >
 		<img class="img-fluid" src="images/KHHANA.jpg" width="auto" height="auto">

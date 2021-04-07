@@ -108,19 +108,19 @@ include ("functions.php");
               <input type="text" class="form-control" id="dpriceEdit" name="dpriceEdit" aria-describedby="emailHelp">
             </div>
             <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="1 week" name="pack" id="flexCheckDefault">
+            <input class="form-check-input" type="radio" value="1 week" name="pack" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
                 1 Week
             </label>
             </div>
             <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="1 month" name="pack" id="flexCheckDefault">
+            <input class="form-check-input" type="radio" value="1 month" name="pack" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
                 1 Month
             </label>
             </div>
             <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="3 month" name="pack" id="flexCheckDefault">
+            <input class="form-check-input" type="radio" value="3 month" name="pack" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
                 3 Month
             </label>

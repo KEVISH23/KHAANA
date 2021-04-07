@@ -113,7 +113,7 @@ function cooklogin(){
 };
 function addmenu(){
 	global $con;
-	$email = $_SESSION['uname'];
+	$email = $_SESSION['uemail'];
 	$qry1 = "select * from cook where cook_email = ?";
 	$res1 = mysqli_prepare($con,$qry1);
 	if ($res1) {
@@ -346,6 +346,9 @@ function  cookupgrademenu(){
 					$menudetails = $ddetails;
 					$price = $dprice;
 					$mdate = $date;
+					$q = "select * from package where menu_id = $menuid";
+					$r = mysqli_query($con, $q);
+					if (mysqli_num_rows($r) != 1) {
 					echo "<tr>
 					<td scope='col'>$srno</td>
 					<td scope='col'>$menuname</td>
@@ -355,6 +358,7 @@ function  cookupgrademenu(){
 				  </tr>
 				  
 				  ";
+				}
 				}
 			}
 			else {
