@@ -190,7 +190,7 @@ function addmenu(){
 };
 function cookviewmenu(){
 	echo "<div class='container'>
-	<table class='table table-responsive' id='myTable'>
+	<table class='table table-responsive' style='margin-top:50px;' id='myTable'>
 	<thead>
 	  <tr class='text-white'>
 		<th scope='col'>Id</th>

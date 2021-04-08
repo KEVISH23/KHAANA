@@ -6,6 +6,7 @@ if (!isset($_SESSION['uname'])) {
 }
 include ("includes.php");
 include ("functions.php");
+
 ?>
 
 <!doctype html>
@@ -76,12 +77,12 @@ include ("functions.php");
       <li class="breadcrumb-item" ><a href="lviewpackmenu.php">View Upgraded Menu</a></li> 
     </ol>
   </nav>
-<div class="container mt-4">
-
-  <?php
-    cookviewmenu();
-  ?>
+  <div class="container mb-3">
+     <?php
+         cookviewmenu()
+     ?>
 </div>
+
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">

@@ -85,6 +85,7 @@ echo "<script>window.open('index.php','_self')</script>";
     <script>
         $(document).ready( function () {
         $('#myTable').DataTable();
+        
         } );
 </script>
 <script>

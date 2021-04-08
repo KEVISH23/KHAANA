@@ -150,7 +150,7 @@ function randmenu(){
 };
 function showmenu(){
 	echo "<div class='container'>
-	<table class='table table-responsive' style='margin-top:50px;' id='myTable'>
+	<table class='table table-responsive' id='myTable'>
 	<thead>
 	  <tr class='text-white'>
 		<th scope='col'>Id</th>
@@ -196,6 +196,9 @@ function showmenu(){
 		else{
 			echo "<h3>No Menu Available</h3>";
 		}
-
+		echo "
+		</tbody>
+	  </table>
+	  </div>";
 };
 ?>
