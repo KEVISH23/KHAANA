@@ -116,6 +116,10 @@ function randmenu(){
 	global $con;
 			$get_t = "select *from menu order by rand() limit 3";
 			$run_t = mysqli_query($con,$get_t);
+			$rowcount=mysqli_num_rows($run_t);
+			if ($rowcount>0) {
+				
+			
 			while ($row_t=mysqli_fetch_array($run_t)) {
 				$mid = $row_t['m_id'];
 				$cookid = $row_t['cook_id'];
@@ -139,5 +143,59 @@ function randmenu(){
 			
 			</div>";
 			}
+		}
+		else{
+			echo "<h3>No Menu Available</h3>";
+		}
+};
+function showmenu(){
+	echo "<div class='container'>
+	<table class='table table-responsive' style='margin-top:50px;' id='myTable'>
+	<thead>
+	  <tr class='text-white'>
+		<th scope='col'>Id</th>
+		<th scope='col'>Image</th>
+		<th scope='col'>Dish Name</th>
+		<th scope='col'>Dish Details</th>
+		<th scope='col'>Dish Price</th>
+		<th scope='col' hidden>Menu Id</th>
+		<th scope='col'>Action</th>
+	  </tr>
+	</thead>
+	<tbody>";
+	global $con;
+	$srno = 0;
+	$get_t = "select *from menu";
+			$run_t = mysqli_query($con,$get_t);
+			$rowcount=mysqli_num_rows($run_t);
+			if ($rowcount>0) {
+				
+			
+			while ($row_t=mysqli_fetch_array($run_t)) {
+				$srno+=1;
+				$mid = $row_t['m_id'];
+				$cookid = $row_t['cook_id'];
+				$mname = $row_t['m_name'];
+				$mdetails = $row_t['m_details'];
+				$mprice = $row_t['m_price'];
+				$mimage = $row_t['m_image'];
+				$mdate = $row_t['m_date'];
+				echo "<tr>
+					<td scope='col'>$srno</td>
+					<td scope='col'><img src='../cook/menuimages/$mimage' alt='menuimage' style='width:100px; height:100px;'></td>
+					<td scope='col'>$mname</td>
+					<td scope='col'>$mdetails</td>
+					<td scope='col'>$mprice</td>
+					<td scope='col' hidden>$mid</td>
+					<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-success edit' name='edit' id='$mid'>Place Order</button></div> </div></td>
+				  </tr>
+				  
+				  ";
+		}
+	}
+		else{
+			echo "<h3>No Menu Available</h3>";
+		}
+
 };
 ?>
