@@ -32,14 +32,14 @@ echo "<script>window.open('index.php','_self')</script>";
       <li class="nav-item">
         <a class="nav-link" href="uindex.php">Home </a>
       </li>
-      <li class="nav-item active ">
-        <a class="nav-link" href="uaboutus.php">About Us<span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="uaboutus.php">About Us</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="ucontact.php">Contact Us</a>
       </li>
-      <li class="nav-item ">
-        <a class="nav-link" href="umenu.php">Menu</a>
+      <li class="nav-item  active">
+        <a class="nav-link" href="umenu.php">Menu<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" href="#">Payment</a>
@@ -65,80 +65,7 @@ echo "<script>window.open('index.php','_self')</script>";
 </nav>
 <!--END NAVBAR-->
 <!--SIGNUP MODAL-->
-	<div class="container text-center p-3 mt-4">
-		<h3>About US</h3>
-	   </div>
-	
 
-
-<div class="container mt-4">
-<div class="row">
-    <div class="col-sm-6 col-lg-6 mt-4 mb-2" >
-    <img class="img-fluid" src="images/KHHANA.jpg" width="auto" height="auto">
-    </div>
-    <div class="col-sm-6 col-lg-6 mt-4 mb-2"  id="grad1" >
-    <h2 class="text-center">About US</h2>
-			<h4 class="text-center">Khaana was established in 2020-21</h4>
-			<h4 class="text-center">Khaana was made by kav</h4>
-			<h4 class="text-center">Khaana give home made food</h4>
-			<h4 class="text-center">dil ka dariya beh hi gaya</h4>
-  </div>
-
-<hr>
-	<hr>
-<div class="container text-center p-5 mt-4">
-	<h3>Team</h3>
-   </div>
-
-	  
-<div class="container">
-<div class="row ">
-<div class="col-md-4 col-sm-4 py-3 py-sm-0">
-
-	<div class="card">
-		<img src="images/face2.png" class="card-img-top img-fluid"  alt="...">
-		
-		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
-		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
-		</ul>
-		
-	  </div>
-
-</div>
-
-
-<div class="col-md-4 col-sm-4 py-3 py-sm-0">
-	<div class="card">
-		<img src="images/face2.png" class="card-img-top img-fluid "  alt="...">	
-		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
-		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
-		</ul>
-		
-	  </div>
-
-</div>
-
-<div class="col-md-4 col-sm-4 py-3 py-sm-0">
-
-	<div class="card">
-		<img src="images/face2.png" class="card-img-top img-fluid"  alt="...">
-		
-		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
-		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
-		</ul>
-		
-	  </div>
-
-</div>
-
-
-</div>
 
 <hr>
 

@@ -37,7 +37,7 @@ if (!isset($_SESSION['cname'])) {
         <a class="nav-link" href="ucontact.php">Contact us </a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" href="#">Checkout</a>
+        <a class="nav-link" href="umenu.php">Menu</a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" href="#">Payment</a>

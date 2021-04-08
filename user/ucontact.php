@@ -48,7 +48,7 @@ echo "<script>window.open('index.php','_self')</script>";
         <a class="nav-link" href="ucontact.php">Contact Us<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item ">
-        <a class="nav-link" href="#">Checkout</a>
+        <a class="nav-link" href="umenu.php">Menu</a>
       </li>
       <li class="nav-item ">
         <a class="nav-link" href="#">Payment</a>
