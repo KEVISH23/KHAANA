@@ -84,53 +84,77 @@ echo "<script>window.open('index.php','_self')</script>";
 		<h2>CONTACT US</h2>
 		<div class="form-group">
 			<label for="usr">Name:</label>
-			<input type="text" class="form-control" id="usr" name="name" placeholder="enter your name">
+			<input type="text" class="form-control" id="usr" name="name" placeholder="Enter your name">
 		</div>
 		<div class="form-group">
 			<label for="pwd">Email:</label>
-			<input type="email" class="form-control" id="email" name="email" placeholder="enter your email id">
+			<input type="email" class="form-control" id="email" name="email" placeholder="Enter your email id">
 		</div>
 		<div class="form-group">
 			<label for="msg">Message</label>
-			<input type="text" class="form-control" id="msg" name="msg" placeholder="message">
+			<input type="text" class="form-control" id="msg" name="msg" placeholder="Message">
 		</div>
 			<div class="row" style="margin-left: 40px;">
 				<div class="col-sm-6" >
-					<button type="button" class="btn btn-primary active">submit</button>
+					<button type="button" class="btn btn-primary active">Submit</button>
 				</div>
 				<div class="col-sm-6">
-				<button type="button" class="btn btn-primary active">cancel</button>
+				<button type="button" class="btn btn-primary active">Cancel</button>
 				</div>
 			</div>
 		</div>
 	</div>
 
 </div>
+<br><br>
 	<!-- logo and form end-->
-<div class="container">
-	<div class="row rowco">
-		<div class="col-sm-4 address"> Address 
-		<ul class="list-group list-group-flush">
-		  <li class="list-group-item address1">rcti.near gujrat high court <br> ahemdabad  </li>
-		
-		</ul>
-		</div>
-		<div class="col-sm-4 phn"> Phone no.
-		<ul class="list-group list-group-flush">
-		  <li class="list-group-item phn1"> 8155443322</li>
-		  
-		</ul>
-		</div>
-		<div class="col-sm-4 email">Email id
-		<ul class="list-group list-group-flush">
-		  <li class="list-group-item email1">tsf@gmail.com </li>
-		  
-		</ul>
-		</div>
+	<div class="container">
+<div class="row ">
+<div class="col-md-4 col-sm-4 py-3 py-sm-0">
 
+	<div class="card">
+		
+		
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item">Address :- </li>
+		  <li class="list-group-item">Bharat</li>
+		  
+		</ul>
+		
 	  </div>
+
+</div>
+
+
+<div class="col-md-4 col-sm-4 py-3 py-sm-0">
+	<div class="card">
+		
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item">Mobile No :-</li>
+		  <li class="list-group-item">1234567890</li>
+		  
+		</ul>
+		
 	  </div>
-	 
+
+</div>
+
+<div class="col-md-4 col-sm-4 py-3 py-sm-0">
+
+	<div class="card">
+		
+		<ul class="list-group list-group-flush">
+		  <li class="list-group-item">Email ID :-</li>
+		  <li class="list-group-item">tsf@gmail.com</li>
+		  
+		</ul>
+		
+	  </div>
+
+</div>
+
+
+</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
