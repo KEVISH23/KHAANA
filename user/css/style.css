@@ -110,7 +110,7 @@ h2{
   .img-fluid {
 	display: inline-block;
 	
-	height: 200px;
+	
 	background-size: contain;
 	background-repeat: no-repeat;
 	cursor: pointer;
