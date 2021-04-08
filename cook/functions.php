@@ -190,7 +190,7 @@ function addmenu(){
 };
 function cookviewmenu(){
 	echo "<div class='container'>
-	<table class='table table-stripped' id='myTable'>
+	<table class='table table-responsive' id='myTable'>
 	<thead>
 	  <tr class='text-white'>
 		<th scope='col'>Id</th>
@@ -261,7 +261,7 @@ function cookviewmenu(){
 					<td scope='col'>$menuname</td>
 					<td scope='col'>$menudetails</td>
 					<td scope='col'>$price</td>
-					<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-primary edit' name='edit' id='$menuid' data-target='#exampleModal'>Edit</button></div> <div class='col-md-6 col-sm-6'><button class='btn btn-danger delete' name='del'id='$menuid'>Delete</button></div></div></td>
+					<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-primary edit' name='edit' id='$menuid' data-target='#exampleModal'>Edit</button></div> <div class='col-md-6 col-sm-6'><button class='btn btn-danger mr-3 delete' name='del'id='$menuid'>Delete</button></div></div></td>
 				  </tr>
 				  
 				  ";
@@ -280,7 +280,7 @@ function cookviewmenu(){
 };
 function  cookupgrademenu(){
 	echo "<div class='container'>
-	<table class='table table-stripped' id='myTable'>
+	<table class='table table-stripped table-responsive' id='myTable'>
 	<thead>
 	  <tr class='text-white'>
 		<th scope='col'>Id</th>
@@ -375,7 +375,7 @@ function  cookupgrademenu(){
 
 function  cookviewupgrademenu(){
 	echo "<div class='container'>
-	<table class='table table-stripped' id='myTable'>
+	<table class='table table-stripped table-responsive' id='myTable'>
 	<thead>
 	  <tr class='text-white'>
 		<th scope='col'>Id</th>

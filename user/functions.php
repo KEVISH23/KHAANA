@@ -65,8 +65,8 @@ function userlogin(){
 					while(mysqli_stmt_fetch($res)){
 						if(password_verify($pass,$dbpass)){
 							
-							$_SESSION['uemail'] = $dbemail;
-                            $_SESSION['uname'] = $dbname;
+							$_SESSION['cemail'] = $dbemail;
+                            $_SESSION['cname'] = $dbname;
 							#echo $_SESSION['uname'];
 							echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
 							<strong>Welcome!</strong> You are Logged in succesfully..

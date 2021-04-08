@@ -205,9 +205,9 @@
 		<img src="images/face1.jpg" class="card-img-top img-fluid"  alt="...">
 		
 		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
+		  <li class="list-group-item">Name :- Vatsal Sheth</li>
 		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
+		  <li class="list-group-item">Post :- Admin</li>
 		</ul>
 		
 	  </div>
@@ -219,9 +219,9 @@
 	<div class="card">
 		<img src="images/face1.jpg" class="card-img-top img-fluid "  alt="...">	
 		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
+		  <li class="list-group-item">Name :- Kevish Thakkar</li>
 		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
+		  <li class="list-group-item">Post :- Admin</li>
 		</ul>
 		
 	  </div>
@@ -234,9 +234,9 @@
 		<img src="images/face1.jpg" class="card-img-top img-fluid"  alt="...">
 		
 		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
+		  <li class="list-group-item">Name :- Akhil Shah</li>
 		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
+		  <li class="list-group-item">Post :- Admin</li>
 		</ul>
 		
 	  </div>

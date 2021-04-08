@@ -195,21 +195,21 @@
       <div class="container" >
       <div class="row">
       <div id="section1" class="col-sm-12 nav1 " style="padding-top:70px;padding-bottom:70px">
-        <h1 style="text-align: center;">GOLD</h1>
+        <h1 style="text-align: center;">1 WEEK</h1>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
       </div>
       </div>
       <div class="row">
       <div id="section2" class="col-sm-12 nav2" style="padding-top:70px;padding-bottom:70px">
-        <h1 style="text-align: center;">SILVER</h1>
+        <h1 style="text-align: center;">1 MONTH</h1>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
       </div>
     </div>
     <div class="row">
       <div id="section3" class="col-sm-12 nav3" style="padding-top:70px;padding-bottom:70px">
-        <h1 style="text-align: center;">PRIMIUM</h1>
+        <h1 style="text-align: center;">3 MONTH</h1>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
         <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
       </div>

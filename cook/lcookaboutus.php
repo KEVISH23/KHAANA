@@ -98,7 +98,7 @@ if (!isset($_SESSION['uname'])) {
    </div>
 
 	  
-<div class="container">
+   <div class="container">
 <div class="row ">
 <div class="col-md-4 col-sm-4 py-3 py-sm-0">
 
@@ -106,9 +106,9 @@ if (!isset($_SESSION['uname'])) {
 		<img src="images/face1.jpg" class="card-img-top img-fluid"  alt="...">
 		
 		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
+		  <li class="list-group-item">Name :- Vatsal Sheth</li>
 		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
+		  <li class="list-group-item">Post :- Admin</li>
 		</ul>
 		
 	  </div>
@@ -120,9 +120,9 @@ if (!isset($_SESSION['uname'])) {
 	<div class="card">
 		<img src="images/face1.jpg" class="card-img-top img-fluid "  alt="...">	
 		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
+		  <li class="list-group-item">Name :- Kevish Thakkar</li>
 		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
+		  <li class="list-group-item">Post :- Admin</li>
 		</ul>
 		
 	  </div>
@@ -135,9 +135,9 @@ if (!isset($_SESSION['uname'])) {
 		<img src="images/face1.jpg" class="card-img-top img-fluid"  alt="...">
 		
 		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
+		  <li class="list-group-item">Name :- Akhil Shah</li>
 		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
+		  <li class="list-group-item">Post :- Admin</li>
 		</ul>
 		
 	  </div>
@@ -146,6 +146,7 @@ if (!isset($_SESSION['uname'])) {
 
 
 </div>
+
 
 <hr>
 

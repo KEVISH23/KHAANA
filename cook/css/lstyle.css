@@ -28,10 +28,10 @@ body {
     padding: 0px;
 }
 h2{
-    font-style: bold;
+
     margin-top: 5px;
     text-align: center;
-    text-shadow: rgba(5, 7, 6, 0.534) 2px 2px 4px;
+   
 
 }
 .col-sm-4{
@@ -62,7 +62,7 @@ h2{
     height: 300px imp !important;
 }
 p{
-    color: blueviolet;
+    color: black;
 }
 .Aboutus{
     background-color:none;

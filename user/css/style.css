@@ -1,10 +1,16 @@
+body {
+    background: #99cdf8;
+    background-image: linear-gradient( 135.9deg,  rgb(88, 240, 235) 16.4%, rgb(7, 75, 94) 56.1% );
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
 .slider {
-    background-color: #ffc107;
+    background-color: rgb(88, 240, 235) 16.4%;
     height: 100vh;
 }
 
 nav{
-	background-color: #b0f3aa;
+	background-color: rgb(50, 158, 154) 16.4%;
 
 }
 .logohere{
@@ -55,11 +61,11 @@ h2{
 	word-spacing: 5px;
 }
 .teams{
-	background-color: #404040;
+	background-color:  rgb(88, 240, 235) 16.4%;
 	margin-top: 0px;
 }
 .footer{
-	background-color: #262825;
+	background-color:  rgb(88, 240, 235) 16.4%;
 	padding-top: 20px;
 	padding-bottom: 20px;
 }
