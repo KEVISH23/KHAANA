@@ -16,6 +16,7 @@
 
 
     <!-- Bootstrap CSS -->
+	<link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <title>Contact Us</title>
@@ -45,7 +46,7 @@
     </ul>
     <ul class="navbar-nav ml-auto">
 	  <li class="nav-item text-white">
-	  	<a class="nav-link" href="#">
+	  	<a class="nav-link" href="#"style="font-family: 'Cinzel Decorative';font-size: 22px;">
 		 Welcome Guest 
 		 </a>
 		</li>
