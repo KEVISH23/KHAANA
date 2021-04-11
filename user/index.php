@@ -257,8 +257,7 @@ include ("functions.php");
 		?>
 </div>
 </div>
-
-
+<hr>
 <!--Footer-->
 <div class="container-fluid footer text-center">
 	<h4 style="font-family: 'Delius Unicase';font-size: 22px;" >&copy; Copyright section khaana.com</h4>
