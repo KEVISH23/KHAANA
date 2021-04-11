@@ -1,7 +1,11 @@
+<?php
+include("includes.php");
+include("functions.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bootstrap 4 Sidebar Menu Responsive with Sub menu  Create Responsive Side Navigation</title>
+    <title>Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -90,7 +94,7 @@
       <div class="row d-flex justify-content-around justify-content-sm-around">
           <div class="col-md-3 bg-info text-white col-lg-3 col-sm-4 border rounded text-center">
               <h3>Total Users</h3>
-              <h4>123456</h4>
+              <?php usercount(); ?>
           </div>
           <div class="col-md-3 bg-info text-white col-lg-3 col-sm-4 border rounded text-center">
             <h3>Total Orders</h3>
@@ -98,7 +102,7 @@
         </div>
         <div class="col-md-3 bg-info text-white col-lg-3 col-sm-4 border rounded text-center">
             <h3>New Users</h3>
-            <h4>6000</h4>
+            <?php curusercount(); ?>
         </div>
       </div>
   </div>

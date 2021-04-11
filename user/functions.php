@@ -7,7 +7,7 @@ function usersignin(){
 	$ccpass = $_POST['u_cpass'];
 	$cimage = $_FILES['u_img']['name'];
 	$cimage_tmp = $_FILES['u_img']['tmp_name'];
-	$qry = "INSERT INTO user (user_namee,user_address,user_email,user_password,user_gender,user_phn,user_photo,user_joindate) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+	$qry = "INSERT INTO user (user_namee,user_address,user_email,user_password,user_gender,user_phn,user_photo,user_joindate,user_jointime) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
 	if ($cpass != $ccpass) {
 		echo "<script>alert('Password Must Be Same!!')</script>";
 		 echo "<script>window.open('index.php','_self')</script>";
@@ -19,9 +19,10 @@ function usersignin(){
 		$res = mysqli_prepare($con,$qry);
 		if($res){
 		
-		mysqli_stmt_bind_param($res,"sssssiss", $cname, $cadd, $cemail, $hpass,$cgen,$cphone,$cimage,$date);
+		mysqli_stmt_bind_param($res,"sssssisss", $cname, $cadd, $cemail, $hpass,$cgen,$cphone,$cimage,$date,$time);
 		date_default_timezone_set('Asia/Kolkata'); 
-        $date = date('Y-m-d H:i:s', time());
+		$time = date("H:i:sA");
+        $date = date('Y-m-d H:i:s');
 		$cname = $_POST['u_name'];
 		$cemail = $_POST['u_email'];
 		$cphone = $_POST['u_phone'];
