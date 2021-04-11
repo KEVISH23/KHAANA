@@ -34,7 +34,7 @@ function usersignin(){
 		$cimage_tmp = $_FILES['u_img']['tmp_name'];
 		if(mysqli_stmt_execute($res)){
 			echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
-			<strong>Welcome Chef!</strong> You are Registered as a Customer...
+			<strong>Welcome!</strong> You are Registered as a Customer...
 			<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
 			  <span aria-hidden='true'>&times;</span>
 			</button>
