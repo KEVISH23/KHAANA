@@ -101,7 +101,6 @@ h2{
 .rform{
 	padding-top: 50px;
 }
-  
   .images-selector input {
 	position: absolute;
 	z-index: 10;
@@ -128,5 +127,4 @@ h2{
   .img-card::after {
 	transform: scaleY(-1);
   }
-  
-  
+

@@ -13,14 +13,17 @@ if (!isset($_SESSION['cname'])) {
 <head>
 	<title>User</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
 	<link rel="stylesheet" type="text/css" href="css/lstyle.css">
+		<link href='https://fonts.googleapis.com/css?family=Delius Unicase' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 				<!-- navigation bar -->
 <nav class="navbar navbar-expand-lg navbar-light ">
 <img src="images/khaana.png" class="logohere" alt="logo">
-  <a class="navbar-brand" href="index.php">KHAANA</a>
+  <a class="navbar-brand" href="index.php" style="font-family: 'Berkshire Swash';font-size: 22px;">Khaana</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -45,7 +48,7 @@ if (!isset($_SESSION['cname'])) {
     </ul>
       <ul class="navbar-nav ml-auto">
 	  <li class="nav-item text-white">
-	  	<a class="nav-link" href="#">
+	  	<a class="nav-link" href="#" style="font-family: 'Cinzel Decorative';font-size: 22px;">
 		 <?php
 		 	if(isset($_SESSION['cname'])){
 			 echo "Welcome " . $_SESSION['cname'];
@@ -140,7 +143,7 @@ if (!isset($_SESSION['cname'])) {
 
 <!--Footer-->
 <div class="container-fluid footer text-center">
-	<h4>&copy; Copyright section khaana.com</h4>
+	<h4 style="font-family: 'Delius Unicase';font-size: 22px;" >&copy; Copyright section khaana.com</h4>
 </div>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>

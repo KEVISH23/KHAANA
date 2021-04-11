@@ -9,17 +9,19 @@ include ("functions.php");
 <head>
 	<title>user</title>
 	<link rel="icon" href="images/favicon.ico" type="image/gif" sizes="16x16">
+	<link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
 	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href='https://fonts.googleapis.com/css?family=Delius Unicase' rel='stylesheet'>
 </head>
 <body>
 				<!-- navigation bar -->
 <nav class="navbar navbar-expand-lg navbar-light ">
 <img src="images/khaana.png" class="logohere" alt="logo">
-  <a class="navbar-brand" href="index.php">KHAANA</a>
+  <a class="navbar-brand" href="index.php" style="font-family: 'Berkshire Swash';font-size: 22px;">Khaana</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -41,7 +43,7 @@ include ("functions.php");
     </ul>
       <ul class="navbar-nav ml-auto">
 	  <li class="nav-item text-white">
-	  	<a class="nav-link" href="#">
+	  	<a class="nav-link" href="#"style="font-family: 'Cinzel Decorative';font-size: 22px;">
 		 <?php
 		 	if(isset($_SESSION['cemail'])){
 			 echo "Welcome," . $_SESSION['cname'];
@@ -257,10 +259,10 @@ include ("functions.php");
 </div>
 </div>
 
-
+<hr>
 <!--Footer-->
 <div class="container-fluid footer text-center">
-	<h4>&copy; Copyright section khaana.com</h4>
+	<h4 style="font-family: 'Delius Unicase';font-size: 22px;" >&copy; Copyright section khaana.com</h4>
 </div>
 
 

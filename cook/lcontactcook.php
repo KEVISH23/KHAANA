@@ -5,13 +5,6 @@ if (!isset($_SESSION['uname'])) {
 	echo "<script>window.open('index.php','_self')</script>";
 }
 ?>
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 
 <!doctype html>
 <html lang="en">
@@ -19,7 +12,9 @@ if (!isset($_SESSION['uname'])) {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+	<link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -30,7 +25,7 @@ if (!isset($_SESSION['uname'])) {
   <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <img src="images/khaana.png" class="logohere" alt="logo">
-  <a class="navbar-brand" href="lindex.php">KHAANA</a>
+  <a class="navbar-brand" style="font-family: 'Berkshire Swash';font-size: 22px;" href="lindex.php">Khaana</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -59,7 +54,7 @@ if (!isset($_SESSION['uname'])) {
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
-		<li class="nav-item" ><a href="#" class="nav-link">
+		<li class="nav-item" ><a href="#" class="nav-link"  style="font-family: 'Cinzel Decorative';font-size: 22px;">
 			<?php
 				echo "Welcome ". $_SESSION['uname'];
 			?>
@@ -78,7 +73,7 @@ if (!isset($_SESSION['uname'])) {
 		<img class="img-fluid" src="images/KHHANA.jpg" width="auto" height="auto">
 		</div>
 		<div class="col-sm-6 col-lg-6"  id="grad1" >
-		<h2>CONTACT US</h2>
+		<h2 style="font-family: 'Bevan';font-size: 35px;">CONTACT US</h2>
 		<div class="form-group">
 			<label for="usr">Name:</label>
 			<input type="text" class="form-control" id="usr" name="name" placeholder="Enter your name">
