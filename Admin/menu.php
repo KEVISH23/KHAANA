@@ -1,7 +1,11 @@
+<?php
+include("includes.php");
+include("functions.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Bootstrap 4 Sidebar Menu Responsive with Sub menu  Create Responsive Side Navigation</title>
+    <title>Recently Added Menus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -92,39 +96,9 @@
     </ol>
   </nav>
     <!--Recent Orders Listing-->
-    <div class="container">
-        <div class="row">
-            <h3 class="display-4 text-white mb-2">Recent Added Menus</h3>
-       </div>
-      <table class="table text-white table-hover mt-4">
-          <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-        </table>
+    <?php
+      newmenu();
+    ?>
 </div>
 </div>
 <!-- End demo content -->

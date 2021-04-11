@@ -33,38 +33,124 @@ function curusercount(){
 };
 function newcookrand(){
     global $con;
-			$get_t = "select *from cook order by rand() limit 3 where cook_joindate = CURDATE()";
+			$get_t = "select *from cook where cook_joindate = CURDATE()  order by rand() limit 3";
 			$run_t = mysqli_query($con,$get_t);
 			$rowcount=mysqli_num_rows($run_t);
 			if ($rowcount>0) {
-				
-			
+                echo "<table class='table table-responsive bg-info text-white table-hover mt-4'>
+                <thead>
+                    <tr>
+                      <th scope='col'>#</th>
+                      <th scope='col'>Name</th>
+                      <th scope='col'>Email</th>
+                      <th scope='col'>Speciality</th>
+                    </tr>
+                  </thead>
+                  <tbody>";
+			$srno = 0;
 			while ($row_t=mysqli_fetch_array($run_t)) {
-				$mid = $row_t['m_id'];
+                $srno+=1;
+				$cookid = $row_t['cook_id'];
+				$cname = $row_t['cook_name'];
+				$cookadd = $row_t['cook_address'];
+				$cemail = $row_t['cook_email'];
+				$cook_expertise = $row_t['cook_expertise'];
+				echo "
+                    <tr>
+                        <th scope='row'>$srno</th>
+                        <td>$cname</td>
+                        <td>$cemail</td>
+                        <td>$cook_expertise</td>
+                    </tr>
+                   ";
+			}
+            echo "</tbody>
+            </table>";
+		}
+		else{
+			echo "<h3 class='display-1'>Recently No Cook Joined!</h3>";
+		}
+};
+function newmenu(){
+    global $con;
+			$get_t = "select *from menu where m_date = CURDATE()  order by rand() limit 3";
+			$run_t = mysqli_query($con,$get_t);
+			$rowcount=mysqli_num_rows($run_t);
+            echo "<table class='table text-white table-hover mt-4'>
+                <thead>
+                    <tr>
+                      <th scope='col'>#</th>
+                      <th scope='col'>Dish Name</th>
+                      <th scope='col'>Dish Details</th>
+                      <th scope='col'>Dish Price</th>
+                    </tr>
+                  </thead>
+                  <tbody>";
+			if ($rowcount>0) {
+				
+			$srno = 0;
+			while ($row_t=mysqli_fetch_array($run_t)) {
+                $srno+=1;
+                $menuid = $row_t['m_id'];
 				$cookid = $row_t['cook_id'];
 				$mname = $row_t['m_name'];
 				$mdetails = $row_t['m_details'];
 				$mprice = $row_t['m_price'];
-				$mimage = $row_t['m_image'];
-				$mdate = $row_t['m_date'];
-				echo "<div class='col-md-4 col-sm-4 py-3 py-sm-0'>
-
-				<div class='card p-1'>
-					<img src='../cook/menuimages/$mimage' class='card-img-top img-fluid'  alt='...'>
-					
-					<ul class='list-group list-group-flush'>
-					  <li class='list-group-item'>Name :- $mname</li>
-					  <li class='list-group-item'>Details :- $mdetails</li>
-					  <li class='list-group-item'>Price :- $mprice</li>
-					</ul>
-					
-				  </div>
-			
-			</div>";
+		echo "		
+          <tr>
+            <th scope='row'>$srno</th>
+            <td>$mname</td>
+            <td>$mdetails</td>
+            <td>$mprice</td>
+          </tr>
+          
+                  ";
 			}
+        echo "</tbody>
+        </table>";
 		}
 		else{
-			echo "<h3>No Menu Available</h3>";
+			echo "<h3 class='display-1'>Recently No Menu Added!</h3>";
 		}
+};
+function viewallmenu(){
+    global $con;
+			$get_t = "select *from menu";
+			$run_t = mysqli_query($con,$get_t);
+			$rowcount=mysqli_num_rows($run_t);
+            if ($rowcount>0) {
+                $srno = 0;
+			while ($row_t=mysqli_fetch_array($run_t)) {
+                $srno+=1;
+                $menuid = $row_t['m_id'];
+				$cookid = $row_t['cook_id'];
+				$mname = $row_t['m_name'];
+				$mdetails = $row_t['m_details'];
+				$mprice = $row_t['m_price'];
+                $mimage = $row_t['m_image'];
+                echo "		
+                <tr>
+                    <th scope='row'>$srno</th>
+                    <td hidden>$menuid</td>
+                    <td>$mname</td>
+                    <td><img src='../cook/menuimages/$mimage' alt='menu image' style='width:100px;height:100px;'></td>
+                    <td>$mdetails</td>
+                    <td>$mprice</td>
+                    <td>
+                    <div class='row'>
+                    <div class='col-lg-4'>
+                        <button class='btn btn-success' id='$menuid'>View</button>
+                    </div>
+                    <div class='col-lg-4'>
+                    <button class='btn btn-warning ' id='$menuid'>Update</button>
+                    </div>
+                    <div class='col-lg-4'>
+                    <button class='btn btn-danger deletebtn' id='$menuid'>Delete</button>
+                    </div>
+                    </div></td>
+                </tr>";
+            }
+        }
+
 };
 ?>
