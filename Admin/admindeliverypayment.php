@@ -26,50 +26,50 @@
 
   <ul class="nav flex-column bg-light mb-0">
     <li class="nav-item">
-      <a href="AdminIndex.html" class="nav-link text-dark bg-light">
+      <a href="AdminIndex.php" class="nav-link text-dark bg-light">
                 <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
                 Dashboard
             </a>
     </li>
     <li class="nav-item">
-      <a href="menu.html" class="nav-link text-dark" >
+      <a href="menu.php" class="nav-link text-dark" >
                 <i class="fa fa-file-text mr-3 text-primary fa-fw"></i>
                 Menu
             </a>
     </li>
     <li class="nav-item">
-      <a href="Adminorders.html" class="nav-link text-dark">
+      <a href="Adminorders.php" class="nav-link text-dark">
                 <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
                 Orders
             </a>
     </li>
     <li class="nav-item">
-      <a href="admincook.html" class="nav-link text-dark">
+      <a href="admincook.php" class="nav-link text-dark">
         <i class="fa fa-users mr-3 text-primary fa-fw" aria-hidden="true "></i>
                 Cook
             </a>
     </li>
  
     <li class="nav-item">
-      <a href="adminuser.html" class="nav-link text-dark">
+      <a href="adminuser.php" class="nav-link text-dark">
         <i class="fa fa-user-circle mr-3 text-primary fa-fw" aria-hidden="true"></i>
                 Customer
             </a>
     </li>
     <li class="nav-item">
-      <a href="admindelivery.html" class="nav-link text-dark">
+      <a href="admindelivery.php" class="nav-link text-dark">
                 <i class="fa fa-motorcycle mr-3 text-primary fa-fw"></i>
                 Delivery Details
             </a>
     </li>
     <li class="nav-item">
-      <a href="adminfeedback.html" class="nav-link text-dark">
+      <a href="adminfeedback.php" class="nav-link text-dark">
                 <i class="fa fa-check-square-o mr-3 text-primary fa-fw"></i>
                 Feedbacks
             </a>
     </li>
     <li class="nav-item">
-      <a href="adminpackage.html" class="nav-link text-dark">
+      <a href="adminpackage.php" class="nav-link text-dark">
                 <i class="fa fa-shopping-basket mr-3 text-primary fa-fw"></i>
                 Packages
             </a>
@@ -88,9 +88,9 @@
   <h2 class="display-4 text-white mb-2">Delivery Details</h2>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="admindelivery.html">Recent Delivery</a></li>
-      <li class="breadcrumb-item"><a href="adminvalldelivery.html">View All Delivery</a></li>
-      <li class="breadcrumb-item"><a href="adminparticulardel.html">View Particular Delivery</a></li>
+      <li class="breadcrumb-item"><a href="admindelivery.php">Recent Delivery</a></li>
+      <li class="breadcrumb-item"><a href="adminvalldelivery.php">View All Delivery</a></li>
+      <li class="breadcrumb-item"><a href="adminparticulardel.php">View Particular Delivery</a></li>
       <li class="breadcrumb-item active">Payment</li>
       
     </ol>
