@@ -13,6 +13,7 @@ if (!isset($_SESSION['cname'])) {
 <head>
 	<title>User</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
 	<link rel="stylesheet" type="text/css" href="css/lstyle.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -20,7 +21,7 @@ if (!isset($_SESSION['cname'])) {
 				<!-- navigation bar -->
 <nav class="navbar navbar-expand-lg navbar-light ">
 <img src="images/khaana.png" class="logohere" alt="logo">
-  <a class="navbar-brand" href="index.php">KHAANA</a>
+  <a class="navbar-brand" href="index.php" style="font-family: 'Berkshire Swash';font-size: 22px;">Khaana</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

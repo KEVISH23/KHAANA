@@ -3,8 +3,10 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-
+	<link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bigshot One' rel='stylesheet'>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
@@ -13,7 +15,7 @@
   <body>
   <nav class="navbar navbar-expand-lg navbar-light">
   <img src="images/khaana.png" class="logohere" alt="logo">
-  <a class="navbar-brand" href="index.php">KHAANA</a>
+  <a class="navbar-brand" style="font-family: 'Berkshire Swash';font-size: 22px;" href="index.php">Khaana</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -168,7 +170,7 @@
   
 
 	<div class="container text-center p-3 mt-4">
-		<h3>About US</h3>
+	<h3 style="font-family: 'Bevan';font-size: 22px;">ABOUT US</h3>
 	   </div>
 	
 
@@ -180,16 +182,14 @@
     </div>
     <div class="col-sm-6 col-lg-6 mt-4 mb-2"  id="grad1" >
     <h2 class="text-center">About US</h2>
-			<h4 class="text-center">Khaana was established in 2020-21</h4>
-			<h4 class="text-center">Khaana was made by kav</h4>
-			<h4 class="text-center">Khaana give home made food</h4>
-			<h4 class="text-center">dil ka dariya beh hi gaya</h4>
+	<h4 class="text-center" style="font-family: 'Bigshot One';font-size: 35px;">Khaana was established in 2020-21<br>Khaana was made by kav<br>Khaana give home made food
+			<br>dil ka dariya beh hi gaya</h4>
   </div>
 
 <hr>
 	<hr>
-<div class="container text-center p-5 mt-4">
-	<h3>Team</h3>
+	<div class="container text-center p-5 mt-4">
+	<h3 style="font-family: 'Bevan';font-size: 22px;">TEAM</h3>
    </div>
 
 	  
@@ -197,13 +197,13 @@
 <div class="row ">
 <div class="col-md-4 col-sm-4 py-3 py-sm-0">
 
-	<div class="card">
-		<img src="images/face2.png" class="card-img-top img-fluid"  alt="...">
+	<div class="card" >
+		<img src="images/vs.jpeg" class="card-img-top img-fluid"  alt="..." style="height: 350px;">
 		
 		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
+		  <li class="list-group-item">Name :- Vatsal Sheth</li>
 		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
+		  <li class="list-group-item">Post :- Admin</li>
 		</ul>
 		
 	  </div>
@@ -212,12 +212,12 @@
 
 
 <div class="col-md-4 col-sm-4 py-3 py-sm-0">
-	<div class="card">
-		<img src="images/face2.png" class="card-img-top img-fluid "  alt="...">	
+	<div class="card" >
+		<img src="images/kt.jpeg" class="card-img-top img-fluid "  alt="..." style="height: 350px;">	
 		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
+		  <li class="list-group-item">Name :- Kevish Thakkar</li>
 		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
+		  <li class="list-group-item">Post :- Admin</li>
 		</ul>
 		
 	  </div>
@@ -226,13 +226,13 @@
 
 <div class="col-md-4 col-sm-4 py-3 py-sm-0">
 
-	<div class="card">
-		<img src="images/face2.png" class="card-img-top img-fluid"  alt="...">
+	<div class="card" >
+		<img src="images/as.jpeg" class="card-img-top img-fluid"  alt="..." style="height: 350px;">
 		
 		<ul class="list-group list-group-flush">
-		  <li class="list-group-item">Name :- abcd</li>
+		  <li class="list-group-item">Name :- Akhil Shah</li>
 		  <li class="list-group-item">Age :- 20</li>
-		  <li class="list-group-item">Post :- Employee</li>
+		  <li class="list-group-item">Post :- Admin</li>
 		</ul>
 		
 	  </div>
