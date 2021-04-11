@@ -15,7 +15,7 @@ include ("functions.php");
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href='https://fonts.googleapis.com/css?family=Delius Unicase' rel='stylesheet'>
 </head>
 <body>
 				<!-- navigation bar -->
@@ -262,7 +262,7 @@ include ("functions.php");
 
 <!--Footer-->
 <div class="container-fluid footer text-center">
-	<h4>&copy; Copyright section khaana.com</h4>
+	<h4 style="font-family: 'Delius Unicase';font-size: 22px;" >&copy; Copyright section khaana.com</h4>
 </div>
 
 
