@@ -198,7 +198,7 @@ if (isset($_POST['update'])) {
 	if ($res1) {
 		mysqli_stmt_bind_param($res1,'s',$cemail);
 		$cemail = $email;
-		mysqli_stmt_bind_result($res1,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate);
+		mysqli_stmt_bind_result($res1,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate,$time);
 		if(mysqli_stmt_execute($res1)){
 			mysqli_stmt_store_result($res1);
 			$rowcount = mysqli_stmt_num_rows($res1);

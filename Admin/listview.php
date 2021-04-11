@@ -1,3 +1,7 @@
+<?php
+include("includes.php");
+include("functions.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="AdminIndex.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
 </head>
 <body>
  
@@ -94,35 +99,22 @@
   <!--Recent Orders Listing-->
   <div class="container">
     <div class="row">
-        <h3 class="display-4 text-white mb-2">List of Menus(Curd System)</h3>
+        <h3 class="display-4 text-white mb-2">List of Menus</h3>
    </div>
-  <table class="table text-white table-hover mt-4">
+  <table class="table table-responsive text-dark mt-4" id="myTable">
       <thead>
           <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col" class="text-white">#</th>
+            <th scope="col" class="text-white" hidden>Srno</th>
+            <th scope="col" class="text-white">Dish Name</th>
+            <th scope="col" class="text-white">Dish Image</th>
+            <th scope="col" class="text-white">Dish Details</th>
+            <th scope="col" class="text-white">Dish Price</th>
+            <th scope="col" class="text-white" class="mr-4">Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
-          </tr>
+          <?php viewallmenu();?>
         </tbody>
     </table>
 </div>
@@ -132,6 +124,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="AdminIndex.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script>
+        $(document).ready( function () {
+        $('#myTable').DataTable();
+        } );
+</script>
 </body>
 </html>
 

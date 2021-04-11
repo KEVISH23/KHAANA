@@ -153,13 +153,13 @@ function addmenu(){
 	$dprice = $_POST['dprice'];
 	$cimage = $_FILES['dphoto']['name'];
 	$cimage_tmp = $_FILES['dphoto']['tmp_name'];
-	$qry = "Insert into menu(cook_id,m_name,m_details,m_price,m_image,m_date) values (?,?,?,?,?,?)";
+	$qry = "Insert into menu(cook_id,m_name,m_details,m_price,m_image,m_date,m_time) values (?,?,?,?,?,?,?)";
 	$cimage = $_FILES['dphoto']['name'];
 	$cimage_tmp = $_FILES['dphoto']['tmp_name'];
 	move_uploaded_file($cimage_tmp,"menuimages/$cimage");
 	$res = mysqli_prepare($con,$qry);
 	if ($res) {
-		mysqli_stmt_bind_param($res,'ississ',$cid,$dname,$ddetails,$dprice,$cimage,$date);
+		mysqli_stmt_bind_param($res,'ississs',$cid,$dname,$ddetails,$dprice,$cimage,$date,$time);
 		date_default_timezone_set('Asia/Kolkata'); 
 		$dname = $_POST['dname'];
 		$cid = $id;
@@ -167,7 +167,8 @@ function addmenu(){
 		$dprice = $_POST['dprice'];
 		$cimage = $_FILES['dphoto']['name'];
 		$cimage_tmp = $_FILES['dphoto']['tmp_name'];
-		$date = date('Y-m-d H:i:s', time());
+		$date = date('Y-m-d H:i:s');
+		$time = date("H:i:s");
 		if(mysqli_stmt_execute($res)){
 			echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
 			<strong>Wohoo!</strong>Menu Added SUccesfully..
@@ -244,7 +245,7 @@ function cookviewmenu(){
 	if ($res) {
 		mysqli_stmt_bind_param($res,'i',$cid);
 		$cid = $cookid;
-		mysqli_stmt_bind_result($res,$idd,$coid,$dname,$ddetails,$dprice,$dimage,$date);
+		mysqli_stmt_bind_result($res,$idd,$coid,$dname,$ddetails,$dprice,$dimage,$date,$time);
 		if(mysqli_stmt_execute($res)){
 			mysqli_stmt_store_result($res);
 			$rowcount = mysqli_stmt_num_rows($res);
@@ -334,7 +335,7 @@ function  cookupgrademenu(){
 	if ($res) {
 		mysqli_stmt_bind_param($res,'i',$cid);
 		$cid = $cookid;
-		mysqli_stmt_bind_result($res,$idd,$coid,$dname,$ddetails,$dprice,$dimage,$date);
+		mysqli_stmt_bind_result($res,$idd,$coid,$dname,$ddetails,$dprice,$dimage,$date,$time);
 		if(mysqli_stmt_execute($res)){
 			mysqli_stmt_store_result($res);
 			$rowcount = mysqli_stmt_num_rows($res);
