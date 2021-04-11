@@ -7,7 +7,7 @@ function cooksignin(){
 	$ccpass = $_POST['c_cpass'];
 	$cimage = $_FILES['c_img']['name'];
 	$cimage_tmp = $_FILES['c_img']['tmp_name'];
-	$qry = "INSERT INTO cook (cook_name,cook_address,cook_email,cook_password,cook_gender,cook_phn,cook_photo,cook_expertise,cook_joindate) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)";
+	$qry = "INSERT INTO cook (cook_name,cook_address,cook_email,cook_password,cook_gender,cook_phn,cook_photo,cook_expertise,cook_joindate,cook_jointime) VALUES (?, ?, ?, ?, ?, ?, ?, ?,?,?)";
 	if ($cpass != $ccpass) {
 		echo "<script>alert('Password Must Be Same!!')</script>";
 		 echo "<script>window.open('index.php','_self')</script>";
@@ -19,9 +19,10 @@ function cooksignin(){
 		$res = mysqli_prepare($con,$qry);
 		if($res){
 		
-		mysqli_stmt_bind_param($res,"sssssisss", $cname, $cadd, $cemail, $hpass,$cgen,$cphone,$cimage,$speciality,$date);
-		date_default_timezone_set('Asia/Kolkata'); 
-        $date = date('Y-m-d H:i:s', time());
+		mysqli_stmt_bind_param($res,"sssssissss", $cname, $cadd, $cemail, $hpass,$cgen,$cphone,$cimage,$speciality,$date,$time);
+		date_default_timezone_set('Asia/Kolkata');
+		$time = date("H:i:sA"); 
+        $date = date('Y-m-d H:i:s');
 		$cname = $_POST['c_name'];
 		$cemail = $_POST['c_email'];
 		$cphone = $_POST['c_phone'];
@@ -57,7 +58,7 @@ function cooklogin(){
 	if ($res) {
 		mysqli_stmt_bind_param($res,'s',$cemail);
 		$cemail = $email;
-		mysqli_stmt_bind_result($res,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate);
+		mysqli_stmt_bind_result($res,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate,$jointime);
 		if(mysqli_stmt_execute($res)){
 			
 			mysqli_stmt_store_result($res);
@@ -119,7 +120,7 @@ function addmenu(){
 	if ($res1) {
 		mysqli_stmt_bind_param($res1,'s',$cemail);
 		$cemail = $email;
-		mysqli_stmt_bind_result($res1,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate);
+		mysqli_stmt_bind_result($res1,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate,$jointime);
 		if(mysqli_stmt_execute($res1)){
 			mysqli_stmt_store_result($res1);
 			$rowcount = mysqli_stmt_num_rows($res1);
@@ -209,7 +210,7 @@ function cookviewmenu(){
 	if ($res1) {
 		mysqli_stmt_bind_param($res1,'s',$cemail);
 		$cemail = $email;
-		mysqli_stmt_bind_result($res1,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate);
+		mysqli_stmt_bind_result($res1,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate,$jointime);
 		if(mysqli_stmt_execute($res1)){
 			mysqli_stmt_store_result($res1);
 			$rowcount = mysqli_stmt_num_rows($res1);
@@ -299,7 +300,7 @@ function  cookupgrademenu(){
 	if ($res1) {
 		mysqli_stmt_bind_param($res1,'s',$cemail);
 		$cemail = $email;
-		mysqli_stmt_bind_result($res1,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate);
+		mysqli_stmt_bind_result($res1,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate,$jointime);
 		if(mysqli_stmt_execute($res1)){
 			mysqli_stmt_store_result($res1);
 			$rowcount = mysqli_stmt_num_rows($res1);
@@ -394,7 +395,7 @@ function  cookviewupgrademenu(){
 	if ($res1) {
 		mysqli_stmt_bind_param($res1,'s',$cemail);
 		$cemail = $email;
-		mysqli_stmt_bind_result($res1,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate);
+		mysqli_stmt_bind_result($res1,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$expertise,$joindate,$jointime);
 		if(mysqli_stmt_execute($res1)){
 			mysqli_stmt_store_result($res1);
 			$rowcount = mysqli_stmt_num_rows($res1);
