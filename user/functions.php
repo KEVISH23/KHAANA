@@ -57,7 +57,7 @@ function userlogin(){
 	if ($res) {
 		mysqli_stmt_bind_param($res,'s',$cemail);
 		$cemail = $email;
-		mysqli_stmt_bind_result($res,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$joindate);
+		mysqli_stmt_bind_result($res,$id,$dbname,$add,$dbemail,$dbpass,$gender,$phn,$photo,$joindate,$jointime);
 		if(mysqli_stmt_execute($res)){
 			
 			mysqli_stmt_store_result($res);
