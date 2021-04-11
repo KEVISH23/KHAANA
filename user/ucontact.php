@@ -86,7 +86,7 @@ echo "<script>window.open('index.php','_self')</script>";
 		<img class="img-fluid" src="images/KHHANA.jpg" width="auto" height="auto">
 		</div>
 		<div class="col-sm-6 col-lg-6"  id="grad1" >
-		<h2>CONTACT US</h2>
+		<h2 style="font-family: 'Bevan';font-size: 35px;">CONTACT US</h2>	
 		<div class="form-group">
 			<label for="usr">Name:</label>
 			<input type="text" class="form-control" id="usr" name="name" placeholder="Enter your name">
