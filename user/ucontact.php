@@ -22,10 +22,13 @@ echo "<script>window.open('index.php','_self')</script>";
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
+
 
 
     <!-- Bootstrap CSS -->
-	<link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+	
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/lstyle.css">
     <title>Contact Us</title>
