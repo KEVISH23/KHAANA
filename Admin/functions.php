@@ -76,7 +76,9 @@ function newmenu(){
 			$get_t = "select *from menu where m_date = CURDATE()  order by rand() limit 3";
 			$run_t = mysqli_query($con,$get_t);
 			$rowcount=mysqli_num_rows($run_t);
-            echo "<table class='table text-white table-hover mt-4'>
+          
+			if ($rowcount>0) {
+                echo "<table class='table text-white table-hover mt-4'>
                 <thead>
                     <tr>
                       <th scope='col'>#</th>
@@ -86,8 +88,6 @@ function newmenu(){
                     </tr>
                   </thead>
                   <tbody>";
-			if ($rowcount>0) {
-				
 			$srno = 0;
 			while ($row_t=mysqli_fetch_array($run_t)) {
                 $srno+=1;
