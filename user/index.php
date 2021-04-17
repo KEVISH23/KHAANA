@@ -245,14 +245,14 @@ include ("functions.php");
 		</div>
 	</div>
 </section>
-<!--team-->
+<!--menu-->
 <div class="teams text-center">
 	<div class="container text-center teamcont">
 		<h3 class="text-white">Menu</h3>
 		<h4 class="text-white">BEST PLACE TO GET TASTE OF HAME MADE FOOD</h4><br>
 
 <div class="container">
-<div class="row ">
+<div class="row">
 		<?php
 			randmenu();
 		?>

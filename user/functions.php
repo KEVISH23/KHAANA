@@ -131,8 +131,8 @@ function randmenu(){
 				$mdate = $row_t['m_date'];
 				echo "<div class='col-md-4 col-sm-4 py-3 py-sm-0'>
 
-				<div class='card p-1'>
-					<img src='../cook/menuimages/$mimage' class='card-img-top img-fluid'  alt='...'>
+				<div class='card p-1' >
+					<img src='../cook/menuimages/$mimage' class='card-img-top img-fluid'  alt='...' >
 					
 					<ul class='list-group list-group-flush'>
 					  <li class='list-group-item'>Name :- $mname</li>
