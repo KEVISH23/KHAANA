@@ -76,7 +76,9 @@ function newmenu(){
 			$get_t = "select *from menu where m_date = CURDATE()  order by rand() limit 3";
 			$run_t = mysqli_query($con,$get_t);
 			$rowcount=mysqli_num_rows($run_t);
-            echo "<table class='table text-white table-hover mt-4'>
+          
+			if ($rowcount>0) {
+                echo "<table class='table text-white table-hover mt-4'>
                 <thead>
                     <tr>
                       <th scope='col'>#</th>
@@ -86,8 +88,6 @@ function newmenu(){
                     </tr>
                   </thead>
                   <tbody>";
-			if ($rowcount>0) {
-				
 			$srno = 0;
 			while ($row_t=mysqli_fetch_array($run_t)) {
                 $srno+=1;
@@ -137,17 +137,14 @@ function viewallmenu(){
                     <td>$mdetails</td>
                     <td>$mprice</td>
                     <td>
-                    <div class='row'>
-                    <div class='col-lg-4'>
-                        <button class='btn btn-success' id='$menuid'>View</button>
-                    </div>
-                    <div class='col-lg-4'>
-                    <button class='btn btn-warning ' id='$menuid'>Update</button>
-                    </div>
-                    <div class='col-lg-4'>
-                    <button class='btn btn-danger deletebtn' id='$menuid'>Delete</button>
-                    </div>
-                    </div></td>
+                    
+                            <button class='btn btn-success edit' name='edit' id='$menuid'>View</button>
+                    
+                            <button class='btn btn-warning ml-2 update' id='$menuid'>Update</button>
+                       
+                            <button class='btn btn-danger mt-2 delete' id='$menuid'>Delete</button>
+                  
+                    </td>
                 </tr>";
             }
         }
