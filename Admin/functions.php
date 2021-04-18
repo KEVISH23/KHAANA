@@ -190,4 +190,61 @@ function viewallcook(){
         }
 
 };
+function viewparcook(){
+    global $con;
+   $id = $_POST['cookid'];
+   $qry = "select * from cook where cook_id=$id";
+    $r = mysqli_query($con,$qry);
+    if ($r) {
+      # code...
+      $rowcount = mysqli_num_rows($r);
+      if ($rowcount>0) {
+        # code...
+        while($row_t = mysqli_fetch_array($r)){
+            $cookid = $row_t['cook_id'];
+            $cname = $row_t['cook_name'];
+            $cadd = $row_t['cook_address'];
+            $coemail = $row_t['cook_email'];
+            $cgender = $row_t['cook_gender'];
+            $cphone = $row_t['cook_phn'];
+            $cimage = $row_t['cook_photo'];
+            $cexp = $row_t['cook_expertise'];
+            $cdate = $row_t['cook_joindate'];
+            $ctime= $row_t['cook_jointime'];
+            echo "
+            <div class='container d-flex justify-content-center mt-4'>
+            <div class='card' style='width: 18rem;'>
+            <img src='../cook/cookimages/$cimage' class='card-img-top' alt='Cook Image'>
+            <div class='card-body'>
+              <h5 class='card-title'>Name: $cname</h5>
+              <p class='card-text'>Address: $cadd</p>
+            </div>
+            <ul class='list-group list-group-flush'>
+              <li class='list-group-item'>Email: $coemail</li>
+              <li class='list-group-item'>Phone No.: $cphone facilisis in</li>
+              <li class='list-group-item'>Gender: $cgender</li>
+              <li class='list-group-item'>Expertise: $cexp</li>
+              <li class='list-group-item'>Join Date: $cdate</li>
+              <li class='list-group-item'>Join Time: $ctime</li>
+            </ul>
+            
+          </div>
+          </div>  
+            ";
+        }
+      }
+      else{echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+        <strong>Oops!</strong>No Such Cook Found...
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+        </button>
+        </div>";}
+    }
+    else{echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+        <strong>Oops!</strong>Something Went Wrong..
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+        </button>
+        </div>";}
+};
 ?>

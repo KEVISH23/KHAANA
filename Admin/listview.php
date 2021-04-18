@@ -264,16 +264,32 @@ if (isset($_POST['update'])) {
     $name = $_POST['udnameEdit'];
     $details = $_POST['uddetailsEdit'];
     $price = $_POST['udpriceEdit'];
+    $qry = "select m_date,m_time from menu where m_id=$id";
+    $r = mysqli_query($con,$qry);
+    if ($r) {
+      # code...
+      $rowcount = mysqli_num_rows($r);
+      if ($rowcount>0) {
+        # code...
+        while($row = mysqli_fetch_array($r)){
+          $date = $row['m_date'];
+          $time = $row['m_time'];
+          
+        }
+      }
+      else{echo "Something went wrong";}
+    }
+    else{echo "Something went wrong";}
     #global $con;
-    $sql = "update menu set m_name=?,m_details=?,m_price=?,m_date=? where m_id=?";
+    $sql = "update menu set m_name=?,m_details=?,m_price=?,m_date=?,m_time=? where m_id=?";
     $res = mysqli_prepare($con,$sql);
     if ($res) {
-        mysqli_stmt_bind_param($res,'ssisi',$name,$details,$price,$date,$id);
+        mysqli_stmt_bind_param($res,'ssissi',$name,$details,$price,$mdate,$mtime,$id);
         $name = $_POST['udnameEdit'];
         $details = $_POST['uddetailsEdit'];
         $price = $_POST['udpriceEdit'];
-        date_default_timezone_set('Asia/Kolkata');
-        $date = date('Y-m-d H:i:s', time());
+        $mdate = $date;
+        $mtime = $time;
         $id = $_POST['snoEdit'];
         if(mysqli_stmt_execute($res)){
           echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>

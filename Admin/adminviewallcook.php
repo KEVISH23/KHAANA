@@ -270,15 +270,32 @@ if (isset($_POST['update'])) {
     $name = $_POST['udnameEdit'];
     $details = $_POST['uddetailsEdit'];
     $price = $_POST['udpriceEdit'];
+    $qry = "select cook_joindate,cook_jointime from cook where cook_id=$id";
+    $r = mysqli_query($con,$qry);
+    if ($r) {
+      # code...
+      $rowcount = mysqli_num_rows($r);
+      if ($rowcount>0) {
+        # code...
+        while($row = mysqli_fetch_array($r)){
+          $date = $row['cook_joindate'];
+          $time = $row['cook_jointime'];
+          
+        }
+      }
+      else{echo "Something went wrong";}
+    }
+    else{echo "Something went wrong";}
     #global $con;
-    $sql = "update cook set cook_name=?,cook_expertise=? where cook_id=?";
+    $sql = "update cook set cook_name=?,cook_expertise=?,cook_joindate=?,cook_jointime=? where cook_id=?";
     $res = mysqli_prepare($con,$sql);
     if ($res) {
-        mysqli_stmt_bind_param($res,'ssi',$name,$details,$id);
+        mysqli_stmt_bind_param($res,'ssssi',$name,$details,$cdate,$ctime,$id);
        
         $name = $_POST['uddetailsEdit'];
         $details = $_POST['udpriceEdit'];
-        
+        $cdate = $date;
+        $ctime = $time;
         $id = $_POST['snoEdit'];
         if(mysqli_stmt_execute($res)){
           echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
