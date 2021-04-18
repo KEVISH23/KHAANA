@@ -142,7 +142,7 @@ function viewallmenu(){
                     
                             <button class='btn btn-warning ml-2 update' id='$menuid'>Update</button>
                        
-                            <button class='btn btn-danger mt-2 delete' id='$menuid'>Delete</button>
+                            <button class='btn btn-danger ml-2 delete' id='$menuid'>Delete</button>
                   
                     </td>
                 </tr>";
@@ -221,7 +221,7 @@ function viewparcook(){
             </div>
             <ul class='list-group list-group-flush'>
               <li class='list-group-item'>Email: $coemail</li>
-              <li class='list-group-item'>Phone No.: $cphone facilisis in</li>
+              <li class='list-group-item'>Phone No.: $cphone</li>
               <li class='list-group-item'>Gender: $cgender</li>
               <li class='list-group-item'>Expertise: $cexp</li>
               <li class='list-group-item'>Join Date: $cdate</li>
