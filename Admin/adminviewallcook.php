@@ -1,3 +1,7 @@
+<?php
+include("includes.php");
+include("functions.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="AdminIndex.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <script src="https://use.fontawesome.com/39ee710c49.js"></script>
 </head>
 <body>
@@ -97,12 +102,13 @@
   </nav>
   <div class="container">
     <div class="row">
-        <h3 class="display-4 text-white mb-2">View All Cook(Curd System)</h3>
+        <h3 class="display-4 text-white mb-2">View All Cook</h3>
    </div>
-   <table class="table text-white table-hover mt-4">
+   <table class="table text-dark text-center mt-4" id="myTable">
     <thead>
         <tr>
           <th scope="col">Sr.NO</th>
+          <th scope="col">Cook Id</th>
           <th scope="col">Name</th>
           <th scope="col">Speciality</th>
           <th scope="col">Operation</th>
@@ -110,104 +116,190 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          
-          <td><div class="container">
-              <div class="row">
-                  <div class="col-lg-4">
-                      <button class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter">View</button>
-                  </div>
-                  <div class="col-lg-4">
-                      <button" class="btn btn-warning btn-block">Update</button>
-                  </div>
-                  <div class="col-lg-4">
-                      <button class="btn btn-danger btn-block">Delete</button>
-                  </div>
-              </div>
-          </div></td>
-        </tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        
-        <td><div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter">View</a>
-                </div>
-                <div class="col-lg-4">
-                    <a href="#" class="btn btn-warning btn-block">Update</a>
-                </div>
-                <div class="col-lg-4">
-                    <a href="#" class="btn btn-danger btn-block">Delete</a>
-                </div>
-            </div>
-        </div></td>
-      </tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      
-      <td><div class="container">
-          <div class="row">
-              <div class="col-lg-4">
-                  <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter">View</a>
-              </div>
-              <div class="col-lg-4">
-                  <a href="#" class="btn btn-warning btn-block">Update</a>
-              </div>
-              <div class="col-lg-4">
-                  <a href="#" class="btn btn-danger btn-block">Delete</a>
-              </div>
-          </div>
-      </div></td>
-    </tr>
+       <?php viewallcook(); ?>
       </tbody>
   </table>
   </div>
   <!--Modal of view feedback-->
   <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+
+  </div>
+<!-- End demo content -->
+<div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Feedback</h5>
+          <h5 class="modal-title" id="editModalLabel">View Cook</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+            <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">
-            <div class="container feedcont">
-                      <div class="row feedrow">
-                        <div class="col-4">
-                          <img src="images/th1.jpg" class="img-fluid">
-                        </div>
-                         <div class="col-8 mt-2">
-                          <p class="feedname">Name:- Anyone</p>
-                          <p class="feedpost">Posted On February 12, 2021</p>
-                        </div>
-                      </div>
-                      <div class="row feeddet">
-                        <div class="col-lg-12 text-info">dycgsdaoucgovsd aygfofxgofngep</div>
-                      </div>
-                </div>
-              
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
+        
+          <div class="modal-body">
+          <form method="post">
+            <input type="hidden" name="snoEdit" id="snoEdit">
+            <div class="form-group">
+              <label for="title">Cook Id</label>
+              <input type="text" class="form-control" id="dnameEdit" name="dnameEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title">Cook Name</label>
+              <input type="text" class="form-control" id="ddetailsEdit" name="ddetailsEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title">Cook Speciality</label>
+              <input type="text" class="form-control" id="dpriceEdit" name="dpriceEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <button name="update" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </form>
+            </div>
+          <div class="modal-footer d-block mr-auto">
+            
+          </div>
+       
       </div>
     </div>
   </div>
-<!-- End demo content -->
-
+  <!--Update Modal-->
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit this Cook</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        
+          <div class="modal-body">
+          <form method="post">
+            <input type="hidden" name="snoEdit" id="usnoEdit">
+            <div class="form-group">
+              <label for="title">Cook Id</label>
+              <input type="text" class="form-control" id="udnameEdit" name="udnameEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title">Cook Name</label>
+              <input type="text" class="form-control" id="uddetailsEdit" name="uddetailsEdit" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+              <label for="title">Cook Speciality</label>
+              <input type="text" class="form-control" id="udpriceEdit" name="udpriceEdit" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" name="update" class="btn btn-primary">Save changes</button>
+            </form>
+            </div>
+          <div class="modal-footer d-block mr-auto">
+            
+          </div>
+       
+      </div>
+    </div>
+  </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="AdminIndex.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script>
+        $(document).ready( function () {
+        $('#myTable').DataTable();
+        } );
+</script>
+<script>
+    edits = document.getElementsByClassName('edit');
+    Array.from(edits).forEach((element) => {
+      element.addEventListener("click", (e) => {
+        console.log("edit ");
+        tr = e.target.parentNode.parentNode;
+        console.log(tr);
+        dname = tr.getElementsByTagName("td")[0].innerText;
+        ddetails = tr.getElementsByTagName("td")[1].innerText;
+        dprice = tr.getElementsByTagName("td")[2].innerText;
+        console.log(dname, ddetails,dprice);
+        dnameEdit.value = dname;
+        ddetailsEdit.value = ddetails;
+        dpriceEdit.value = dprice;
+        snoEdit.value = e.target.id;
+        console.log(e.target.id)
+        $('#viewModal').modal('toggle');
+      })
+    })
+    edits = document.getElementsByClassName('update');
+    Array.from(edits).forEach((element) => {
+      element.addEventListener("click", (e) => {
+        console.log("edit ");
+        utr = e.target.parentNode.parentNode;
+        console.log(utr);
+        udname = utr.getElementsByTagName("td")[0].innerText;
+        uddetails = utr.getElementsByTagName("td")[1].innerText;
+        udprice = utr.getElementsByTagName("td")[2].innerText;
+        console.log(udname, uddetails,udprice);
+        udnameEdit.value = udname;
+        uddetailsEdit.value = uddetails;
+        udpriceEdit.value = udprice;
+        usnoEdit.value = e.target.id;
+        console.log(e.target.id)
+        $('#editModal').modal('toggle');
+      })
+    })
+    deletes = document.getElementsByClassName('delete');
+    Array.from(deletes).forEach((element) => {
+      element.addEventListener("click", (e) => {
+        console.log("edit ");
+        sno = e.target.id;
 
+        if (confirm("Are you sure you want to delete this cook!")) {
+          console.log("yes");
+          window.location = `adminviewallcook.php?delete=${sno}`;
+          // TODO: Create a form and use post request to submit a form
+        }
+        else {
+          console.log("no");
+        }
+      })
+    })
+    
+  </script>
 </body>
 </html>
+<?php
+global $con;
+if (isset($_POST['update'])) {
+    $id = $_POST['snoEdit'];
+    $name = $_POST['udnameEdit'];
+    $details = $_POST['uddetailsEdit'];
+    $price = $_POST['udpriceEdit'];
+    #global $con;
+    $sql = "update cook set cook_name=?,cook_expertise=? where cook_id=?";
+    $res = mysqli_prepare($con,$sql);
+    if ($res) {
+        mysqli_stmt_bind_param($res,'ssi',$name,$details,$id);
+       
+        $name = $_POST['uddetailsEdit'];
+        $details = $_POST['udpriceEdit'];
+        
+        $id = $_POST['snoEdit'];
+        if(mysqli_stmt_execute($res)){
+          echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
+        <strong>Wohoo!</strong>Cook Updated SUccesfully..
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <span aria-hidden='true'>&times;</span>
+        </button>
+        </div>";
+        echo "<script>window.open('adminviewallcook.php','_self')</script>";
+        }
+    }
+    else{
+      echo "res not set";
+    }
+}
+
+if(isset($_GET['delete'])){
+  $sno = $_GET['delete'];
+  $delete = true;
+  $sql = "DELETE FROM cook WHERE cook_id = $sno";
+  $result = mysqli_query($con, $sql);
+  echo "<script>window.open('adminviewallcook.php','_self')</script>";
+}
+?>

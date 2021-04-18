@@ -159,7 +159,7 @@ include("functions.php");
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="editModalLabel">Edit this Note</h5>
+          <h5 class="modal-title" id="editModalLabel">Edit this Menu</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -224,14 +224,14 @@ include("functions.php");
       element.addEventListener("click", (e) => {
         console.log("edit ");
         utr = e.target.parentNode.parentNode;
-        console.log(tr);
-        udname = tr.getElementsByTagName("td")[1].innerText;
-        uddetails = tr.getElementsByTagName("td")[3].innerText;
-        udprice = tr.getElementsByTagName("td")[4].innerText;
+        console.log(utr);
+        udname = utr.getElementsByTagName("td")[1].innerText;
+        uddetails = utr.getElementsByTagName("td")[3].innerText;
+        udprice = utr.getElementsByTagName("td")[4].innerText;
         console.log(udname, uddetails,udprice);
-        udnameEdit.value = dname;
-        uddetailsEdit.value = ddetails;
-        udpriceEdit.value = dprice;
+        udnameEdit.value = udname;
+        uddetailsEdit.value = uddetails;
+        udpriceEdit.value = udprice;
         usnoEdit.value = e.target.id;
         console.log(e.target.id)
         $('#editModal').modal('toggle');
