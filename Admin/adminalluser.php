@@ -104,13 +104,13 @@ include("functions.php");
     <div class="row">
         <h3 class="display-4 text-white mb-2">View All Customers</h3>
    </div>
-  <table class="table text-dark  mt-4" id="myTable">
+  <table class="table text-dark text-center mt-4" id="myTable">
       <thead>
           <tr>
             <th scope="col">Sr.NO</th>
             <th scope="col">User Id</th>
             <th scope="col">Name</th></th>
-            <th scope="col">Mobile No.</th>
+            <th scope="col">Address</th>
             <th scope="col">Operation</th>
           </tr>
         </thead>
@@ -121,7 +121,77 @@ include("functions.php");
   </div>
 </div>
 
-  
+<div class="modal fade" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">View User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        
+          <div class="modal-body">
+          <form method="post">
+            <input type="hidden" name="snoEdit" id="snoEdit">
+            <div class="form-group">
+              <label for="title">User Id</label>
+              <input type="text" class="form-control" id="dnameEdit" name="dnameEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title">User Name</label>
+              <input type="text" class="form-control" id="ddetailsEdit" name="ddetailsEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title">User Address</label>
+              <input type="text" class="form-control" id="dpriceEdit" name="dpriceEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <button name="update" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </form>
+            </div>
+          <div class="modal-footer d-block mr-auto">
+            
+          </div>
+       
+      </div>
+    </div>
+  </div>
+  <!--Update Modal-->
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit this User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        
+          <div class="modal-body">
+          <form method="post">
+            <input type="hidden" name="snoEdit" id="usnoEdit">
+            <div class="form-group">
+              <label for="title">User Id</label>
+              <input type="text" class="form-control" id="udnameEdit" name="udnameEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title">User Name</label>
+              <input type="text" class="form-control" id="uddetailsEdit" name="uddetailsEdit" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+              <label for="title">User Address</label>
+              <input type="text" class="form-control" id="udpriceEdit" name="udpriceEdit" aria-describedby="emailHelp">
+            </div>
+            <button type="submit" name="update" class="btn btn-primary">Save changes</button>
+            </form>
+            </div>
+          <div class="modal-footer d-block mr-auto">
+            
+          </div>
+       
+      </div>
+    </div>
+  </div>
 <!-- End demo content -->
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -134,5 +204,117 @@ include("functions.php");
         $('#myTable').DataTable();
         } );
 </script>
+<script>
+    edits = document.getElementsByClassName('edit');
+    Array.from(edits).forEach((element) => {
+      element.addEventListener("click", (e) => {
+        console.log("edit ");
+        tr = e.target.parentNode.parentNode;
+        console.log(tr);
+        dname = tr.getElementsByTagName("td")[0].innerText;
+        ddetails = tr.getElementsByTagName("td")[1].innerText;
+        dprice = tr.getElementsByTagName("td")[2].innerText;
+        console.log(dname, ddetails,dprice);
+        dnameEdit.value = dname;
+        ddetailsEdit.value = ddetails;
+        dpriceEdit.value = dprice;
+        snoEdit.value = e.target.id;
+        console.log(e.target.id)
+        $('#viewModal').modal('toggle');
+      })
+    })
+    edits = document.getElementsByClassName('update');
+    Array.from(edits).forEach((element) => {
+      element.addEventListener("click", (e) => {
+        console.log("edit ");
+        utr = e.target.parentNode.parentNode;
+        console.log(utr);
+        udname = utr.getElementsByTagName("td")[0].innerText;
+        uddetails = utr.getElementsByTagName("td")[1].innerText;
+        udprice = utr.getElementsByTagName("td")[2].innerText;
+        console.log(udname, uddetails,udprice);
+        udnameEdit.value = udname;
+        uddetailsEdit.value = uddetails;
+        udpriceEdit.value = udprice;
+        usnoEdit.value = e.target.id;
+        console.log(e.target.id)
+        $('#editModal').modal('toggle');
+      })
+    })
+    deletes = document.getElementsByClassName('delete');
+    Array.from(deletes).forEach((element) => {
+      element.addEventListener("click", (e) => {
+        console.log("edit ");
+        sno = e.target.id;
+
+        if (confirm("Are you sure you want to delete this user!")) {
+          console.log("yes");
+          window.location = `adminalluser.php?delete=${sno}`;
+          // TODO: Create a form and use post request to submit a form
+        }
+        else {
+          console.log("no");
+        }
+      })
+    })
+    
+  </script>
 </body>
 </html>
+<?php
+global $con;
+if (isset($_POST['update'])) {
+    $id = $_POST['snoEdit'];
+    $name = $_POST['udnameEdit'];
+    $details = $_POST['uddetailsEdit'];
+    $price = $_POST['udpriceEdit'];
+    $qry = "select user_joindate,user_jointime from user where user_id=$id";
+    $r = mysqli_query($con,$qry);
+    if ($r) {
+      # code...
+      $rowcount = mysqli_num_rows($r);
+      if ($rowcount>0) {
+        # code...
+        while($row = mysqli_fetch_array($r)){
+          $date = $row['user_joindate'];
+          $time = $row['user_jointime'];
+          
+        }
+      }
+      else{echo "Something went wrong";}
+    }
+    else{echo "Something went wrong";}
+    #global $con;
+    $sql = "update user set user_namee=?,user_address=?,user_joindate=?,user_jointime=? where user_id=?";
+    $res = mysqli_prepare($con,$sql);
+    if ($res) {
+        mysqli_stmt_bind_param($res,'ssssi',$name,$details,$cdate,$ctime,$id);
+       
+        $name = $_POST['uddetailsEdit'];
+        $details = $_POST['udpriceEdit'];
+        $cdate = $date;
+        $ctime = $time;
+        $id = $_POST['snoEdit'];
+        if(mysqli_stmt_execute($res)){
+          echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
+        <strong>Wohoo!</strong>User Updated SUccesfully..
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+          <span aria-hidden='true'>&times;</span>
+        </button>
+        </div>";
+        echo "<script>window.open('adminalluser.php','_self')</script>";
+        }
+    }
+    else{
+      echo "res not set";
+    }
+}
+
+if(isset($_GET['delete'])){
+  $sno = $_GET['delete'];
+  $delete = true;
+  $sql = "DELETE FROM user WHERE user_id = $sno";
+  $result = mysqli_query($con, $sql);
+  echo "<script>window.open('adminalluser.php','_self')</script>";
+}
+?>

@@ -319,14 +319,14 @@ function viewalluser(){
             <th scope='row'>$srno</th>
             <td>$userid</td>
             <td>$uname</td>
-            <td>$uphone</td>
+            <td>$uadd</td>
             <td>
             
-                    <button class='btn btn-success edit' name='edit' id='$userid'>View</button>
+                    <button class='btn btn-success mt-2 edit' name='edit' id='$userid'>View</button>
             
-                    <button class='btn btn-warning ml-2 update' id='$userid'>Update</button>
+                    <button class='btn btn-warning mt-2 update' id='$userid'>Update</button>
                
-                    <button class='btn btn-danger ml-2 delete' id='$userid'>Delete</button>
+                    <button class='btn btn-danger mt-2 delete' id='$userid'>Delete</button>
           
             </td>
         </tr>";
