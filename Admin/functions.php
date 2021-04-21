@@ -188,6 +188,9 @@ function viewallcook(){
                 </tr>";
             }
         }
+        else {
+            echo "<h3 class='display-1 text-white'>No Cook Registered</h3>";
+        }
 
 };
 function viewparcook(){
@@ -246,5 +249,92 @@ function viewparcook(){
         <span aria-hidden='true'>&times;</span>
         </button>
         </div>";}
+};
+function newuserrand(){
+    global $con;
+    $get_t = "select *from user where user_joindate = CURDATE()  order by rand() limit 3";
+    $run_t = mysqli_query($con,$get_t);
+    $rowcount=mysqli_num_rows($run_t);
+    if ($rowcount>0) {
+        echo "<table class='table bg-info text-white table-hover mt-4'>
+        <thead>
+            <tr>
+              <th scope='col'>#</th>
+              <th scope='col'>User Id</th>
+              <th scope='col'>Name</th>
+              <th scope='col'>Phone No</th>
+              <th scope='col'>Address</th>
+              <th scope='col'>Email</th>
+            </tr>
+          </thead>
+          <tbody>";
+    $srno = 0;
+    while ($row_t=mysqli_fetch_array($run_t)) {
+        $srno+=1;
+        $uid = $row_t['user_id'];
+        $uname = $row_t['user_namee'];
+        $uphn = $row_t['user_phn'];
+        $uadd = $row_t['user_address'];
+        $uemail = $row_t['user_email'];
+        echo "
+            <tr>
+                <th scope='row'>$srno</th>
+                <td>$uid</td>
+                <td>$uname</td>
+                <td>$uphn</td>
+                <td>$uadd</td>
+                <td>$uemail</td>
+            </tr>
+           ";
+    }
+    echo "</tbody>
+    </table>";
+}
+else{
+    echo "<h3 class='display-1 text-white'>Recently No User Joined!</h3>";
+}
+
+};
+function viewalluser(){
+    global $con;
+    $get_t = "select *from user";
+    $run_t = mysqli_query($con,$get_t);
+    $rowcount=mysqli_num_rows($run_t);
+    if ($rowcount>0) {
+        $srno = 0;
+    while ($row_t=mysqli_fetch_array($run_t)) {
+        $srno+=1;
+        $userid = $row_t['user_id'];
+        $uname = $row_t['user_namee'];
+        $uadd = $row_t['user_address'];
+        $uoemail = $row_t['user_email'];
+        $ugender = $row_t['user_gender'];
+        $uphone = $row_t['user_phn'];
+        $uimage = $row_t['user_photo'];
+        $udate = $row_t['user_joindate'];
+        $utime= $row_t['user_jointime'];
+        
+        echo "		
+        <tr>
+            <th scope='row'>$srno</th>
+            <td>$userid</td>
+            <td>$uname</td>
+            <td>$uphone</td>
+            <td>
+            
+                    <button class='btn btn-success edit' name='edit' id='$userid'>View</button>
+            
+                    <button class='btn btn-warning ml-2 update' id='$userid'>Update</button>
+               
+                    <button class='btn btn-danger ml-2 delete' id='$userid'>Delete</button>
+          
+            </td>
+        </tr>";
+    }
+}
+else {
+    echo "<h3 class='display-1 text-white'>No Cook Registered</h3>";
+}
+
 };
 ?>

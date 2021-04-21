@@ -1,3 +1,7 @@
+<?php
+include("includes.php");
+include("functions.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -99,84 +103,9 @@
     <div class="row">
         <h3 class="display-4 text-white mb-2">Recent Customer</h3>
    </div>
-  <table class="table text-white table-hover mt-4">
-      <thead>
-          <tr>
-            <th scope="col">Sr.NO</th>
-            <th scope="col">Name</th>
-            <th scope="col">Address</th></th>
-            <th scope="col">Mobile No.</th>
-            <th scope="col">Email ID</th>
-            <th scope="col">Operation</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Home</td>
-            <td>Office</td>
-            <td>Delivered</td>
-
-            <td><div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter">View</a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-warning btn-block">Update</a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-danger btn-block">Delete</a>
-                    </div>
-                </div>
-            </div></td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Home</td>
-            <td>Office</td>
-            <td>Delivered</td>
-
-            <td><div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter">View</a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-warning btn-block">Update</a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-danger btn-block">Delete</a>
-                    </div>
-                </div>
-            </div></td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Home</td>
-            <td>Office</td>
-            <td>Delivered</td>
-
-            <td><div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter">View</a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-warning btn-block">Update</a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-danger btn-block">Delete</a>
-                    </div>
-                </div>
-            </div></td>
-          </tr>
-        </tbody>
-    </table>
-  </div>
+  <?php
+  newuserrand();
+  ?>
   <!--Modal of view feedback-->
   <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
