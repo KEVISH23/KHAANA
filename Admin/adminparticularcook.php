@@ -105,7 +105,7 @@ include("functions.php");
 <form method="post">
   <div class="form-group">
     
-    <input type="text" name="cookid" class="form-control" placeholder="Enter Cook Id">
+    <input type="text" name="cookid" class="form-control" placeholder="Enter Cook Id" required>
   </div>
   <button type="submit" name="submit" class="btn btn-primary text-center">View Details</button>
 </form>

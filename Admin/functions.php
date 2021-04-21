@@ -337,4 +337,59 @@ else {
 }
 
 };
+function viewparuser(){
+    global $con;
+    $id = $_POST['userid'];
+    $qry = "select * from user where user_id=$id";
+     $r = mysqli_query($con,$qry);
+     if ($r) {
+       # code...
+       $rowcount = mysqli_num_rows($r);
+       if ($rowcount>0) {
+         # code...
+         while($row_t = mysqli_fetch_array($r)){
+             $userid = $row_t['user_id'];
+             $uname = $row_t['user_namee'];
+             $uadd = $row_t['user_address'];
+             $uoemail = $row_t['user_email'];
+             $ugender = $row_t['user_gender'];
+             $uphone = $row_t['user_phn'];
+             $uimage = $row_t['user_photo'];
+             $udate = $row_t['user_joindate'];
+             $utime= $row_t['user_jointime'];
+             echo "
+             <div class='container d-flex justify-content-center mt-4 mb-4'>
+             <div class='card' style='width: 18rem;'>
+             <img src='../user/userimages/$uimage' class='card-img-top' alt='Cook Image'>
+             <div class='card-body'>
+               <h5 class='card-title'>Name: $uname</h5>
+               <p class='card-text'>Address: $uadd</p>
+             </div>
+             <ul class='list-group list-group-flush'>
+               <li class='list-group-item'>Email: $uoemail</li>
+               <li class='list-group-item'>Phone No.: $uphone</li>
+               <li class='list-group-item'>Gender: $ugender</li>
+               <li class='list-group-item'>Join Date: $udate</li>
+               <li class='list-group-item'>Join Time: $utime</li>
+             </ul>
+             
+           </div>
+           </div>  
+             ";
+         }
+       }
+       else{echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+         <strong>Oops!</strong>No Such User Found...
+         <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+         <span aria-hidden='true'>&times;</span>
+         </button>
+         </div>";}
+     }
+     else{echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+         <strong>Oops!</strong>Something Went Wrong..
+         <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+         <span aria-hidden='true'>&times;</span>
+         </button>
+         </div>";}
+};
 ?>
