@@ -74,7 +74,45 @@ echo "<script>window.open('index.php','_self')</script>";
          showmenu();
      ?>
 </div>
-
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit this Note</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        
+          <div class="modal-body">
+          <form method="post" action="paytm/PaytmKit/TxnTest.php">
+            <input type="hidden" name="snoEdit" id="snoEdit">
+            <div class="form-group">
+              <label for="title">Dish Name</label>
+              <input type="text" class="form-control" id="dnameEdit" name="dnameEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title">Dish Details</label>
+              <input type="text" class="form-control" id="ddetailsEdit" name="ddetailsEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title">Dish Price</label>
+              <input type="text" class="form-control" id="dpriceEdit" name="dpriceEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title" hidden>Dish Price</label>
+              <input type="text" class="form-control" id="dmenuEdit" name="dmenuEdit" aria-describedby="emailHelp" hidden readonly>
+            </div>
+            <button type="submit" name="confirm" class="btn btn-success">Confirm Order</button>
+            </form>
+            </div>
+          <div class="modal-footer d-block mr-auto">
+            
+          </div>
+       
+      </div>
+    </div>
+  </div>
   
 <hr>
     <!-- Optional JavaScript -->
@@ -101,6 +139,11 @@ echo "<script>window.open('index.php','_self')</script>";
         dprice = tr.getElementsByTagName("td")[4].innerText;
         menuid = tr.getElementsByTagName("td")[5].innerText;
         console.log(dname, ddetails,dprice,menuid);
+        dnameEdit.value = dname;
+        ddetailsEdit.value = ddetails;
+        dpriceEdit.value = dprice;
+        dmenuEdit.value = menuid;
+        $('#editModal').modal('toggle');
       })
     })
 </script>
@@ -108,3 +151,8 @@ echo "<script>window.open('index.php','_self')</script>";
   </body>
 
 </html>
+<?php
+if (isset($_POST['confirm'])) {
+  echo "<script>window.open('paytm/PaytmKit/TxnTest.php','_self')</script>";
+}
+?>

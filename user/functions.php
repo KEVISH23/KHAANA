@@ -65,7 +65,7 @@ function userlogin(){
 				if($rowcount>0){
 					while(mysqli_stmt_fetch($res)){
 						if(password_verify($pass,$dbpass)){
-							
+							$_SESSION['cid'] = $id;
 							$_SESSION['cemail'] = $dbemail;
                             $_SESSION['cname'] = $dbname;
 							#echo $_SESSION['uname'];
@@ -202,4 +202,5 @@ function showmenu(){
 	  </table>
 	  </div>";
 };
+
 ?>

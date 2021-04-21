@@ -174,7 +174,7 @@ include ("functions.php");
 <?php
 global $con;
 if (isset($_POST['update'])) {
-    echo "HEHE AAYOOOO";
+    
     $id = $_POST['snoEdit'];
     $name = $_POST['dnameEdit'];
     $details = $_POST['ddetailsEdit'];
