@@ -1,3 +1,7 @@
+<?php
+include("includes.php");
+include("functions.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -96,26 +100,16 @@
     </ol>
   </nav>
 <!--FORM FOR DELIVERY BOY PAYMENT-->
-   <div class="container mt-5">
-     <div class="row">
-       <div class="col-lg-8 offset-2">
-        <form>
-          <div class="form-group flabel">
-            <label for="inputdelivery">Enter ID</label>
-            <input type="text" class="form-control" id="inputdelivery"  placeholder="Enter Package ID" required>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-12 col-lg-12 col-sm-12 text-center viewper">
-                <button type="submit" class="btn btn-success">View Details</button>
-              </div>
-            </div>
-          </div>     
-        </form>
-       </div>
-     </div>
-     <div class="col offset-2"></div>
-   </div>
+<h2 class="display-4 text-white mb-2">Package Id</h2>
+<div class="container text-center">
+<form method="post">
+  <div class="form-group">
+    
+    <input type="text" name="packid" class="form-control" placeholder="Enter Package Id" required>
+  </div>
+  <button type="submit" name="submit" class="btn btn-primary text-center">View Details</button>
+</form>
+</div>
 
   </div>
  
@@ -128,3 +122,9 @@
 <script src="AdminIndex.js"></script>
 </body>
 </html>
+<?php
+if (isset($_POST['submit'])) {
+  viewparpack();
+
+}
+?>

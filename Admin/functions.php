@@ -333,7 +333,7 @@ function viewalluser(){
     }
 }
 else {
-    echo "<h3 class='display-1 text-white'>No Cook Registered</h3>";
+    echo "<h3 class='display-1 text-white'>No User Registered</h3>";
 }
 
 };
@@ -380,6 +380,155 @@ function viewparuser(){
        }
        else{echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
          <strong>Oops!</strong>No Such User Found...
+         <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+         <span aria-hidden='true'>&times;</span>
+         </button>
+         </div>";}
+     }
+     else{echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+         <strong>Oops!</strong>Something Went Wrong..
+         <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+         <span aria-hidden='true'>&times;</span>
+         </button>
+         </div>";}
+};
+function newpackrand(){
+    global $con;
+    $get_t = "select *from package where package_date = CURDATE()  order by rand() limit 3";
+    $run_t = mysqli_query($con,$get_t);
+    $rowcount=mysqli_num_rows($run_t);
+  
+    if ($rowcount>0) {
+        echo "<table class='table text-white table-hover mt-4'>
+        <thead>
+            <tr>
+            <th scope='col'>Sr.NO</th>
+            <th scope='col'>Dish Name</th>
+            <th scope='col'>Duration</th>
+            <th scope='col'>Dish Price</th>
+            </tr>
+          </thead>
+          <tbody>";
+    $srno = 0;
+    while ($row_t=mysqli_fetch_array($run_t)) {
+        $srno+=1;
+        $packid = $row_t['package_id'];
+        $menuid = $row_t['menu_id'];
+        $cookid = $row_t['cook_id'];
+        $mname = $row_t['menu_name'];
+        $packdays = $row_t['package_days'];
+        $pprice = $row_t['package_price'];
+        echo "		
+        <tr>
+            <th scope='row'>$srno</th>
+            <td>$mname</td>
+            <td>$packdays</td>
+            <td>$pprice</td>
+        </tr>
+        
+                ";
+            }
+        echo "</tbody>
+        </table>";
+        }
+        else{
+            echo "<h3 class='display-1'>Recently No Menu Added!</h3>";
+        }
+};
+function viewallpackage(){
+    global $con;
+    $get_t = "select *from package";
+    $run_t = mysqli_query($con,$get_t);
+    $rowcount=mysqli_num_rows($run_t);
+    if ($rowcount>0) {
+        $srno = 0;
+    while ($row_t=mysqli_fetch_array($run_t)) {
+        $srno+=1;
+        $packid = $row_t['package_id'];
+        $cid = $row_t['cook_id'];
+        $mid = $row_t['menu_id'];
+        $mname = $row_t['menu_name'];
+        $pdays = $row_t['package_days'];
+        $upprice = $row_t['package_price'];
+        $pdate = $row_t['package_date'];
+        $ptime= $row_t['package_time'];
+        
+        echo "		
+        <tr>
+            <th scope='row'>$srno</th>
+            <td>$packid</td>
+            <td>$mname</td>
+            <td>$pdays</td>
+            <td>$upprice</td>
+            <td>
+            
+                    <button class='btn btn-success  edit' name='edit' id='$packid'>View</button>
+            
+                    <button class='btn btn-warning ml-1 update' id='$packid'>Update</button>
+               
+                    <button class='btn btn-danger ml-1 delete' id='$packid'>Delete</button>
+          
+            </td>
+        </tr>";
+    }
+}
+else {
+    
+}
+};
+function viewparpack(){
+    global $con;
+    $id = $_POST['packid'];
+    $qry = "select * from package where package_id=$id";
+     $r = mysqli_query($con,$qry);
+     if ($r) {
+       # code...
+       $rowcount = mysqli_num_rows($r);
+       if ($rowcount>0) {
+         # code...
+         while($row_t = mysqli_fetch_array($r)){
+             $packid = $row_t['package_id'];
+             $cid = $row_t['cook_id'];
+             $mid = $row_t['menu_id'];
+             $mname = $row_t['menu_name'];
+             $pdays = $row_t['package_days'];
+             $pprice = $row_t['package_price'];
+             $pdate = $row_t['package_date'];
+             $ptime = $row_t['package_time'];
+             $q = "select cook_name from cook where cook_id=$cid";
+             $r = mysqli_query($con,$q);
+             while ($row1 = mysqli_fetch_array($r)) {
+                 # code...
+                 $cname = $row1['cook_name'];
+             }
+             $q1 = "select m_image from menu where m_id=$mid";
+             $r1 = mysqli_query($con,$q1);
+             while ($row2 = mysqli_fetch_array($r1)) {
+                 # code...
+                 $mimage = $row2['m_image'];
+             }
+             echo "
+             <div class='container d-flex justify-content-center mt-4 mb-4'>
+             <div class='card' style='width: 18rem;'>
+             <img src='../cook/menuimages/$mimage' class='card-img-top' alt='Cook Image'>
+             <div class='card-body'>
+               <h5 class='card-title'>Cook Name: $cname</h5>
+               <h5 class='card-title'>Dish Name: $mname</h5>
+             </div>
+             <ul class='list-group list-group-flush'>
+               <li class='list-group-item'>Duration: $pdays</li>
+               <li class='list-group-item'>Price: $pprice</li>
+               <li class='list-group-item'>Added Date: $pdate</li>
+               <li class='list-group-item'>Added Date: $ptime</li>
+             </ul>
+             
+           </div>
+           </div>  
+             ";
+         }
+       }
+       else{echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+         <strong>Oops!</strong>No Such Package Found...
          <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
          <span aria-hidden='true'>&times;</span>
          </button>
