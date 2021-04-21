@@ -58,9 +58,9 @@
 <div class="page-content p-5" id="content">
 
 
-<h2 class="display-2 text-white mb-2">Orders</h2>
+<h2 class="display-2 text-white mb-2 ">Orders</h2><br>
   <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
+    <ol class="breadcrumb ">
       <li class="breadcrumb-item active">Total  Orders</li>
       <li class="breadcrumb-item"><a href="#">Accepted Order</a></li>
       
