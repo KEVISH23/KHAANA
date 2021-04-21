@@ -430,7 +430,7 @@ function  cookviewupgrademenu(){
 	if ($res) {
 		mysqli_stmt_bind_param($res,'i',$cid);
 		$cid = $cookid;
-		mysqli_stmt_bind_result($res,$pidd,$coid,$mid,$mname,$pdays,$dprice,$date);
+		mysqli_stmt_bind_result($res,$pidd,$coid,$mid,$mname,$pdays,$dprice,$date,$time);
 		if(mysqli_stmt_execute($res)){
 			mysqli_stmt_store_result($res);
 			$rowcount = mysqli_stmt_num_rows($res);
@@ -444,6 +444,7 @@ function  cookviewupgrademenu(){
 					$packdays = $pdays;
 					$price = $dprice;
 					$mdate = $date;
+					$mtime = $time;
 					echo "<tr>
 					<td scope='col'>$srno</td>
 					<td scope='col'>$mename</td>

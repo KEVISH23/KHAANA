@@ -208,8 +208,20 @@ if (isset($_POST['update'])) {
 if(isset($_GET['delete'])){
   $sno = $_GET['delete'];
   $delete = true;
+  
+  $q = "select * FROM package WHERE menu_id = $sno";
+  $r = mysqli_query($con, $q);
+  $rowcount = mysqli_num_rows($r);
+  if ($rowcount > 0) {
+    $s = "DELETE FROM package WHERE menu_id = $sno";
+  $res = mysqli_query($con, $s);
   $sql = "DELETE FROM menu WHERE m_id = $sno";
   $result = mysqli_query($con, $sql);
+  }
+  else {
+    $sql = "DELETE FROM menu WHERE m_id = $sno";
+  $result = mysqli_query($con, $sql);
+  }
   echo "<script>window.open('lviewmenu.php','_self')</script>";
 }
 ?>

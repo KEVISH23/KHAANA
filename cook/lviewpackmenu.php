@@ -223,16 +223,17 @@ if (isset($_POST['update'])) {
     $price = $_POST['dpriceEdit'];
     $pack = $_POST['pack'];
     #global $con;
-    $sql = "update package set cook_id=?,menu_id=?,menu_name=?,package_days=?,package_price=?,package_date=? where menu_id=?";
+    $sql = "update package set cook_id=?,menu_id=?,menu_name=?,package_days=?,package_price=?,package_date=?,package_time=? where menu_id=?";
     $res = mysqli_prepare($con,$sql);
     if ($res) {
-        mysqli_stmt_bind_param($res,'iissisi',$cookid,$sid,$name,$pack,$price,$date,$sid);
+        mysqli_stmt_bind_param($res,'iississi',$cookid,$sid,$name,$pack,$price,$date,$time,$sid);
         $cookid = $id;
         $name = $_POST['dnameEdit'];
         $price = $_POST['dpriceEdit'];
         $pack = $_POST['pack'];
         date_default_timezone_set('Asia/Kolkata');
-        $date = date('Y-m-d H:i:s', time());
+        $date = date('Y-m-d H:i:s');
+        $time = date("H:i:s");
         $sid = $_POST['snoEdit'];
         if(mysqli_stmt_execute($res)){
           echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>

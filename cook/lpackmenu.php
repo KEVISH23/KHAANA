@@ -217,21 +217,23 @@ if (isset($_POST['update'])) {
 			}
 		}
 	}
-    $sid = $_POST['snoEdit'];
+  $sid = $_POST['snoEdit'];
+ 
     $name = $_POST['dnameEdit'];
     $details = $_POST['ddetailsEdit'];
     $price = $_POST['dpriceEdit'];
     $pack = $_POST['pack'];
     
-    $sql = "Insert into package(cook_id,menu_id,menu_name,package_days,package_price,package_date) values (?,?,?,?,?,?)";
+    $sql = "Insert into package(cook_id,menu_id,menu_name,package_days,package_price,package_date,package_time) values (?,?,?,?,?,?,?)";
     $res = mysqli_prepare($con,$sql);
     if ($res) {
-        mysqli_stmt_bind_param($res,'iissis',$cookid,$sid,$name,$pack,$price,$date);
+        mysqli_stmt_bind_param($res,'iississ',$cookid,$sid,$name,$pack,$price,$date,$time);
         $cookid = $id;
         $pack = $_POST['pack'];
         $price = $_POST['dpriceEdit'];
         date_default_timezone_set('Asia/Kolkata');
-        $date = date('Y-m-d H:i:s', time());
+        $date = date('Y-m-d H:i:s');
+		    $time = date("H:i:s");
         $sid = $_POST['snoEdit'];
         if(mysqli_stmt_execute($res)){
           echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
