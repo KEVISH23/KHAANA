@@ -2,30 +2,48 @@
 header("Pragma: no-cache");
 header("Cache-Control: no-cache");
 header("Expires: 0");
+include ("../../includes.php");
 // following files need to be included
 require_once("./lib/config_paytm.php");
 require_once("./lib/encdec_paytm.php");
-
+global $con;
 $checkSum = "";
 $paramList = array();
-
+$packid = 0;
 $ORDER_ID = $_POST["ORDER_ID"];
 $CUST_ID = $_POST["CUST_ID"];
+$MENU_ID = $_POST['MENU_ID'];
+$COOK_ID = $_POST['COOK_ID'];
 $INDUSTRY_TYPE_ID = $_POST["INDUSTRY_TYPE_ID"];
 $CHANNEL_ID = $_POST["CHANNEL_ID"];
 $TXN_AMOUNT = $_POST["TXN_AMOUNT"];
+$time = date("H:i:sA");
+$date = date('Y-m-d H:i:s');
+$sql = "INSERT INTO order_master(payorder_id,user_id,cook_id,menu_id,package_id,date,time) values ('$ORDER_ID',$CUST_ID,$COOK_ID,$MENU_ID,$packid,'$date','$time')";
+$r = mysqli_query($con,$sql);
+if ($r) {
+	
+}
+else {
+	
+		
+	echo "<script>window.open('../../umenu.php','_self')</script>";
+}
+
+
 
 // Create an array having all required parameters for creating checksum.
 $paramList["MID"] = PAYTM_MERCHANT_MID;
 $paramList["ORDER_ID"] = $ORDER_ID;
 $paramList["CUST_ID"] = $CUST_ID;
+$paramList["MSISDN"] = $MENU_ID;
+$paramList["EMAIL"] = $COOK_ID;
 $paramList["INDUSTRY_TYPE_ID"] = $INDUSTRY_TYPE_ID;
 $paramList["CHANNEL_ID"] = $CHANNEL_ID;
 $paramList["TXN_AMOUNT"] = $TXN_AMOUNT;
 $paramList["WEBSITE"] = PAYTM_MERCHANT_WEBSITE;
-
+$paramList["CALLBACK_URL"] = "http://localhost/KHAANA/KHAANA/user/paytm/PaytmKit/pgResponse.php";
 /*
-$paramList["CALLBACK_URL"] = "http://localhost/PaytmKit/pgResponse.php";
 $paramList["MSISDN"] = $MSISDN; //Mobile number of customer
 $paramList["EMAIL"] = $EMAIL; //Email ID of customer
 $paramList["VERIFIED_BY"] = "EMAIL"; //
