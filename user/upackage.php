@@ -40,14 +40,14 @@ echo "<script>window.open('index.php','_self')</script>";
       <li class="nav-item">
         <a class="nav-link" href="ucontact.php">Contact Us</a>
       </li>
-      <li class="nav-item  active">
-        <a class="nav-link" href="umenu.php">Menu<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="umenu.php">Menu</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="uorders.php">Orders</a>
       </li>
       <li class="nav-item ">
-      <a class="nav-link" href="upackage.php">Tiffin</a>
+      <li class="nav-item  active">
+      <a class="nav-link" href="upackage.php">Tiffin<span class="sr-only">(current)</span></a>
     </li>
     </ul>
     <ul class="navbar-nav ml-auto">

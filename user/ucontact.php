@@ -55,8 +55,11 @@ echo "<script>window.open('index.php','_self')</script>";
       <li class="nav-item ">
         <a class="nav-link" href="umenu.php">Menu</a>
       </li>
+	  <li class="nav-item">
+        <a class="nav-link" href="uorders.php">Orders</a>
+      </li>
       <li class="nav-item ">
-        <a class="nav-link" href="#">Payment</a>
+	  <a class="nav-link" href="upackage.php">Tiffin</a>
     </li>
     </ul>
     <ul class="navbar-nav ml-auto">
