@@ -68,6 +68,7 @@ function cooklogin(){
 						if(password_verify($pass,$dbpass)){
 							$_SESSION['uname'] = $dbname;
 							$_SESSION['uemail'] = $dbemail;
+							$_SESSION['uid'] = $id;
 							#echo $_SESSION['uname'];
 							echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
 							<strong>Welcome Chef!</strong> You are Logged in succesfully..
@@ -466,5 +467,76 @@ function  cookviewupgrademenu(){
 	</tbody>
   </table>
   </div>";
+};
+function showmyorder(){
+	
+	echo "<div class='container'>
+	<table class='table table-responsive' id='myTable'>
+	<thead>
+	  <tr class='text-white'>
+		<th scope='col'>Sr No.</th>
+		<th scope='col'>Menu Image</th>
+		<th scope='col'>Dish Name</th>
+		<th scope='col'>Dish Details</th>
+		<th scope='col'>Price</th>
+	  </tr>
+	</thead>
+	<tbody>";
+	$srno = 0;
+	global $con;
+	$cid = $_SESSION['uid'];
+	$q = "select * from order_master where cook_id = $cid";
+	$r = mysqli_query($con,$q);
+	if ($r) {
+		# code...
+		$rc = mysqli_num_rows($r);
+		if ($rc > 0) {
+			# code...
+			while ($row = mysqli_fetch_array($r)) {
+				# code...
+				$srno+=1;
+				$menuid = $row['menu_id'];
+				$userid = $row['user_id'];
+				if ($menuid > 0) {
+					
+				$q2 = "select m_name,m_details,m_price,m_image from menu where m_id = $menuid";
+				$r2 = mysqli_query($con,$q2);
+				if ($r2) {
+					# code...
+					$rc2 = mysqli_num_rows($r2);
+					if ($rc2 > 0) {
+						while ($row2 = mysqli_fetch_array($r2)) {
+							# code...
+							
+							$mname = $row2['m_name'];
+							$mdetails = $row2['m_details'];
+							$mprice = $row2['m_price'];
+							$mimage = $row2['m_image'];
+							
+							echo "<tr>
+						<td scope='col'>$srno</td>
+						<td scope='col'><img src='menuimages/$mimage' style='width:100px; height:100px;'></td>
+						<td scope='col'>$mname</td>
+						<td scope='col'>$mdetails</td>
+						<td scope='col'>$mprice</td>
+					</tr>
+				  
+				  ";
+						}
+					}
+			}
+				}
+				else {
+					
+					continue;
+				}
+				
+		}
+	}
+}
+echo "
+</tbody>
+</table>
+</div>";
 };
 ?>
