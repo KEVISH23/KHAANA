@@ -1,4 +1,9 @@
+<?php 
+session_start();
+include ("includes.php");
+include ("functions.php");
 
+?>
 <!doctype html>
 <html lang="en">
   <head>

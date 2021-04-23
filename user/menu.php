@@ -1,25 +1,25 @@
-
 <?php
 session_start();
 include ("includes.php");
 include ("functions.php");
-?>
 
-<html>
-<head>
-	<title>user</title>
-	<link rel="icon" href="images/favicon.ico" type="image/gif" sizes="16x16">
-	<link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
-	<link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
-	<link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link href='https://fonts.googleapis.com/css?family=Delius Unicase' rel='stylesheet'>
-</head>
-<body>
-				<!-- navigation bar -->
-<nav class="navbar navbar-expand-lg navbar-light ">
+?>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/lstyle.css">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"> 
+    <title>Menu</title>
+  </head>
+  <body>
+  <nav class="navbar navbar-expand-lg navbar-light ">
 <img src="images/khaana.png" class="logohere" alt="logo">
   <a class="navbar-brand" href="index.php" style="font-family: 'Berkshire Swash';font-size: 22px;">Khaana</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@ include ("functions.php");
         <a class="nav-link" href="contact.php">Contact us </a>
       </li>
             <li class="nav-item">
-        <a class="nav-link" href="menu.php">Menu</a>
+        <a class="nav-link" href="#">Menu</a>
       </li>
     </ul>
       <ul class="navbar-nav ml-auto">
@@ -187,102 +187,100 @@ include ("functions.php");
 		</div>
 	</div>
 	</div>
-<!-- Carousel -->
-<div class="container-fluid slider">
-
-	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" >
-	  <ol class="carousel-indicators">
-	    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-	    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-	    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-	  </ol>
-	  <div class="carousel-inner">
-	    <div class="carousel-item active" style="margin-top: 30px;">
-	      <img class="d-block w-100" src="images/thali3.jpg" alt="First slide" style="height: 90vh;">
-	    </div>
-	    <div class="carousel-item" style="margin-top: 30px;">
-	      <img class="d-block w-100" src="images/thali.jpg" alt="Second slide" style="height: 90vh;">
-	    </div>
-	    <div class="carousel-item" style="margin-top: 30px;">
-	      <img class="d-block w-100" src="images/thali2.jpg" alt="Third slide" style="height: 90vh;">
-	    </div>
-	  </div>
-	  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-	    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-	    <span class="sr-only">Previous</span>
-	  </a>
-	  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-	    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-	    <span class="sr-only">Next</span>
-	  </a>
-	</div>
-</div>
-<!--Services-->
-<section class="container text-center service">
-	<h1>Packages</h1>
-
-	<div class="row rowsetting">
-		<div class="col-mg-4 col-md-4 col-sm-4 col-1o d-block m-auto colsetting">
-			<div class="imgsetting d-block m-auto bg-warning">
-      <i class="fa fa-calendar fa-2x text-white" aria-hidden="true"></i>
-			</div>
-			<h2 class="h2ds">1 WEEK</h2>
-			<p>BOOK A TIFFIN FOR  <b> 1 WEEK </b> AND ENJOY YOUR DAILY TIFFIN PROVIDED BY OUR COOKS. COST MAY VARRY BY COOKS</p>
-		</div>
-		<div class="col-mg-4 col-md-4 col-sm-4 col-1o d-block m-auto colsetting">
-			<div class="imgsetting d-block m-auto bg-warning">
-			<i class="fa fa-calendar fa-2x text-white" aria-hidden="true"></i>
-			</div>
-			<h2 class="h2ds">1 MONTH</h2>
-			<p>BOOK A TIFFIN FOR  <b>1 MONTH</b> AND ENJOY YOUR DAILY TIFFIN PROVIDED BY OUR COOKS. COST MAY VARRY BY COOKS</p>
-		</div>
-		<div class="col-mg-4 col-md-4 col-sm-4 col-1o d-block m-auto colsetting">
-			<div class="imgsetting d-block m-auto bg-warning">
-      <i class="fa fa-calendar fa-2x text-white" aria-hidden="true"></i>
-			</div>
-			<h2 class="h2ds">3 MONTH</h2>
-			<p>BOOK A TIFFIN FOR <b> 3 MONTH </b>  AND ENJOY YOUR DAILY TIFFIN PROVIDED BY OUR COOKS. COST MAY VARRY BY COOKS</p>
-		</div>
-	</div>
-</section>
-<!--menu-->
-<div class="teams text-center">
-	<div class="container text-center teamcont">
-		<h3 class="text-white">Menu</h3>
-		<h4 class="text-white">BEST PLACE TO GET TASTE OF HAME MADE FOOD</h4><br>
-
-<div class="container">
-<div class="row">
-		<?php
-			randmenu();
-		?>
-</div>
-</div>
-
+<!--END NAVBAR-->
+<!--SIGNUP MODAL-->
 <hr>
-<!--Footer-->
-<div class="container-fluid footer text-center">
-	<h4 style="font-family: 'Delius Unicase';font-size: 22px;" >&copy; Copyright section khaana.com</h4>
 </div>
-
-
-
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<div class="container mb-3">
+     <?php
+         showmenu();
+     ?>
+</div>
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Edit this Note</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        
+          <div class="modal-body">
+          <form method="post">
+            <input type="hidden" name="snoEdit" id="snoEdit">
+            <div class="form-group">
+              <label for="title">Dish Name</label>
+              <input type="text" class="form-control" id="dnameEdit" name="dnameEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title">Dish Details</label>
+              <input type="text" class="form-control" id="ddetailsEdit" name="ddetailsEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title">Dish Price</label>
+              <input type="text" class="form-control" id="dpriceEdit" name="dpriceEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title" hidden>Dish Price</label>
+              <input type="text" class="form-control" id="dmenuEdit" name="dmenuEdit" aria-describedby="emailHelp" hidden readonly>
+            </div>
+            <button type="submit" name="confirm" class="btn btn-success">Confirm Order</button>
+            </form>
+            </div>
+          <div class="modal-footer d-block mr-auto">
+            
+          </div>
+       
+      </div>
+    </div>
+  </div>
+  
+<hr>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready( function () {
+        $('#myTable').DataTable();
+        
+        } );
+</script>
+<script>
+ edits = document.getElementsByClassName('edit');
+    Array.from(edits).forEach((element) => {
+      element.addEventListener("click", (e) => {
+        console.log("edit ");
+        tr = e.target.parentNode.parentNode.parentNode.parentNode;
+        console.log(tr);
+        dname = tr.getElementsByTagName("td")[2].innerText;
+        ddetails = tr.getElementsByTagName("td")[3].innerText;
+        dprice = tr.getElementsByTagName("td")[4].innerText;
+        menuid = tr.getElementsByTagName("td")[5].innerText;
+        console.log(dname, ddetails,dprice,menuid);
+        dnameEdit.value = dname;
+        ddetailsEdit.value = ddetails;
+        dpriceEdit.value = dprice;
+        dmenuEdit.value = menuid;
+        $('#editModal').modal('toggle');
+      })
+    })
+</script>
 
-</body>
+  </body>
+
 </html>
-
-<!--php code to signin a customer-->
-
-<!--php code to signin a customer-->
 <?php
-if (isset($_POST['usubmit'])) {
-	usersignin();
-}
-if (isset($_POST['ssubmit'])) {
-	userlogin();
+if (isset($_POST['confirm'])) {
+    if (isset($_SESSION['cname'])) {
+        echo "<script>window.open('paytm/PaytmKit/TxnTest.php','_self')</script>";
+    }
+    else {
+      echo " <script>$('#login').modal('toggle')</script>";
+    }
+ 
 }
 ?>
-
