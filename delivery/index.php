@@ -107,8 +107,12 @@ include ("functions.php");
                         </div>
                         </div>
 						<div class="form-group">
-							<label for="inputadd">Expertise</label>
-							<input type="text" class="form-control" id="inputadd" name="c_speciality" placeholder="Enter Your Expertise" required>
+							<label for="inputadd">Vehicle</label>
+							<input type="text" class="form-control" id="inputadd" name="vehicle" placeholder="Enter Your Vehicle(E.g Activa 6g , Hero Splendor)" required>
+						</div>
+						<div class="form-group">
+							<label for="inputadd">Vehicle Number</label>
+							<input type="text" class="form-control" id="inputadd" name="vnum" placeholder="Enter Your Vehicle Number" required>
 						</div>
 						<div class="form-group">
 							<label for="inputpass">Password</label>
@@ -207,3 +211,10 @@ include ("functions.php");
   </body>
 </html>
 <?php
+if(isset($_POST['csubmit'])){
+	deliverysignin();
+}
+if (isset($_POST['ssubmit'])) {
+	deliverylogin();
+}
+?>
