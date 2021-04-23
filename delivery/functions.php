@@ -216,6 +216,7 @@ function showaacceptorder(){
             # code...
             while ($row = mysqli_fetch_array($r)) {
                 # code...
+                $srno += 1;
                 $orderid = $row['order_id'];
                 $aoid = $row['ao_id'];
                 $q1 = "select user_id,cook_id from order_master where order_id = $orderid";
