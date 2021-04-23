@@ -179,8 +179,8 @@ function showallorder(){
                 echo "<tr>
                 <td scope='col'>$srno</td>
                 <td scope='col'>$username</td>
-                <td scope='col'>$useradd</td>
                 <td scope='col'>$cookadd</td>
+                <td scope='col'>$useradd</td>
                 <td scope='col' hidden>$orderid</td>
                 <td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-success edit' name='edit' id='$orderid' data-target='#exampleModal'>Accept</button></div> </div> </td>
               </tr>";
@@ -256,8 +256,8 @@ function showaacceptorder(){
                 echo "<tr>
                 <td scope='col'>$srno</td>
                 <td scope='col'>$username</td>
-                <td scope='col'>$useradd</td>
                 <td scope='col'>$cookadd</td>
+                <td scope='col'>$useradd</td>
                 <td scope='col' hidden>$aoid</td>
                 <td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-danger edit' name='edit' id='$aoid' data-target='#exampleModal'>Cancel</button></div> </div> </td>
               </tr>";
