@@ -113,4 +113,161 @@ function deliverylogin(){
 	}
 	
 };
+function showallorder(){
+    echo "<div class='container'>
+	<table class='table table-responsive' style='margin-top:50px;' id='myTable'>
+	<thead>
+	  <tr class='text-white'>
+		<th scope='col'>Id</th>
+        <th scope='col'>Customer Name</th>
+		<th scope='col'>From</th>
+		<th scope='col'>To</th>
+        <th scope='col' hidden>Order id</th>
+		<th scope='col'>Action</th>
+	  </tr>
+	</thead>
+	<tbody>";
+    global $con;
+    $srno = 0;
+    $q = "select * from order_master";
+    $r = mysqli_query($con,$q);
+    if ($q) {
+        # code...
+        $rc = mysqli_num_rows($r);
+        if ($rc > 0) {
+            # code...
+            
+            while ($row = mysqli_fetch_array($r)) {
+                # code...
+                $srno+=1;
+                $orderid = $row['order_id'];
+                $cookid = $row['cook_id'];
+                $userid = $row['user_id'];
+                $q3 = "select * from accepted_order where order_id = $orderid";
+                $r3 = mysqli_query($con,$q3);
+                if ($r3) {
+                    # code...
+                    $rc3 = mysqli_num_rows($r3);
+                    if ($rc3 > 0) {
+                        $srno-=1;
+                        continue;
+                    }
+                }
+                $q1 = "select user_address,user_namee from user where user_id = $userid";
+                $r1 = mysqli_query($con,$q1);
+                if ($r1) {
+                    # code...
+                    $rc1 = mysqli_num_rows($r1);
+                    if ($rc1 > 0) {
+                        while ($row1 = mysqli_fetch_array($r1)) {
+                            $useradd = $row1['user_address'];
+                            $username = $row1['user_namee'];
+                        }
+                    }
+                }
+                $q2 = "select cook_address from cook where cook_id = $cookid";
+                $r2 = mysqli_query($con,$q2);
+                if ($r2) {
+                    # code...
+                    $rc2 = mysqli_num_rows($r2);
+                    if ($rc2 > 0) {
+                        while ($row2 = mysqli_fetch_array($r2)) {
+                            $cookadd = $row2['cook_address'];
+                        }
+                    }
+                }
+                echo "<tr>
+                <td scope='col'>$srno</td>
+                <td scope='col'>$username</td>
+                <td scope='col'>$useradd</td>
+                <td scope='col'>$cookadd</td>
+                <td scope='col' hidden>$orderid</td>
+                <td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-success edit' name='edit' id='$orderid' data-target='#exampleModal'>Accept</button></div> </div> </td>
+              </tr>";
+            }
+           
+        }
+
+    }
+};
+function showaacceptorder(){
+    echo "<div class='container'>
+	<table class='table table-responsive' style='margin-top:50px;' id='myTable'>
+	<thead>
+	  <tr class='text-white'>
+		<th scope='col'>Id</th>
+        <th scope='col'>Customer Name</th>
+		<th scope='col'>From</th>
+		<th scope='col'>To</th>
+        <th scope='col' hidden>Order id</th>
+		<th scope='col'>Action</th>
+	  </tr>
+	</thead>
+	<tbody>";
+    global $con;
+    $srno = 0;
+    $delid = $_SESSION['did'];
+    $q = "select * from accepted_order where delivery_id = $delid";
+    $r = mysqli_query($con,$q);
+    if ($r) {
+        # code...
+        $rc = mysqli_num_rows($r);
+        if ($rc > 0) {
+            # code...
+            while ($row = mysqli_fetch_array($r)) {
+                # code...
+                $orderid = $row['order_id'];
+                $aoid = $row['ao_id'];
+                $q1 = "select user_id,cook_id from order_master where order_id = $orderid";
+                $r1 = mysqli_query($con,$q1);
+                if ($r1) {
+                    # code...
+                    $rc1 = mysqli_num_rows($r1);
+                    if ($rc1 > 0) {
+                        # code...
+                        while ($row = mysqli_fetch_array($r1)) {
+                            # code...
+                            $cookid = $row['cook_id'];
+                            $userid = $row['user_id'];
+                            $q2 = "select user_address,user_namee from user where user_id = $userid";
+                $r2 = mysqli_query($con,$q2);
+                if ($r2) {
+                    # code...
+                    $rc2 = mysqli_num_rows($r2);
+                    if ($rc2 > 0) {
+                        while ($row2 = mysqli_fetch_array($r2)) {
+                            $useradd = $row2['user_address'];
+                            $username = $row2['user_namee'];
+                        }
+                    }
+                }
+                $q3 = "select cook_address from cook where cook_id = $cookid";
+                $r3 = mysqli_query($con,$q3);
+                if ($r3) {
+                    # code...
+                    $rc3 = mysqli_num_rows($r3);
+                    if ($rc3 > 0) {
+                        while ($row3 = mysqli_fetch_array($r3)) {
+                            $cookadd = $row3['cook_address'];
+                        }
+                    }
+                }
+                echo "<tr>
+                <td scope='col'>$srno</td>
+                <td scope='col'>$username</td>
+                <td scope='col'>$useradd</td>
+                <td scope='col'>$cookadd</td>
+                <td scope='col' hidden>$aoid</td>
+                <td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-danger edit' name='edit' id='$aoid' data-target='#exampleModal'>Cancel</button></div> </div> </td>
+              </tr>";
+
+                        }
+                    }
+                    
+
+                }
+            }
+        }
+    }
+};
 ?>

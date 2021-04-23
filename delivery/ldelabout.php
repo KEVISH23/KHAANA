@@ -1,4 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['dname'])) {
 
+	echo "<script>window.open('index.php','_self')</script>";
+} 
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -43,8 +49,8 @@
     </ul>
     <ul class="navbar-nav ml-auto">
 		<li class="nav-item" ><a href="#" class="nav-link" style="font-family: 'Cinzel Decorative';font-size: 22px;">
-			<?php
-				echo "Welcome ";
+    <?php
+				echo "Welcome ".$_SESSION['dname'];
 			?>
 		</output></a></li>	
 	  <li class="nav-item" ><a href="logout.php" class="nav-link">Log out</output></a></li>

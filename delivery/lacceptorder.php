@@ -70,19 +70,19 @@ include ("functions.php");
 <h2 class="display-2 text-white mb-2 ">Orders</h2><br>
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb ">
-      <li class="breadcrumb-item active">Total  Orders</li>
-      <li class="breadcrumb-item"><a href="lacceptorder.php">Accepted Order</a></li>
+      <li class="breadcrumb-item"><a href="ldelorder.php">Total  Orders</a></li>
+      <li class="breadcrumb-item active">Accepted Order</li>
       
     </ol>
   </nav>
   
   <div>
   <br>
-  <h3 class="display-4 text-white offset-5">Total Orders</h3>      
+  <h3 class="display-4 text-white offset-5">Accepted Orders</h3>      
    </div>
 
    <?php
-      showallorder();
+      showaacceptorder();
    ?>
 
 </div>
@@ -115,7 +115,7 @@ include ("functions.php");
               <label for="title" hidden>Order Id</label>
               <input type="text" class="form-control" id="orderidEdit" name="orderidEdit" aria-describedby="emailHelp" hidden readonly>
             </div>
-            <button type="submit" name="confirm" class="btn btn-success">Comfirm Delivery</button>
+            <button type="submit" name="confirm" class="btn btn-danger">Cancel Delivery</button>
             </form>
             </div>
           <div class="modal-footer d-block mr-auto">
@@ -164,17 +164,17 @@ include ("functions.php");
 <?php
 if (isset($_POST['confirm'])) {
   # code...
-  $orderid = $_POST['orderidEdit'];
+  $aoid = $_POST['orderidEdit'];
   global $con;
   date_default_timezone_set('Asia/Kolkata');
 		$time = date("H:i:sA"); 
     $date = date('Y-m-d H:i:s');
   $delid = $_SESSION['did'];
-  $q = "insert into accepted_order(order_id,delivery_id,date,time) values($orderid,$delid,'$date','$time')";
+  $q = "delete from accepted_order where ao_id = $aoid";
   $r = mysqli_query($con,$q);
   if ($r) {
     # code...
-    echo "<script>window.open('ldelorder.php','_self')</script>";
+    echo "<script>window.open('lacceptorder.php','_self')</script>";
   }
 }
 ?>
