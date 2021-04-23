@@ -45,7 +45,7 @@
         <a class="nav-link" href="contact.php">Contact Us<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Menu</a>
+        <a class="nav-link" href="menu.php">Menu</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
