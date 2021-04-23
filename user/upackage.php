@@ -74,7 +74,7 @@ echo "<script>window.open('index.php','_self')</script>";
 </div>
 <div class="container mb-3">
      <?php
-         showmenu();
+         showpack ();
      ?>
 </div>
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -91,16 +91,20 @@ echo "<script>window.open('index.php','_self')</script>";
           <form method="post" action="paytm/PaytmKit/TxnTest.php">
             <input type="hidden" name="snoEdit" id="snoEdit">
             <div class="form-group">
-              <label for="title">Dish Name</label>
+              <label for="title">Tiffin Name</label>
               <input type="text" class="form-control" id="dnameEdit" name="dnameEdit" aria-describedby="emailHelp" readonly>
             </div>
             <div class="form-group">
-              <label for="title">Dish Details</label>
+              <label for="title">Tiffin Details</label>
               <input type="text" class="form-control" id="ddetailsEdit" name="ddetailsEdit" aria-describedby="emailHelp" readonly>
             </div>
             <div class="form-group">
-              <label for="title">Dish Price</label>
+              <label for="title">Tiffin Price</label>
               <input type="text" class="form-control" id="dpriceEdit" name="dpriceEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title">Duration</label>
+              <input type="text" class="form-control" id="ddurationEdit" name="ddurationEdit" aria-describedby="emailHelp" readonly>
             </div>
             <div class="form-group">
               <label for="title" hidden>Dish Price</label>
@@ -140,11 +144,13 @@ echo "<script>window.open('index.php','_self')</script>";
         dname = tr.getElementsByTagName("td")[2].innerText;
         ddetails = tr.getElementsByTagName("td")[3].innerText;
         dprice = tr.getElementsByTagName("td")[4].innerText;
-        menuid = tr.getElementsByTagName("td")[5].innerText;
-        console.log(dname, ddetails,dprice,menuid);
+        duration = tr.getElementsByTagName("td")[5].innerText;
+        menuid = tr.getElementsByTagName("td")[6].innerText;
+        console.log(dname, ddetails,dprice,duration,menuid);
         dnameEdit.value = dname;
         ddetailsEdit.value = ddetails;
         dpriceEdit.value = dprice;
+        ddurationEdit.value = duration;
         dmenuEdit.value = menuid;
         $('#editModal').modal('toggle');
       })

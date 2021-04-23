@@ -74,7 +74,7 @@ echo "<script>window.open('index.php','_self')</script>";
 </div>
 <div class="container mb-3">
      <?php
-         showmenu();
+         showorders();
      ?>
 </div>
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -88,7 +88,7 @@ echo "<script>window.open('index.php','_self')</script>";
         </div>
         
           <div class="modal-body">
-          <form method="post" action="paytm/PaytmKit/TxnTest.php">
+          <form method="post">
             <input type="hidden" name="snoEdit" id="snoEdit">
             <div class="form-group">
               <label for="title">Dish Name</label>
@@ -106,7 +106,7 @@ echo "<script>window.open('index.php','_self')</script>";
               <label for="title" hidden>Dish Price</label>
               <input type="text" class="form-control" id="dmenuEdit" name="dmenuEdit" aria-describedby="emailHelp" hidden readonly>
             </div>
-            <button type="submit" name="confirm" class="btn btn-success">Confirm Order</button>
+            <button type="submit" name="confirm" class="btn btn-danger">Confirm Cancellation</button>
             </form>
             </div>
           <div class="modal-footer d-block mr-auto">
@@ -140,7 +140,7 @@ echo "<script>window.open('index.php','_self')</script>";
         dname = tr.getElementsByTagName("td")[2].innerText;
         ddetails = tr.getElementsByTagName("td")[3].innerText;
         dprice = tr.getElementsByTagName("td")[4].innerText;
-        menuid = tr.getElementsByTagName("td")[5].innerText;
+        menuid = tr.getElementsByTagName("td")[6].innerText;
         console.log(dname, ddetails,dprice,menuid);
         dnameEdit.value = dname;
         ddetailsEdit.value = ddetails;
@@ -156,6 +156,27 @@ echo "<script>window.open('index.php','_self')</script>";
 </html>
 <?php
 if (isset($_POST['confirm'])) {
-  echo "<script>window.open('paytm/PaytmKit/TxnTest.php','_self')</script>";
+    global $con;
+    $orderid = $_POST['dmenuEdit'];
+    $qry = "delete from order_master where order_id = $orderid";
+    $run = mysqli_query($con,$qry);
+    if ($run) {
+      echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
+							<strong>Okay</strong> Order Cancelled....
+							<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+							<span aria-hidden='true'>&times;</span>
+							</button>
+							</div>";
+              echo "<script>window.open('uorders.php','_self')</script>";        
+    }
+    else {
+      echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
+							<strong>Ooops!</strong> Something Went Wrong...
+							<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+							<span aria-hidden='true'>&times;</span>
+							</button>
+							</div>";
+    }
+
 }
 ?>

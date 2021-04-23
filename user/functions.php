@@ -202,5 +202,205 @@ function showmenu(){
 	  </table>
 	  </div>";
 };
+function showpack(){
+	echo "<div class='container'>
+	<table class='table table-responsive' id='myTable'>
+	<thead>
+	  <tr class='text-white'>
+		<th scope='col'>Id</th>
+		<th scope='col'>Image</th>
+		<th scope='col'>Dish Name</th>
+		<th scope='col'>Dish Details</th>
+		<th scope='col'>Dish Price</th>
+		<th scope='col'>Duration</th>
+		<th scope='col' hidden>Menu Id</th>
+		<th scope='col'>Action</th>
+	  </tr>
+	</thead>
+	<tbody>";
+	global $con;
+	$srno = 0;
+	$get_t = "select *from package";
+			$run_t = mysqli_query($con,$get_t);
+			$rowcount=mysqli_num_rows($run_t);
+			if ($rowcount>0) {
+				
+			
+			while ($row_t=mysqli_fetch_array($run_t)) {
+				$srno+=1;
+				$packid = $row_t['package_id'];
+				$cid = $row_t['cook_id'];
+				$duration = $row_t['package_days'];
+				$pprice = $row_t['package_price'];
+				$mname = $row_t['menu_name'];
+				$menid = $row_t['menu_id'];
+				$pdate = $row_t['package_date'];
+				$ptime = $row_t['package_time'];
+				$sql = "select m_details,m_image from menu where m_id=$menid";
+				$res = mysqli_query($con,$sql);
+				if ($res) {
+					# code...
+					if (mysqli_num_rows($res)>0) {
+						# code...
+						while ($row = mysqli_fetch_array($res)) {
+							# code...
+							$mdetails = $row['m_details'];
+							$mimage = $row['m_image'];
+						}
+					}
+				}
+				
+				
+				echo "<tr>
+					<td scope='col'>$srno</td>
+					<td scope='col'><img src='../cook/menuimages/$mimage' alt='menuimage' style='width:100px; height:100px;'></td>
+					<td scope='col'>$mname</td>
+					<td scope='col'>$mdetails</td>
+					<td scope='col'>$pprice</td>
+					<td scope='col'>$duration</td>
+					<td scope='col' hidden>$packid</td>
+					<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-success edit' name='edit' id='$menid'>Place Order</button></div> </div></td>
+				  </tr>
+				  
+				  ";
+		}
+	}
+		else{
+			echo "<h3>No Menu Available</h3>";
+		}
+		echo "
+		</tbody>
+	  </table>
+	  </div>";
+};
+function showorders(){
+
+	global $con;
+	$srno = 0;
+	echo "<div class='container'>
+	<table class='table table-responsive' id='myTable'>
+	<thead>
+	  <tr class='text-white'>
+		<th scope='col'>Id</th>
+		<th scope='col'>Image</th>
+		<th scope='col'>Dish Name</th>
+		<th scope='col'>Dish Details</th>
+		<th scope='col'>Dish Price</th>
+		<th scope='col'>Duration</th>
+		<th scope='col' hidden>Menu Id</th>
+		<th scope='col'>Action</th>
+	  </tr>
+	</thead>
+	<tbody>";
+	$userid = $_SESSION['cid'];
+	$get_t = "select *from order_master where user_id=$userid";
+			$run_t = mysqli_query($con,$get_t);
+			$rowcount=mysqli_num_rows($run_t);
+			if ($rowcount>0) {
+			
+			
+			while ($row_t=mysqli_fetch_array($run_t)) {
+				$orderid = $row_t['order_id'];
+				$packid = $row_t['package_id'];
+				$mid = $row_t['menu_id'];
+				if ($mid == 0) {
+					$qry = "select * from package where package_id = $packid";
+					$res = mysqli_query($con,$qry);
+					if ($res) {
+						# code...
+						$rowc = mysqli_num_rows($res);
+						if ($rowc > 0) {
+							# code...
+							while ($rowt = mysqli_fetch_array($res)) {
+								# code...
+								$srno+=1;
+								$packid = $rowt['package_id'];
+								$cid = $rowt['cook_id'];
+								$duration = $rowt['package_days'];
+								$pprice = $rowt['package_price'];
+								$mname = $rowt['menu_name'];
+								$menid = $rowt['menu_id'];
+								$pdate = $rowt['package_date'];
+								$ptime = $rowt['package_time'];
+								$sql = "select m_details,m_image from menu where m_id=$menid";
+								$res = mysqli_query($con,$sql);
+								if ($res) {
+									# code...
+									if (mysqli_num_rows($res)>0) {
+										# code...
+										while ($row = mysqli_fetch_array($res)) {
+											# code...
+											$mdetails = $row['m_details'];
+											$mimage = $row['m_image'];
+										}
+									}
+								}
+							}
+							echo "<tr>
+								<td scope='col'>$srno</td>
+								<td scope='col'><img src='../cook/menuimages/$mimage' alt='menuimage' style='width:100px; height:100px;'></td>
+								<td scope='col'>$mname</td>
+								<td scope='col'>$mdetails</td>
+								<td scope='col'>$pprice</td>
+								<td scope='col'>$duration</td>
+								<td scope='col' hidden>$orderid</td>
+								<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-danger edit' name='edit' id='$orderid'>Cancel Tiffin</button></div> </div></td>
+							</tr>
+							
+							";
+
+						}
+					}
+				}
+				else{
+					$q = "select * from menu where m_id = $mid";
+					$r = mysqli_query($con,$q);
+					if ($r) {
+						# code..
+						$rc = mysqli_num_rows($r);
+						if ($rc > 0) {
+							while ($row = mysqli_fetch_array($r)) {
+							
+								# code...
+								$srno+=1;
+								$mid = $row['m_id'];
+								$cookid = $row['cook_id'];
+								$mname = $row['m_name'];
+								$mdetails = $row['m_details'];
+								$mprice = $row['m_price'];
+								$mimage = $row['m_image'];
+								$mdate = $row['m_date'];
+	
+							}
+							echo "<tr>
+					<td scope='col'>$srno</td>
+					<td scope='col'><img src='../cook/menuimages/$mimage' alt='menuimage' style='width:100px; height:100px;'></td>
+					<td scope='col'>$mname</td>
+					<td scope='col'>$mdetails</td>
+					<td scope='col'>$mprice</td>
+					<td scope='col'>--------</td>
+					<td scope='col' hidden>$orderid</td>
+					<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-danger edit' name='edit' id='$orderid'>Cancel Order</button></div> </div></td>
+				  </tr>
+				  
+				  ";
+						}
+						
+					}
+				}
+					
+				
+				
+			}
+		}
+		else{
+			echo "<h3>No Menu Available</h3>";
+		}
+		echo "
+		</tbody>
+	  </table>
+	  </div>";
+		
+};
 
 ?>

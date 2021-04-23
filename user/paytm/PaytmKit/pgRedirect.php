@@ -9,7 +9,8 @@ require_once("./lib/encdec_paytm.php");
 global $con;
 $checkSum = "";
 $paramList = array();
-$packid = 0;
+date_default_timezone_set('Asia/Kolkata');
+$packid = $_POST['PACK_ID'];
 $ORDER_ID = $_POST["ORDER_ID"];
 $CUST_ID = $_POST["CUST_ID"];
 $MENU_ID = $_POST['MENU_ID'];
@@ -19,7 +20,7 @@ $CHANNEL_ID = $_POST["CHANNEL_ID"];
 $TXN_AMOUNT = $_POST["TXN_AMOUNT"];
 $time = date("H:i:sA");
 $date = date('Y-m-d H:i:s');
-$sql = "INSERT INTO order_master(payorder_id,user_id,cook_id,menu_id,package_id,date,time) values ('$ORDER_ID',$CUST_ID,$COOK_ID,$MENU_ID,$packid,'$date','$time')";
+$sql = "INSERT INTO order_master(payorder_id,user_id,cook_id,menu_id,package_id,date,time) values ('$ORDER_ID',$CUST_ID,$COOK_ID,'$MENU_ID','$packid','$date','$time')";
 $r = mysqli_query($con,$sql);
 if ($r) {
 	

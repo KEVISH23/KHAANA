@@ -16,6 +16,7 @@
 	<h1>Merchant Check Out Page</h1>
 	<pre>
 	</pre>
+
 	<form method="post" action="pgRedirect.php">
 		<table border="1">
 			<tbody>
@@ -41,8 +42,30 @@
 					<td>3</td>
 					<td><label>MENUID ::*</label></td>
 					<td><input id="MENU_ID" tabindex="2" maxlength="12" size="12" name="MENU_ID" autocomplete="off" value="<?php 
-						$menuid = $_POST['dmenuEdit'];
-						echo $menuid;
+						if ($_SERVER['HTTP_REFERER'] == "http://localhost/KHAANA/KHAANA/user/upackage.php"){
+							$menuid = 0;
+						}
+						else {
+							# code...
+							$menuid = $_POST['dmenuEdit'];
+							echo $menuid;
+						}
+						
+					?>"></td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td><label>PackageID ::*</label></td>
+					<td><input id="PACK_ID" tabindex="2" maxlength="12" size="12" name="PACK_ID" autocomplete="off" value="<?php 
+						if ($_SERVER['HTTP_REFERER'] == "http://localhost/KHAANA/KHAANA/user/umenu.php" ){
+							$packid = 0;
+						}
+						else {
+							# code...
+							$packid = $_POST['dmenuEdit'];
+							echo $packid;
+						}
+						
 					?>"></td>
 				</tr>
 				
@@ -50,21 +73,54 @@
 					<td>3</td>
 					<td><label>COOKID ::*</label></td>
 					<td><input id="COOK_ID" tabindex="2" maxlength="12" size="12" name="COOK_ID" autocomplete="off" value="<?php 
-						$mid = $_POST['dmenuEdit'];
-						global $con;
-						$qry = "select cook_id from menu where m_id = $mid";
-						$res = mysqli_query($con,$qry);
-						if ($res) {
-							# code...
-							while ($row = mysqli_fetch_array($res)) {
+						if ($_SERVER['HTTP_REFERER'] == "http://localhost/KHAANA/KHAANA/user/upackage.php") {
+							# http://localhost/KHAANA/KHAANA/user/upackage.php
+							if (isset($_POST['dmenuEdit'])) {
 								# code...
-								$cookid = $row['cook_id'];
+								$mid = $_POST['dmenuEdit'];
+							global $con;
+							$qry = "select cook_id from package where package_id = $mid";
+							$res = mysqli_query($con,$qry);
+							if ($res) {
+								# code...
+								while ($row = mysqli_fetch_array($res)) {
+									# code...
+									$cookid = $row['cook_id'];
+								}
+								echo $cookid;
 							}
-							echo $cookid;
+							else {
+								echo "Something is wrong";
+							}
+							}
+
 						}
-						else {
-							echo "Something is wrong";
+						elseif ($_SERVER['HTTP_REFERER'] == "http://localhost/KHAANA/KHAANA/user/umenu.php" ) {
+							# code...
+							if (isset($_POST['dmenuEdit'])) {
+								# code...
+								$mid = $_POST['dmenuEdit'];
+							global $con;
+							$qry = "select cook_id from menu where m_id = $mid";
+							$res = mysqli_query($con,$qry);
+							if ($res) {
+								# code...
+								while ($row = mysqli_fetch_array($res)) {
+									# code...
+									$cookid = $row['cook_id'];
+								}
+								echo $cookid;
+							}
+							else {
+								echo "Something is wrong";
+							}
+							}
 						}
+						
+						
+						
+						
+						
 					?>"></td>
 				</tr>
 				<tr>
