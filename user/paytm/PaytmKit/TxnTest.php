@@ -16,7 +16,7 @@
 	<h1>Merchant Check Out Page</h1>
 	<pre>
 	</pre>
-
+<center>
 	<form method="post" action="pgRedirect.php">
 		<table border="1">
 			<tbody>
@@ -33,12 +33,12 @@
 						value="<?php echo  "ORDS" . rand(10000,99999999)?>">
 					</td>
 				</tr>
-				<tr>
+				<tr hidden>
 					<td>2</td>
 					<td><label>CUSTID ::*</label></td>
 					<td><input id="CUST_ID" tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value="<?php echo $_SESSION['cid']; ?>"></td>
 				</tr>
-				<tr>
+				<tr hidden>
 					<td>3</td>
 					<td><label>MENUID ::*</label></td>
 					<td><input id="MENU_ID" tabindex="2" maxlength="12" size="12" name="MENU_ID" autocomplete="off" value="<?php 
@@ -53,7 +53,7 @@
 						
 					?>"></td>
 				</tr>
-				<tr>
+				<tr hidden>
 					<td>3</td>
 					<td><label>PackageID ::*</label></td>
 					<td><input id="PACK_ID" tabindex="2" maxlength="12" size="12" name="PACK_ID" autocomplete="off" value="<?php 
@@ -69,7 +69,7 @@
 					?>"></td>
 				</tr>
 				
-				<tr>
+				<tr hidden>
 					<td>3</td>
 					<td><label>COOKID ::*</label></td>
 					<td><input id="COOK_ID" tabindex="2" maxlength="12" size="12" name="COOK_ID" autocomplete="off" value="<?php 
@@ -140,7 +140,7 @@
 					<td><label>txnAmount*</label></td>
 					<td><input title="TXN_AMOUNT" tabindex="10"
 						type="text" name="TXN_AMOUNT"
-						value="<?php $price = $_POST['dpriceEdit']; echo $price; ?>">
+						value="<?php $price = $_POST['dpriceEdit']; echo $price; ?>" readonly>
 					</td>
 				</tr>
 				<tr>
@@ -152,6 +152,7 @@
 		</table>
 		* - Mandatory Fields
 	</form>
+	</center>
 </body>
 </html>
 <?php
