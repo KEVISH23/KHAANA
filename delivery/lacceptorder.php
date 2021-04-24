@@ -90,7 +90,7 @@ include ("functions.php");
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="editModalLabel">Edit this Note</h5>
+          <h5 class="modal-title" id="editModalLabel">Cancel Delivery</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
@@ -125,6 +125,45 @@ include ("functions.php");
       </div>
     </div>
   </div>
+  <div class="modal fade" id="doneModal" tabindex="-1" role="dialog" aria-labelledby="doneModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="editModalLabel">Delivery Done</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        
+          <div class="modal-body">
+          <form method="post">
+            <input type="hidden" name="usnoEdit" id="usnoEdit">
+            <div class="form-group">
+              <label for="title">Customer Name</label>
+              <input type="text" class="form-control" id="udnameEdit" name="udnameEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title">Customer Address</label>
+              <input type="text" class="form-control" id="uddetailsEdit" name="uddetailsEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title">Cook Address</label>
+              <input type="text" class="form-control" id="ucaddEdit" name="ucaddEdit" aria-describedby="emailHelp" readonly>
+            </div>
+            <div class="form-group">
+              <label for="title" hidden>Order Id</label>
+              <input type="text" class="form-control" id="uorderidEdit" name="uorderidEdit" aria-describedby="emailHelp" hidden readonly>
+            </div>
+            <button type="submit" name="ddone" class="btn btn-success">Delivery Done</button>
+            </form>
+            </div>
+          <div class="modal-footer d-block mr-auto">
+            
+          </div>
+       
+      </div>
+    </div>
+  </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
@@ -146,7 +185,7 @@ include ("functions.php");
         dname = tr.getElementsByTagName("td")[1].innerText;
         ddetails = tr.getElementsByTagName("td")[2].innerText;
         cadd = tr.getElementsByTagName("td")[3].innerText;
-        orderid = tr.getElementsByTagName("td")[4].innerText;
+        orderid = tr.getElementsByTagName("td")[6].innerText;
         console.log(dname, ddetails,cadd,orderid);
         dnameEdit.value = dname;
         ddetailsEdit.value = ddetails;
@@ -155,6 +194,27 @@ include ("functions.php");
         snoEdit.value = e.target.id;
         console.log(e.target.id)
         $('#editModal').modal('toggle');
+      })
+    })
+
+    edits = document.getElementsByClassName('done');
+    Array.from(edits).forEach((element) => {
+      element.addEventListener("click", (e) => {
+        console.log("edit ");
+        utr = e.target.parentNode.parentNode.parentNode.parentNode;
+        console.log(utr);
+        udname = utr.getElementsByTagName("td")[1].innerText;
+        uddetails = utr.getElementsByTagName("td")[2].innerText;
+        ucadd = utr.getElementsByTagName("td")[3].innerText;
+        uorderid = utr.getElementsByTagName("td")[6].innerText;
+        console.log(udname, uddetails,ucadd,uorderid);
+        udnameEdit.value = udname;
+        uddetailsEdit.value = uddetails;
+        ucaddEdit.value = ucadd;
+        uorderidEdit.value = uorderid;
+        usnoEdit.value = e.target.id;
+        console.log(e.target.id)
+        $('#doneModal').modal('toggle');
       })
     })
 </script>
@@ -175,6 +235,31 @@ if (isset($_POST['confirm'])) {
   if ($r) {
     # code...
     echo "<script>window.open('lacceptorder.php','_self')</script>";
+  }
+}
+
+if (isset($_POST['ddone'])) {
+  # code...
+  $aoid = $_POST['uorderidEdit'];
+  global $con;
+  date_default_timezone_set('Asia/Kolkata');
+		$time = date("H:i:sA"); 
+    $date = date('Y-m-d H:i:s');
+  $delid = $_SESSION['did'];
+  $qry = "select order_id from accepted_order where ao_id = $aoid";
+  $res = mysqli_query($con,$qry);
+  if ($res) {
+    # code...
+    while ($row = mysqli_fetch_array($res)) {
+      # code...
+      $orderid = $row['order_id'];
+    }
+  }
+  $q = "insert into delivery_done(ao_id,order_id,delivery_id,date,time) values($aoid,$orderid,$delid,'$date','$time')";
+  $r = mysqli_query($con,$q);
+  if ($r) {
+    # code...
+
   }
 }
 ?>

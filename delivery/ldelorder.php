@@ -146,7 +146,7 @@ include ("functions.php");
         dname = tr.getElementsByTagName("td")[1].innerText;
         ddetails = tr.getElementsByTagName("td")[2].innerText;
         cadd = tr.getElementsByTagName("td")[3].innerText;
-        orderid = tr.getElementsByTagName("td")[4].innerText;
+        orderid = tr.getElementsByTagName("td")[6].innerText;
         console.log(dname, ddetails,cadd,orderid);
         dnameEdit.value = dname;
         ddetailsEdit.value = ddetails;

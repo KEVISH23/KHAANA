@@ -122,6 +122,8 @@ function showallorder(){
         <th scope='col'>Customer Name</th>
 		<th scope='col'>From</th>
 		<th scope='col'>To</th>
+        <th scope='col'>Customer Number</th>
+        <th scope='col'>Cook Number</th>
         <th scope='col' hidden>Order id</th>
 		<th scope='col'>Action</th>
 	  </tr>
@@ -153,7 +155,7 @@ function showallorder(){
                         continue;
                     }
                 }
-                $q1 = "select user_address,user_namee from user where user_id = $userid";
+                $q1 = "select user_address,user_namee,user_phn from user where user_id = $userid";
                 $r1 = mysqli_query($con,$q1);
                 if ($r1) {
                     # code...
@@ -162,10 +164,11 @@ function showallorder(){
                         while ($row1 = mysqli_fetch_array($r1)) {
                             $useradd = $row1['user_address'];
                             $username = $row1['user_namee'];
+                            $userphn = $row1['user_phn'];
                         }
                     }
                 }
-                $q2 = "select cook_address from cook where cook_id = $cookid";
+                $q2 = "select cook_address,cook_phn from cook where cook_id = $cookid";
                 $r2 = mysqli_query($con,$q2);
                 if ($r2) {
                     # code...
@@ -173,6 +176,7 @@ function showallorder(){
                     if ($rc2 > 0) {
                         while ($row2 = mysqli_fetch_array($r2)) {
                             $cookadd = $row2['cook_address'];
+                            $cookphn = $row2['cook_phn'];
                         }
                     }
                 }
@@ -181,6 +185,8 @@ function showallorder(){
                 <td scope='col'>$username</td>
                 <td scope='col'>$cookadd</td>
                 <td scope='col'>$useradd</td>
+                <td scope='col'>$userphn</td>
+                <td scope='col'>$cookphn</td>
                 <td scope='col' hidden>$orderid</td>
                 <td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-success edit' name='edit' id='$orderid' data-target='#exampleModal'>Accept</button></div> </div> </td>
               </tr>";
@@ -199,6 +205,8 @@ function showaacceptorder(){
         <th scope='col'>Customer Name</th>
 		<th scope='col'>From</th>
 		<th scope='col'>To</th>
+        <th scope='col'>Customer Number</th>
+        <th scope='col'>Cook Number</th>
         <th scope='col' hidden>Order id</th>
 		<th scope='col'>Action</th>
 	  </tr>
@@ -214,11 +222,25 @@ function showaacceptorder(){
         $rc = mysqli_num_rows($r);
         if ($rc > 0) {
             # code...
+            
             while ($row = mysqli_fetch_array($r)) {
                 # code...
-                $srno += 1;
+                #$srno += 1;
+                #echo $srno;
                 $orderid = $row['order_id'];
                 $aoid = $row['ao_id'];
+                $query = "select * from  delivery_done where order_id = $orderid";
+                $runit = mysqli_query($con,$query);
+                if ($runit) {
+                    #$srno -= 1;
+                    # code...
+                    $rowc = mysqli_num_rows($runit);
+                    if ($rowc > 0) {
+                        
+                        continue;
+                    }
+                }
+                
                 $q1 = "select user_id,cook_id from order_master where order_id = $orderid";
                 $r1 = mysqli_query($con,$q1);
                 if ($r1) {
@@ -230,7 +252,7 @@ function showaacceptorder(){
                             # code...
                             $cookid = $row['cook_id'];
                             $userid = $row['user_id'];
-                            $q2 = "select user_address,user_namee from user where user_id = $userid";
+                            $q2 = "select user_address,user_namee,user_phn from user where user_id = $userid";
                 $r2 = mysqli_query($con,$q2);
                 if ($r2) {
                     # code...
@@ -239,10 +261,11 @@ function showaacceptorder(){
                         while ($row2 = mysqli_fetch_array($r2)) {
                             $useradd = $row2['user_address'];
                             $username = $row2['user_namee'];
+                            $userphn = $row2['user_phn'];
                         }
                     }
                 }
-                $q3 = "select cook_address from cook where cook_id = $cookid";
+                $q3 = "select cook_address,cook_phn from cook where cook_id = $cookid";
                 $r3 = mysqli_query($con,$q3);
                 if ($r3) {
                     # code...
@@ -250,16 +273,20 @@ function showaacceptorder(){
                     if ($rc3 > 0) {
                         while ($row3 = mysqli_fetch_array($r3)) {
                             $cookadd = $row3['cook_address'];
+                            $cookphn = $row3['cook_phn'];
                         }
                     }
                 }
+                $srno += 1;
                 echo "<tr>
-                <td scope='col'>$srno</td>
+                <td scope='col'>$srno </td>
                 <td scope='col'>$username</td>
                 <td scope='col'>$cookadd</td>
                 <td scope='col'>$useradd</td>
+                <td scope='col'>$userphn</td>
+                <td scope='col'>$cookphn</td>
                 <td scope='col' hidden>$aoid</td>
-                <td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-danger edit' name='edit' id='$aoid' data-target='#exampleModal'>Cancel</button></div> </div> </td>
+                <td scope='col'><button class='btn btn-danger edit' name='edit' id='$aoid' data-target='#exampleModal'>Cancel</button><button class='btn btn-success done mt-2' name='done' id='$aoid' data-target='#exampleModal'>Done</button> </td>
               </tr>";
 
                         }
