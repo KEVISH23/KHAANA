@@ -303,6 +303,16 @@ function showorders(){
 				$orderid = $row_t['order_id'];
 				$packid = $row_t['package_id'];
 				$mid = $row_t['menu_id'];
+				$query = "select * from delivery_done where order_id = $orderid";
+				$result = mysqli_query($con,$query);
+				if ($result) {
+					# code...
+					$rowcountt = mysqli_num_rows($result);
+					if ($rowcountt > 0) {
+						# code...
+						continue;
+					}
+				}
 				if ($mid == 0) {
 					$qry = "select * from package where package_id = $packid";
 					$res = mysqli_query($con,$qry);

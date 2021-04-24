@@ -78,7 +78,7 @@ include ("functions.php");
   
   <div>
   <br>
-  <h3 class="display-4 text-white offset-5">Accepted Orders</h3>      
+
    </div>
 
    <?php
@@ -259,7 +259,7 @@ if (isset($_POST['ddone'])) {
   $r = mysqli_query($con,$q);
   if ($r) {
     # code...
-
+    echo "<script>window.open('lacceptorder.php','_self')</script>";
   }
 }
 ?>
