@@ -616,6 +616,7 @@ function viewallorders(){
                     <tr>
                         <th scope='row'>$srno</th>
                         <td>$orderid</td>
+                        <td>$porderid</td>
                         <td><img src='../cook/menuimages/$mimage' style='width:100px;height:100px;'></td>
                         <td>$mname</td>
                         <td>--------</td>
@@ -661,6 +662,7 @@ function viewallorders(){
                         <tr>
                             <th scope='row'>$srno</th>
                             <td>$orderid</td>
+                            <td>$porderid</td>
                             <td><img src='../cook/menuimages/$menuimg' style='width:100px;height:100px;'></td>
                             <td>$menuname</td>
                             <td>$pdays</td>
@@ -716,6 +718,15 @@ function viewcomporders(){
                     $porderid = $row_t['payorder_id'];
                     $menuid = $row_t['menu_id'];
                     $packageid = $row_t['package_id'];
+                    $query = "select delivery_id from delivery_done where order_id = $orderid";
+                    $result = mysqli_query($con,$query);
+                    if ($result) {
+                        # code...
+                        while ($roww = mysqli_fetch_array($result)) {
+                            # code...
+                            $delid = $roww['delivery_id'];
+                        }
+                    }
                     if ($menuid > 0) {
                         # code...
                         $q = "select m_image,m_name,m_details,m_price from menu where m_id = $menuid";
@@ -741,6 +752,7 @@ function viewcomporders(){
                                     <th scope='row'>$srno</th>
                                     <td>$orderid</td>
                                     <td>$cookid</td>
+                                    <td>$delid</td>
                                     <td><img src='../cook/menuimages/$mimage' style='width:100px;height:100px;'></td>
                                     <td>$mname</td>
                                     <td>--------</td>
@@ -789,6 +801,7 @@ function viewcomporders(){
                                         <th scope='row'>$srno</th>
                                         <td>$orderid</td>
                                         <td>$cookid</td>
+                                        <td>$delid</td>
                                         <td><img src='../cook/menuimages/$menuimg' style='width:100px;height:100px;'></td>
                                         <td>$menuname</td>
                                         <td>$pdays</td>
@@ -1031,5 +1044,39 @@ function dqrcode(){
         </div>";
         }
     }
+};
+function viewpay(){
+    global $con;
+    $get_t = "select *from payment";
+    $run_t = mysqli_query($con,$get_t);
+    $rowcount=mysqli_num_rows($run_t);
+    if ($rowcount>0) {
+        $srno = 0;
+    while ($row_t=mysqli_fetch_array($run_t)) {
+        $srno+=1;
+        $pid = $row_t['payment_id'];
+        $poid = $row_t['payorder_id'];
+        $amount = $row_t['amount'];
+        $status = $row_t['status'];
+        $tid = $row_t['txnid'];
+        $tdate = $row_t['txndate'];
+        
+        
+        echo "		
+        <tr>
+            <th scope='row'>$srno</th>
+            <td>$pid</td>
+            <td>$poid</td>
+            <td>$amount</td>
+            <td>$status</td>
+            <td>$tid</td>
+            <td>$tdate</td>
+           
+        </tr>";
+    }
+}
+else {
+    #echo "<h3 class='display-1 text-white'>No Cook Registered</h3>";
+}
 };
 ?>
