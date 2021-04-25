@@ -186,7 +186,7 @@
     </div>
     <div class="col-sm-6 col-lg-6 mt-4 mb-2"  id="grad1" >
     <h2 class="text-center">About US</h2>
-	<h4 
+	<h4 class="text-center" style="font-family: 'Bigshot One';font-size: 24px;">We Are Khaana, <br><br> We will solve problem of persons who are from other cities/state for job/study who are in search for homemade food rather than Hotels/Restaurants. <br><br> We provide a platform for corona patient to get healthy home made food at a very reasonable cost. </h4>
   </div>
 
 <hr>
