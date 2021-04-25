@@ -582,4 +582,229 @@ function neworderrand(){
 			echo "<h3 class='display-1'>Recently No One Ordered!</h3>";
 		}
 };
+function viewallorders(){
+    global $con;
+    $get_t = "select *from order_master";
+    $run_t = mysqli_query($con,$get_t);
+    $rowcount=mysqli_num_rows($run_t);
+    if ($rowcount>0) {
+       
+    $srno = 0;
+    while ($row_t=mysqli_fetch_array($run_t)) {
+        $srno+=1;
+        $orderid = $row_t['order_id'];
+        $porderid = $row_t['payorder_id'];
+        $menuid = $row_t['menu_id'];
+        $packageid = $row_t['package_id'];
+        if ($menuid > 0) {
+            # code...
+            $q = "select m_image,m_name,m_details,m_price from menu where m_id = $menuid";
+            $r = mysqli_query($con,$q);
+            if ($r) {
+                # code...
+                $rc = mysqli_num_rows($r);
+                if ($rc > 0) {
+                    # code...
+                    while ($row = mysqli_fetch_array($r)) {
+                        # code...
+                        $mimage = $row['m_image'];
+                        $mname = $row['m_name'];
+                        $mdetails = $row['m_details'];
+                        $mprice = $row['m_price'];
+                    }
+                    echo "		
+                    <tr>
+                        <th scope='row'>$srno</th>
+                        <td>$orderid</td>
+                        <td><img src='../cook/menuimages/$mimage' style='width:100px;height:100px;'></td>
+                        <td>$mname</td>
+                        <td>--------</td>
+                        <td>$mprice</td>
+                        <td>
+                        
+                                <button class='btn btn-success  edit' name='edit' id='$orderid'>View</button>
+                        
+                                
+                           
+                                <button class='btn btn-danger ml-1 delete' id='$orderid'>Delete</button>
+                      
+                        </td>
+                    </tr>";
+                }
+            }
+        }
+        else {
+            # code...
+            $q1 = "select menu_id,menu_name,package_days,package_price from package where package_id = $packageid";
+            $r1 = mysqli_query($con,$q1);
+            if ($r1) {
+                # code..
+                $rc1 = mysqli_num_rows($r1);
+                if ($rc1 > 0) {
+                    # code...
+                    while ($row1 = mysqli_fetch_array($r1)) {
+                        # code...
+                        $mid = $row1['menu_id'];
+                        $menuname = $row1['menu_name'];
+                        $pdays = $row1['package_days'];
+                        $pprice = $row1['package_price'];
+                        $q3 = "select m_image from menu where m_id = $mid";
+                        $r3 = mysqli_query($con,$q3);
+                        if ($r3) {
+                            # code...
+                            while ($row3 = mysqli_fetch_array($r3)) {
+                                # code...
+                                $menuimg = $row3['m_image'];
+                            }
+                        }
+                        echo "		
+                        <tr>
+                            <th scope='row'>$srno</th>
+                            <td>$orderid</td>
+                            <td><img src='../cook/menuimages/$menuimg' style='width:100px;height:100px;'></td>
+                            <td>$menuname</td>
+                            <td>$pdays</td>
+                            <td>$pprice</td>
+                            <td>
+                            
+                                    <button class='btn btn-success  edit' name='edit' id='$orderid'>View</button>
+                            
+                                    
+                               
+                                    <button class='btn btn-danger ml-1 delete' id='$orderid'>Delete</button>
+                          
+                            </td>
+                        </tr>";
+                    }
+                }
+            }
+        }
+
+        }
+        echo "</tbody>
+        </table>";
+        }
+        else{
+            echo "<h3 class='display-1'>Recently No One Ordered!</h3>";
+        }
+};
+function viewcomporders(){
+   
+    global $con;
+    $q4 = "select order_id from delivery_done";
+    $r4 = mysqli_query($con,$q4);
+    if ($r4) {
+        # code...
+        $rc4 = mysqli_num_rows($r4);
+        if ($rc4 > 0) {
+            # code...
+            while ($row5 = mysqli_fetch_array($r4)) {
+                # code...
+                $orderid1 = $row5['order_id'];
+                $get_t = "select * from order_master where order_id = $orderid1";
+                $run_t = mysqli_query($con,$get_t);
+                $rowcount=mysqli_num_rows($run_t);
+                if ($rowcount>0) {
+                
+                $srno = 0;
+                while ($row_t=mysqli_fetch_array($run_t)) {
+                    $srno+=1;
+                    $orderid = $row_t['order_id'];
+                    $porderid = $row_t['payorder_id'];
+                    $menuid = $row_t['menu_id'];
+                    $packageid = $row_t['package_id'];
+                    if ($menuid > 0) {
+                        # code...
+                        $q = "select m_image,m_name,m_details,m_price from menu where m_id = $menuid";
+                        $r = mysqli_query($con,$q);
+                        if ($r) {
+                            # code...
+                            $rc = mysqli_num_rows($r);
+                            if ($rc > 0) {
+                                # code...
+                                while ($row = mysqli_fetch_array($r)) {
+                                    # code...
+                                    $mimage = $row['m_image'];
+                                    $mname = $row['m_name'];
+                                    $mdetails = $row['m_details'];
+                                    $mprice = $row['m_price'];
+                                }
+                                echo "		
+                                <tr>
+                                    <th scope='row'>$srno</th>
+                                    <td>$orderid</td>
+                                    <td><img src='../cook/menuimages/$mimage' style='width:100px;height:100px;'></td>
+                                    <td>$mname</td>
+                                    <td>--------</td>
+                                    <td>$mprice</td>
+                                    <td>
+                                    
+                                            <button class='btn btn-success  edit' name='edit' id='$orderid'>View</button>
+                                    
+                                            
+                                    
+                                            <button class='btn btn-danger ml-1 delete' id='$orderid'>Delete</button>
+                                
+                                    </td>
+                                </tr>";
+                            }
+                        }
+                    }
+                    else {
+                        # code...
+                        $q1 = "select menu_id,menu_name,package_days,package_price from package where package_id = $packageid";
+                        $r1 = mysqli_query($con,$q1);
+                        if ($r1) {
+                            # code..
+                            $rc1 = mysqli_num_rows($r1);
+                            if ($rc1 > 0) {
+                                # code...
+                                while ($row1 = mysqli_fetch_array($r1)) {
+                                    # code...
+                                    $mid = $row1['menu_id'];
+                                    $menuname = $row1['menu_name'];
+                                    $pdays = $row1['package_days'];
+                                    $pprice = $row1['package_price'];
+                                    $q3 = "select m_image from menu where m_id = $mid";
+                                    $r3 = mysqli_query($con,$q3);
+                                    if ($r3) {
+                                        # code...
+                                        while ($row3 = mysqli_fetch_array($r3)) {
+                                            # code...
+                                            $menuimg = $row3['m_image'];
+                                        }
+                                    }
+                                    echo "		
+                                    <tr>
+                                        <th scope='row'>$srno</th>
+                                        <td>$orderid</td>
+                                        <td><img src='../cook/menuimages/$menuimg' style='width:100px;height:100px;'></td>
+                                        <td>$menuname</td>
+                                        <td>$pdays</td>
+                                        <td>$pprice</td>
+                                        <td>
+                                        
+                                                <button class='btn btn-success  edit' name='edit' id='$orderid'>View</button>
+                                        
+                                                
+                                        
+                                                <button class='btn btn-danger ml-1 delete' id='$orderid'>Delete</button>
+                                    
+                                        </td>
+                                    </tr>";
+                                }
+                            }
+                        }
+                    }
+
+                    }
+                   
+                    
+                            
+                        }
+                       
+                        }
+                    }
+    }
+};
 ?>

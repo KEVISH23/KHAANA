@@ -92,8 +92,9 @@ include("functions.php");
   <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"> <a href="Adminorders.php"> Orders</a></li>
-      <li class="breadcrumb-item active">List View</li>
-      <li class="breadcrumb-item"> <a href="admincomporder.php">Delivered Orders</a></li>
+      <li class="breadcrumb-item"> <a href="OrderLV.php">List View</a></li>
+      <li class="breadcrumb-item active">Delivered Orders</li>
+      
       
     </ol>
   </nav>
@@ -116,7 +117,7 @@ include("functions.php");
         </thead>
         <tbody>
         <?php
-          viewallorders();
+          viewcomporders();
         ?>
         </tbody>
     </table>
@@ -221,7 +222,7 @@ include("functions.php");
 
         if (confirm("Are you sure you want to delete this order!")) {
           console.log("yes");
-          window.location = `OrderLV.php?delete=${sno}`;
+          window.location = `admincomporder.php?delete=${sno}`;
           // TODO: Create a form and use post request to submit a form
         }
         else {
@@ -239,6 +240,6 @@ if(isset($_GET['delete'])){
   $delete = true;
   $sql = "DELETE FROM order_master WHERE order_id = $sno";
   $result = mysqli_query($con, $sql);
-  echo "<script>window.open('OrderLV.php','_self')</script>";
+  echo "<script>window.open('admincomporder.php','_self')</script>";
 }
 ?>

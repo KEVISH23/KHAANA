@@ -92,6 +92,7 @@ include("functions.php");
     <ol class="breadcrumb">
       <li class="breadcrumb-item active">Orders</li>
       <li class="breadcrumb-item"><a href="OrderLV.php">List View</a></li>
+      <li class="breadcrumb-item"> <a href="admincomporder.php">Delivered Orders</a></li>
       
     </ol>
   </nav>
