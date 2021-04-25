@@ -541,4 +541,45 @@ function viewparpack(){
          </button>
          </div>";}
 };
+function neworderrand(){
+    global $con;
+			$get_t = "select *from order_master where date = CURDATE()  order by rand() limit 3";
+			$run_t = mysqli_query($con,$get_t);
+			$rowcount=mysqli_num_rows($run_t);
+			if ($rowcount>0) {
+                echo "<table class='table bg-info text-white table-hover mt-4'>
+                <thead>
+                    <tr>
+                      <th scope='col'>#</th>
+                      <th scope='col'>Order Id</th>
+                      <th scope='col'>PayOrder ID</th>
+                      <th scope='col'>Menu Id</th>
+                      <th scope='col'>Package Id</th>
+                    </tr>
+                  </thead>
+                  <tbody>";
+			$srno = 0;
+			while ($row_t=mysqli_fetch_array($run_t)) {
+                $srno+=1;
+				$orderid = $row_t['order_id'];
+				$porderid = $row_t['payorder_id'];
+				$menuid = $row_t['menu_id'];
+				$packageid = $row_t['package_id'];
+				echo "
+                    <tr>
+                        <th scope='row'>$srno</th>
+                        <td>$orderid</td>
+                        <td>$porderid</td>
+                        <td>$menuid</td>
+                        <td>$packageid</td>
+                    </tr>
+                   ";
+			}
+            echo "</tbody>
+            </table>";
+		}
+		else{
+			echo "<h3 class='display-1'>Recently No One Ordered!</h3>";
+		}
+};
 ?>
