@@ -691,6 +691,7 @@ function viewallorders(){
 function viewcomporders(){
    
     global $con;
+    $srno = 0;
     $q4 = "select order_id from delivery_done";
     $r4 = mysqli_query($con,$q4);
     if ($r4) {
@@ -700,16 +701,18 @@ function viewcomporders(){
             # code...
             while ($row5 = mysqli_fetch_array($r4)) {
                 # code...
+                
                 $orderid1 = $row5['order_id'];
                 $get_t = "select * from order_master where order_id = $orderid1";
                 $run_t = mysqli_query($con,$get_t);
                 $rowcount=mysqli_num_rows($run_t);
                 if ($rowcount>0) {
                 
-                $srno = 0;
+                
                 while ($row_t=mysqli_fetch_array($run_t)) {
-                    $srno+=1;
+                    
                     $orderid = $row_t['order_id'];
+                    $cookid = $row_t['cook_id'];
                     $porderid = $row_t['payorder_id'];
                     $menuid = $row_t['menu_id'];
                     $packageid = $row_t['package_id'];
@@ -719,20 +722,25 @@ function viewcomporders(){
                         $r = mysqli_query($con,$q);
                         if ($r) {
                             # code...
+                            
                             $rc = mysqli_num_rows($r);
                             if ($rc > 0) {
                                 # code...
+                                
                                 while ($row = mysqli_fetch_array($r)) {
                                     # code...
+                                    $srno += 1;
                                     $mimage = $row['m_image'];
                                     $mname = $row['m_name'];
                                     $mdetails = $row['m_details'];
                                     $mprice = $row['m_price'];
+                                    
                                 }
                                 echo "		
                                 <tr>
                                     <th scope='row'>$srno</th>
                                     <td>$orderid</td>
+                                    <td>$cookid</td>
                                     <td><img src='../cook/menuimages/$mimage' style='width:100px;height:100px;'></td>
                                     <td>$mname</td>
                                     <td>--------</td>
@@ -759,8 +767,10 @@ function viewcomporders(){
                             $rc1 = mysqli_num_rows($r1);
                             if ($rc1 > 0) {
                                 # code...
+                                
                                 while ($row1 = mysqli_fetch_array($r1)) {
                                     # code...
+                                    $srno += 1;
                                     $mid = $row1['menu_id'];
                                     $menuname = $row1['menu_name'];
                                     $pdays = $row1['package_days'];
@@ -778,6 +788,7 @@ function viewcomporders(){
                                     <tr>
                                         <th scope='row'>$srno</th>
                                         <td>$orderid</td>
+                                        <td>$cookid</td>
                                         <td><img src='../cook/menuimages/$menuimg' style='width:100px;height:100px;'></td>
                                         <td>$menuname</td>
                                         <td>$pdays</td>
@@ -927,9 +938,9 @@ function viewpardel(){
             $cdate = $row_t['delivery_joindate'];
             $ctime= $row_t['delivery_jointime'];
             echo "
-            <div class='container d-flex justify-content-center mt-4'>
+            <div class='container d-flex justify-content-center mt-4 mb-4'>
             <div class='card' style='width: 18rem;'>
-            <img src='../cook/deliveryimages/$cimage' class='card-img-top' alt='Cook Image'>
+            <img src='../delivery/deliveryimages/$cimage' class='card-img-top' alt='Cook Image'>
             <div class='card-body'>
               <h5 class='card-title'>Name: $cname</h5>
               <p class='card-text'>Address: $cadd</p>
@@ -962,5 +973,63 @@ function viewpardel(){
         <span aria-hidden='true'>&times;</span>
         </button>
         </div>";}
+};
+function cqrcode(){
+    global $con;
+    $cookid = $_POST['cookid'];
+    $q = "select * from qr_code where cook_id = $cookid";
+    $r = mysqli_query($con,$q);
+    if ($r) {
+        # code...
+        $rc = mysqli_num_rows($r);
+        if ($rc > 0) {
+            # code...
+            while ($row = mysqli_fetch_array($r)) {
+                # code...
+                $qr = $row['qrcode'];
+
+            }
+            echo "<div class='container d-flex justify-content-center mt-4'><div class='card' style='width: 18rem;'>
+            <img class='card-img-top' src='../cook/cookqrimages/$qr' alt='Card image cap'>
+          </div></div>";
+        }
+        else {
+            echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+            <strong>Oops!</strong>Not Uploaded QR code...
+            <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+            <span aria-hidden='true'>&times;</span>
+            </button>
+            </div>";
+        }
+    }
+};
+function dqrcode(){
+    global $con;
+    $cookid = $_POST['delid'];
+    $q = "select * from qr_code where delivery_id = $cookid";
+    $r = mysqli_query($con,$q);
+    if ($r) {
+        # code...
+        $rc = mysqli_num_rows($r);
+        if ($rc > 0) {
+            # code...
+            while ($row = mysqli_fetch_array($r)) {
+                # code...
+                $qr = $row['qrcode'];
+
+            }
+            echo "<div class='container d-flex justify-content-center mt-4'><div class='card' style='width: 18rem;'>
+            <img class='card-img-top' src='../cook/cookqrimages/$qr' alt='Card image cap'>
+          </div></div>";
+        }
+        else {
+            echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+        <strong>Oops!</strong>Not Uploaded QR code...
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+        </button>
+        </div>";
+        }
+    }
 };
 ?>

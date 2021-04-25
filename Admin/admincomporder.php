@@ -108,6 +108,7 @@ include("functions.php");
           <tr>
             <th scope="col">Sr.NO</th>
             <th scope="col">Order Id</th>
+            <th scope="col">Cook Id</th>
             <th scope="col">Image</th>
             <th scope="col">Name</th>
             <th scope="col">Duration</th>
