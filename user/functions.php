@@ -300,6 +300,7 @@ function showorders(){
 			
 			
 			while ($row_t=mysqli_fetch_array($run_t)) {
+				
 				$orderid = $row_t['order_id'];
 				$payorderid = $row_t['payorder_id'];
 				$packid = $row_t['package_id'];
@@ -317,6 +318,7 @@ function showorders(){
 						$resultt = mysqli_query($con,$queryy);
 					}
 					else {
+
 						# code...
 						$mid = $row_t['menu_id'];
 						
@@ -362,7 +364,7 @@ function showorders(){
 												}
 											}
 										}
-									}
+									
 									echo "<tr>
 										<td scope='col'>$srno</td>
 										<td scope='col'><img src='../cook/menuimages/$mimage' alt='menuimage' style='width:100px; height:100px;'></td>
@@ -375,7 +377,7 @@ function showorders(){
 									</tr>
 									
 									";
-		
+									}
 								}
 							}
 						}
@@ -398,19 +400,19 @@ function showorders(){
 										$mimage = $row['m_image'];
 										$mdate = $row['m_date'];
 			
-									}
+									
 									echo "<tr>
-							<td scope='col'>$srno</td>
-							<td scope='col'><img src='../cook/menuimages/$mimage' alt='menuimage' style='width:100px; height:100px;'></td>
-							<td scope='col'>$mname</td>
-							<td scope='col'>$mdetails</td>
-							<td scope='col'>$mprice</td>
-							<td scope='col'>--------</td>
-							<td scope='col' hidden>$orderid</td>
-							<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-danger edit' name='edit' id='$orderid'>Cancel Order</button></div> </div></td>
-						  </tr>
-						  
-						  ";
+									<td scope='col'>$srno</td>
+									<td scope='col'><img src='../cook/menuimages/$mimage' alt='menuimage' style='width:100px; height:100px;'></td>
+									<td scope='col'>$mname</td>
+									<td scope='col'>$mdetails</td>
+									<td scope='col'>$mprice</td>
+									<td scope='col'>--------</td>
+									<td scope='col' hidden>$orderid</td>
+									<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-danger edit' name='edit' id='$orderid'>Cancel Order</button></div> </div></td>
+								</tr>
+								
+								";
 								}
 								
 							}
@@ -420,21 +422,21 @@ function showorders(){
 						
 					}
 				}
-				else{
-					#echo "<h3>No Menu Available</h3>";
+				
+			
+					
+			}
+		}
+	}
+
+
+				else {
+					echo "res not set";	
 				}
 				echo "
 				</tbody>
 			  </table>
-			  </div>";
-					
-					}
-				
-				}
-				else {
-					echo "res not set";	
-				}
-				
+			  </div>";		
 			
 		
 };
