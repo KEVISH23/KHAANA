@@ -85,8 +85,8 @@ echo "<script>window.open('index.php','_self')</script>";
     </div>
     <div class="col-sm-6 col-lg-6 mt-4 mb-2"  id="grad1" >
     <h2 class="text-center">About US</h2>
-    <h4 class="text-center" style="font-family: 'Bigshot One';font-size: 35px;">Khaana was established in 2020-21<br>Khaana was made by kav<br>Khaana give home made food
-			<br>dil ka dariya beh hi gaya</h4>
+    <h4 class="text-center" style="font-family: 'Bigshot One';font-size: 24px;">We Are Khaana, <br><br> We will solve problem of persons who are from other cities/state for job/study who are in search for homemade food rather than Hotels/Restaurants. <br><br> We provide a platform for corona patient to get healthy home made food at a very reasonable cost. </h4>
+	
   </div>
 
 <hr>
