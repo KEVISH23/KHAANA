@@ -70,7 +70,7 @@ include("functions.php");
     <li class="nav-item">
       <a href="adminfeedback.php" class="nav-link text-dark">
                 <i class="fa fa-check-square-o mr-3 text-primary fa-fw"></i>
-                Feedbacks
+                Payment
             </a>
     </li>
     <li class="nav-item">
@@ -127,88 +127,7 @@ include("functions.php");
               newcookrand();
               ?>
 </div>
-  <!-- FeedBAck -->
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col align-self-start">
-        <h3 class="display-4 text-white mb-2">Feedbacks</h3>
-      </div>
-      <div class="col"></div>
-      <div class="col align-self-end">
-        <a href="adminfeedback.php" class="btn btn-warning">View all Feedbacks</a>
-      </div>
-   </div>
-  <div class="container feedcont">
-    <div class="row">
-      <div class="col-lg-6 feedcol">
-        <div class="container">
-          <div class="row feedrow">
-            <div class="col-4">
-              <img src="images/th1.jpg" class="img-fluid">
-            </div>
-             <div class="col-8 mt-2">
-              <p class="feedname">Name:- Anyone</p>
-              <p class="feedpost">Posted On February 12, 2021</p>
-            </div>
-          </div>
-          <div class="row feeddet">
-            <div class="col-lg-12">dycgsdaoucgovsd aygfofxgofngep</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 feedcol">
-        <div class="container">
-          <div class="row feedrow">
-            <div class="col-4">
-              <img src="images/th2.jpg" class="img-fluid">
-            </div>
-             <div class="col-8 mt-2">
-              <p class="feedname">Name:- Anyone</p>
-              <p class="feedpost">Posted On February 12, 2021</p>
-            </div>
-          </div>
-          <div class="row feeddet">
-            <div class="col-lg-12">dycgsdaoucgovsd aygfofxgofngep</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 feedcol">
-        <div class="container">
-          <div class="row feedrow">
-            <div class="col-4">
-              <img src="images/th7.jpg" class="img-fluid">
-            </div>
-             <div class="col-8 mt-2">
-              <p class="feedname">Name:- Anyone</p>
-              <p class="feedpost">Posted On February 12, 2021</p>
-            </div>
-          </div>
-          <div class="row feeddet">
-            <div class="col-lg-12">dycgsdaoucgovsd aygfofxgofngep</div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-6 feedcol">
-        <div class="container">
-          <div class="row feedrow">
-            <div class="col-4">
-              <img src="images/th4.jpg" class="img-fluid">
-            </div>
-             <div class="col-8 mt-2">
-              <p class="feedname">Name:- Anyone</p>
-              <p class="feedpost">Posted On February 12, 2021</p>
-            </div>
-          </div>
-          <div class="row feeddet">
-            <div class="col-lg-12">dycgsdaoucgovsd aygfofxgofngep</div>
-          </div>
-        </div>
-      </div>
-  
-    </div>
-  </div>
-
-  <!--Feedback End-->
+ 
 
 
 

@@ -69,7 +69,7 @@ include("functions.php");
       <li class="nav-item">
         <a href="adminfeedback.php" class="nav-link text-dark">
                   <i class="fa fa-check-square-o mr-3 text-primary fa-fw"></i>
-                  Feedbacks
+                  Payment
               </a>
       </li>
       <li class="nav-item">
