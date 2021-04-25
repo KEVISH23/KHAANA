@@ -1,6 +1,6 @@
 body {
     background: #ced4da;
-     background-image: linear-gradient( 135.9deg,  rgb(6, 116, 112) 16.4%, rgb(20, 73, 87) 56.1% );
+     background-image: linear-gradient( 135.9deg,  #247BA0 16.4%, #00E3AE 56.1% );
     min-height: 100vh;
     overflow-x: hidden;
   }
