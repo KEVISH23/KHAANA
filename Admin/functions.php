@@ -807,4 +807,160 @@ function viewcomporders(){
                     }
     }
 };
+function ordercount(){
+    global $con;
+	$get_t = "select *from order_master";
+			$run_t = mysqli_query($con,$get_t);
+            if ($run_t) {
+                $rowcount=mysqli_num_rows($run_t);
+                echo "<h4>$rowcount</h4>";   
+            }
+            else {
+                echo "<h4>Something is wrong</h4>";
+            }
+};
+function newdelrand(){
+    global $con;
+    $get_t = "select *from delivery where delivery_joindate = CURDATE()  order by rand() limit 3";
+    $run_t = mysqli_query($con,$get_t);
+    $rowcount=mysqli_num_rows($run_t);
+    if ($rowcount>0) {
+        echo "<table class='table bg-info text-white table-hover mt-4'>
+        <thead>
+            <tr>
+              <th scope='col'>#</th>
+              <th scope='col'>Delivery Id</th>
+              <th scope='col'>Name</th>
+              <th scope='col'>Vehicle</th>
+              <th scope='col'>Vehicle Number</th>
+            </tr>
+          </thead>
+          <tbody>";
+    $srno = 0;
+    while ($row_t=mysqli_fetch_array($run_t)) {
+        $srno+=1;
+        $cookid = $row_t['delivery_id'];
+        $cname = $row_t['delivery_name'];
+        $cookadd = $row_t['delivery_vehicle'];
+        $cemail = $row_t['delivery_vnumber'];
+        
+        echo "
+            <tr>
+                <th scope='row'>$srno</th>
+                <td>$cookid</td>
+                <td>$cname</td>
+                <td>$cookadd</td>
+                <td>$cookemail</td>
+            </tr>
+           ";
+    }
+    echo "</tbody>
+    </table>";
+}
+else{
+    echo "<h3 class='display-1'>Recently No Delivery Man Joined!</h3>";
+}
+};
+function viewalldel(){
+    global $con;
+    $get_t = "select *from delivery";
+    $run_t = mysqli_query($con,$get_t);
+    $rowcount=mysqli_num_rows($run_t);
+    if ($rowcount>0) {
+        $srno = 0;
+    while ($row_t=mysqli_fetch_array($run_t)) {
+        $srno+=1;
+        $cookid = $row_t['delivery_id'];
+        $cname = $row_t['delivery_name'];
+        $cadd = $row_t['delivery_address'];
+        $coemail = $row_t['delivery_email'];
+        $cgender = $row_t['delivery_gender'];
+        $cphone = $row_t['delivery_phn'];
+        $cimage = $row_t['delivery_photo'];
+        $cexp = $row_t['delivery_vehicle'];
+        $vnum = $row_t['delivery_vnumber'];
+        $cdate = $row_t['delivery_joindate'];
+        $ctime= $row_t['delivery_jointime'];
+        
+        echo "		
+        <tr>
+            <th scope='row'>$srno</th>
+            <td>$cookid</td>
+            <td>$cname</td>
+            <td>$vnum</td>
+            <td>
+            
+                    <button class='btn btn-success edit' name='edit' id='$cookid'>View</button>
+            
+                    <button class='btn btn-warning ml-2 update' id='$cookid'>Update</button>
+               
+                    <button class='btn btn-danger ml-2 delete' id='$cookid'>Delete</button>
+          
+            </td>
+        </tr>";
+    }
+}
+else {
+    #echo "<h3 class='display-1 text-white'>No Cook Registered</h3>";
+}
+};
+function viewpardel(){
+    global $con;
+   $id = $_POST['delid'];
+   $qry = "select * from delivery where delivery_id=$id";
+    $r = mysqli_query($con,$qry);
+    if ($r) {
+      # code...
+      $rowcount = mysqli_num_rows($r);
+      if ($rowcount>0) {
+        # code...
+        while($row_t = mysqli_fetch_array($r)){
+            $cookid = $row_t['delivery_id'];
+            $cname = $row_t['delivery_name'];
+            $cadd = $row_t['delivery_address'];
+            $coemail = $row_t['delivery_email'];
+            $cgender = $row_t['delivery_gender'];
+            $cphone = $row_t['delivery_phn'];
+            $cimage = $row_t['delivery_photo'];
+            $cexp = $row_t['delivery_vehicle'];
+            $vnum = $row_t['delivery_vnumber'];
+            $cdate = $row_t['delivery_joindate'];
+            $ctime= $row_t['delivery_jointime'];
+            echo "
+            <div class='container d-flex justify-content-center mt-4'>
+            <div class='card' style='width: 18rem;'>
+            <img src='../cook/deliveryimages/$cimage' class='card-img-top' alt='Cook Image'>
+            <div class='card-body'>
+              <h5 class='card-title'>Name: $cname</h5>
+              <p class='card-text'>Address: $cadd</p>
+            </div>
+            <ul class='list-group list-group-flush'>
+              <li class='list-group-item'>Email: $coemail</li>
+              <li class='list-group-item'>Phone No.: $cphone</li>
+              <li class='list-group-item'>Gender: $cgender</li>
+              <li class='list-group-item'>Vehicle: $cexp</li>
+              <li class='list-group-item'>Vehicle Number: $vnum</li>
+              <li class='list-group-item'>Join Date: $cdate</li>
+              <li class='list-group-item'>Join Time: $ctime</li>
+            </ul>
+            
+          </div>
+          </div>  
+            ";
+        }
+      }
+      else{echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+        <strong>Oops!</strong>No Such Delivery Man Found...
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+        </button>
+        </div>";}
+    }
+    else{echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+        <strong>Oops!</strong>Something Went Wrong..
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+        </button>
+        </div>";}
+};
 ?>

@@ -1,3 +1,7 @@
+<?php
+include("includes.php");
+include("functions.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -99,118 +103,11 @@
     <div class="row">
         <h3 class="display-4 text-white mb-2">Recent Delivery</h3>
    </div>
-  <table class="table text-white table-hover mt-4">
-      <thead>
-          <tr>
-            <th scope="col">Sr.NO</th>
-            <th scope="col">Name</th>
-            <th scope="col">From</th></th>
-            <th scope="col"> To</th>
-            <th scope="col">Status</th>
-            <th scope="col">Operation</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Home</td>
-            <td>Office</td>
-            <td>Delivered</td>
-
-            <td><div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter">View</a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-warning btn-block">Update</a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-danger btn-block">Delete</a>
-                    </div>
-                </div>
-            </div></td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Home</td>
-            <td>Office</td>
-            <td>Delivered</td>
-
-            <td><div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter">View</a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-warning btn-block">Update</a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-danger btn-block">Delete</a>
-                    </div>
-                </div>
-            </div></td>
-          </tr>
-          <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Home</td>
-            <td>Office</td>
-            <td>Delivered</td>
-
-            <td><div class="container">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter">View</a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-warning btn-block">Update</a>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="#" class="btn btn-danger btn-block">Delete</a>
-                    </div>
-                </div>
-            </div></td>
-          </tr>
-        </tbody>
-    </table>
-  </div>
+   <?php newdelrand(); ?>
+    </div>
   <!--Modal of view feedback-->
   <!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLongTitle">Feedback</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <div class="container feedcont">
-                      <div class="row feedrow">
-                        <div class="col-4">
-                          <img src="images/th1.jpg" class="img-fluid">
-                        </div>
-                         <div class="col-8 mt-2">
-                          <p class="feedname">Name:- Anyone</p>
-                          <p class="feedpost">Posted On February 12, 2021</p>
-                        </div>
-                      </div>
-                      <div class="row feeddet">
-                        <div class="col-lg-12 text-info">dycgsdaoucgovsd aygfofxgofngep</div>
-                      </div>
-                </div>
-              
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
 <!-- End demo content -->
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

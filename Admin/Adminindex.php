@@ -99,7 +99,7 @@ include("functions.php");
           </div>
           <div class="col-md-3 bg-info text-white col-lg-3 col-sm-4 border rounded text-center">
             <h3>Total Orders</h3>
-            <h4>234567</h4>
+            <?php ordercount(); ?>
         </div>
         <div class="col-md-3 bg-info text-white col-lg-3 col-sm-4 border rounded text-center">
             <h3>New Users</h3>
@@ -114,35 +114,7 @@ include("functions.php");
           <div class="row">
               <h3 class="display-4 text-white mb-2">Recent Orders</h3>
          </div>
-        <table class="table bg-info text-white table-hover mt-4">
-            <thead>
-                <tr>
-                  <th scope="col">#</th>
-                  <th scope="col">First</th>
-                  <th scope="col">Last</th>
-                  <th scope="col">Handle</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td colspan="2">Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
-              </tbody>
-          </table>
+       <?php neworderrand(); ?>
 </div>
   <!--Cook Listing-->
   <div class="container-fluid">
