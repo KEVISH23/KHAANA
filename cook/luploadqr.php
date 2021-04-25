@@ -35,8 +35,8 @@ include ("functions.php");
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="lindex.php">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="lindex.php">Home </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="lcookaboutus.php">About Us</a>
@@ -53,6 +53,9 @@ include ("functions.php");
       </li>
       <li class="nav-item">
         <a class="nav-link" href="lpackage.php">Our Package Policy</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="luploadqr.php">QR Code <span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">
