@@ -39,20 +39,13 @@ include ("functions.php");
         <a class="nav-link" href="lindex.php">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="lcookaboutus.php">About Us</a>
+        <a class="nav-link" href="ldelabout.php">About Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="lcontactcook.php">Contact Us</a>
+        <a class="nav-link" href="ldelcontact.php">Contact Us</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="lmenu.php">Menu</a>
-      </li>
-	  
       <li class="nav-item">
         <a class="nav-link" href="lorder.php">Order</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="lpackage.php">Our Package Policy</a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">

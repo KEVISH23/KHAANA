@@ -46,6 +46,9 @@ if (!isset($_SESSION['dname'])) {
       <li class="nav-item">
         <a class="nav-link" href="ldelorder.php">Order</a>
       </li>
+      <li class="nav-item">
+      <a class="nav-link" href="luploadqr.php">QR Code</a>
+      </li>
     </ul>
     <ul class="navbar-nav ml-auto">
 		<li class="nav-item" ><a href="#" class="nav-link" style="font-family: 'Cinzel Decorative';font-size: 22px;">
