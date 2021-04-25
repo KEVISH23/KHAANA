@@ -1,3 +1,7 @@
+<?php
+include("includes.php");
+include("functions.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -99,15 +103,15 @@
    <div class="container mt-5">
      <div class="row">
        <div class="col-lg-8 offset-2">
-        <form>
+        <form method="post">
           <div class="form-group flabel">
             <label for="inputdelivery">Enter ID</label>
-            <input type="text" class="form-control" id="inputdelivery"  placeholder="Enter Cook ID" required>
+            <input type="text" class="form-control" name="cookid" id="inputdelivery"  placeholder="Enter Cook ID" required>
           </div>
           <div class="container">
             <div class="row">
               <div class="col-md-6 col-lg-6 col-sm-6">
-                <button type="submit" class="btn btn-success btn-block" form="modal-details" data-toggle="modal" data-target="#exampleModal">Pay</button>
+                <button type="submit" name="submit" class="btn btn-success btn-block">Pay</button>
               </div>
               <div class="col-md-6 col-lg-6 col-sm-6">
                 <button type="reset" class="btn btn-danger btn-block">Cancel</button>
@@ -121,38 +125,6 @@
    </div>
    <!--QR CODE MODAL-->
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Scan QR Code</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <div class="container">
-          <div class="row d-flex justify-content-center align-items-center">
-            <img src="images/qr.png" alt="" class="img-fluid">
-        </div>
-        <div class="container">
-          <div class="row">
-            <div class="col"></div>
-            <div class="col align-self-center">
-              <h5>Name:-Anyone</h5><br><h5>id:-any123</h5>
-            </div>
-            <div class="col"></div>
-            
-        </div>
-        
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
-  </div>
  
   
 <!-- End demo content -->
@@ -163,3 +135,28 @@
 <script src="AdminIndex.js"></script>
 </body>
 </html>
+<?php
+if (isset($_POST['cookid'])) {
+  # code...
+  global $con;
+  $cookid = $_POST['cookid'];
+  $q = "select * from cook where cook_id = $cookid";
+  $r = mysqli_query($con,$q);
+  if ($r) {
+    # code...
+    $rc = mysqli_num_rows($r);
+    if ($rc > 0) {
+      # code...
+      cqrcode();
+    }
+    else {
+      echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
+        <strong>Oops!</strong>No Such Cook Exist.
+        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
+        <span aria-hidden='true'>&times;</span>
+        </button>
+        </div>";
+    }
+  }
+}
+?>
