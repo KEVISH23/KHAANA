@@ -11,6 +11,7 @@
 <head>
 <title>Merchant Check Out Page</title>
 <meta name="GENERATOR" content="Evrsoft First Page">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
 	<h1>Merchant Check Out Page</h1>
@@ -18,7 +19,7 @@
 	</pre>
 <center>
 	<form method="post" action="pgRedirect.php">
-		<table border="1">
+		<table border="1" class="table">
 			<tbody>
 				<tr>
 					<th>S.No</th>
@@ -30,7 +31,7 @@
 					<td><label>ORDER_ID::*</label></td>
 					<td><input id="ORDER_ID" tabindex="1" maxlength="20" size="20"
 						name="ORDER_ID" autocomplete="off"
-						value="<?php echo  "ORDS" . rand(10000,99999999)?>">
+						value="<?php echo  "ORDS" . rand(10000,99999999)?>" readonly>
 					</td>
 				</tr>
 				<tr hidden>
@@ -39,7 +40,7 @@
 					<td><input id="CUST_ID" tabindex="2" maxlength="12" size="12" name="CUST_ID" autocomplete="off" value="<?php echo $_SESSION['cid']; ?>"></td>
 				</tr>
 				<tr hidden>
-					<td>3</td>
+					<td>2</td>
 					<td><label>MENUID ::*</label></td>
 					<td><input id="MENU_ID" tabindex="2" maxlength="12" size="12" name="MENU_ID" autocomplete="off" value="<?php 
 						if ($_SERVER['HTTP_REFERER'] == "http://localhost/KHAANA/KHAANA/user/upackage.php"){
@@ -51,7 +52,7 @@
 							echo $menuid;
 						}
 						
-					?>"></td>
+					?>" readonly></td>
 				</tr>
 				<tr hidden>
 					<td>3</td>
@@ -66,7 +67,7 @@
 							echo $packid;
 						}
 						
-					?>"></td>
+					?>" readonly></td>
 				</tr>
 				
 				<tr hidden>
@@ -121,22 +122,22 @@
 						
 						
 						
-					?>"></td>
+					?>" readonly></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td><label>INDUSTRY_TYPE_ID ::*</label></td>
+					<td><input id="INDUSTRY_TYPE_ID" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail" readonly></td>
 				</tr>
 				<tr>
 					<td>3</td>
-					<td><label>INDUSTRY_TYPE_ID ::*</label></td>
-					<td><input id="INDUSTRY_TYPE_ID" tabindex="4" maxlength="12" size="12" name="INDUSTRY_TYPE_ID" autocomplete="off" value="Retail"></td>
-				</tr>
-				<tr>
-					<td>4</td>
 					<td><label>Channel ::*</label></td>
 					<td><input id="CHANNEL_ID" tabindex="4" maxlength="12"
-						size="12" name="CHANNEL_ID" autocomplete="off" value="WEB">
+						size="12" name="CHANNEL_ID" autocomplete="off" value="WEB" readonly>
 					</td>
 				</tr>
 				<tr>
-					<td>5</td>
+					<td>4</td>
 					<td><label>txnAmount*</label></td>
 					<td><input title="TXN_AMOUNT" tabindex="10"
 						type="text" name="TXN_AMOUNT"
@@ -146,13 +147,16 @@
 				<tr>
 					<td></td>
 					<td></td>
-					<td><input value="CheckOut" type="submit" name="done" onclick=""></td>
+					<td><input value="CheckOut" class="btn btn-success" type="submit" name="done" onclick=""></td>
 				</tr>
 			</tbody>
 		</table>
 		* - Mandatory Fields
 	</form>
 	</center>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
 <?php
