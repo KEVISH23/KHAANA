@@ -166,6 +166,8 @@ function showmenu(){
 	<tbody>";
 	global $con;
 	$srno = 0;
+	$profit = 0;
+	$fprice = 0;
 	$get_t = "select *from menu";
 			$run_t = mysqli_query($con,$get_t);
 			$rowcount=mysqli_num_rows($run_t);
@@ -181,12 +183,15 @@ function showmenu(){
 				$mprice = $row_t['m_price'];
 				$mimage = $row_t['m_image'];
 				$mdate = $row_t['m_date'];
+				$profit = ($mprice/100)*10;
+				$fprice = $mprice + $profit;
+				
 				echo "<tr>
 					<td scope='col'>$srno</td>
 					<td scope='col'><img src='../cook/menuimages/$mimage' alt='menuimage' style='width:100px; height:100px;'></td>
 					<td scope='col'>$mname</td>
 					<td scope='col'>$mdetails</td>
-					<td scope='col'>$mprice</td>
+					<td scope='col'>".round($fprice)."</td>
 					<td scope='col' hidden>$mid</td>
 					<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-success edit' name='edit' id='$mid'>Place Order</button></div> </div></td>
 				  </tr>
@@ -220,6 +225,8 @@ function showpack(){
 	<tbody>";
 	global $con;
 	$srno = 0;
+	$profit = 0;
+	$fprice = 0;
 	$get_t = "select *from package";
 			$run_t = mysqli_query($con,$get_t);
 			$rowcount=mysqli_num_rows($run_t);
@@ -236,6 +243,21 @@ function showpack(){
 				$menid = $row_t['menu_id'];
 				$pdate = $row_t['package_date'];
 				$ptime = $row_t['package_time'];
+				if ($duration == "1 week") {
+					# code...
+					$profit = ($pprice/100)*15;
+					$fprice = $pprice+$profit;
+				}
+				else if ($duration == "1 month") {
+					# code...
+					$profit = ($pprice/100)*10;
+					$fprice = $pprice+$profit;
+				}
+				else if ($duration == "3 month") {
+					# code...
+					$profit = ($pprice/100)*5;
+					$fprice = $pprice+$profit;
+				}
 				$sql = "select m_details,m_image from menu where m_id=$menid";
 				$res = mysqli_query($con,$sql);
 				if ($res) {
@@ -256,7 +278,7 @@ function showpack(){
 					<td scope='col'><img src='../cook/menuimages/$mimage' alt='menuimage' style='width:100px; height:100px;'></td>
 					<td scope='col'>$mname</td>
 					<td scope='col'>$mdetails</td>
-					<td scope='col'>$pprice</td>
+					<td scope='col'>".round($fprice)."</td>
 					<td scope='col'>$duration</td>
 					<td scope='col' hidden>$packid</td>
 					<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-success edit' name='edit' id='$menid'>Place Order</button></div> </div></td>
