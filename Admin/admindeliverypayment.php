@@ -92,7 +92,7 @@ if (!isset($_SESSION['adminname'])) {
 <div class="page-content p-5" id="content">
   <!-- Toggle button -->
   <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
-
+  <a href="logout.php" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-sign-out mr-2"></i><small class="text-uppercase font-weight-bold">Logout</small></a>
   <!-- Demo content -->
   <h2 class="display-4 text-white mb-2">Delivery Details</h2>
   <nav aria-label="breadcrumb">
