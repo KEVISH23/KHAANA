@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("includes.php");
 include("functions.php");
 ?>
@@ -93,7 +94,7 @@ if (isset($_POST['login'])) {
 		# code...
 
 		$_SESSION['adminname'] = $uname;
-		echo "<script>window.open('AdminIndex.php','_self')</script>";
+		echo "<script>window.open('Adminindex.php','_self')</script>";
 	}
 	else {
 		echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>

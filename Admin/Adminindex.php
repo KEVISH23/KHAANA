@@ -1,6 +1,12 @@
 <?php
+session_start();
 include("includes.php");
 include("functions.php");
+
+if (!isset($_SESSION['adminname'])) {
+  # code...
+  echo "<script>window.open('index.php','_self')</script>";
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -79,6 +85,7 @@ include("functions.php");
                 Packages
             </a>
     </li>
+    
   </ul>
 </div>
 <!-- End vertical navbar -->
@@ -88,7 +95,7 @@ include("functions.php");
 <div class="page-content p-5" id="content">
   <!-- Toggle button -->
   <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
-
+  <a href="logout.php" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-sign-out mr-2"></i><small class="text-uppercase font-weight-bold">Logout</small></a>
   <!-- Demo content -->
   <h2 class="display-4 text-white mb-2">Dashboard</h2>
   <div class="container mt-3">

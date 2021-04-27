@@ -1,6 +1,11 @@
 <?php
 include("includes.php");
 include("functions.php");
+session_start();
+if (!isset($_SESSION['adminname'])) {
+  # code...
+  echo "<script>window.open('index.php','_self')</script>";
+}
 ?>
 <!DOCTYPE html>
 <html>
