@@ -22,7 +22,7 @@ include ("functions.php");
     <link rel="stylesheet" href="css/lstyle.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"> 
 
-    <title>Menu</title>
+    <title>QR Code</title>
   </head>
   
   <body>
@@ -54,6 +54,9 @@ include ("functions.php");
       <li class="nav-item">
         <a class="nav-link" href="lpackage.php">Our Package Policy</a>
       </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="luploadqr.php">QR Code <span class="sr-only">(current)</span></a>
+      </li>
     </ul>
     <ul class="navbar-nav ml-auto">
 		<li class="nav-item" ><a href="#" class="nav-link" style="font-family: 'Cinzel Decorative';font-size: 22px;">
@@ -69,8 +72,8 @@ include ("functions.php");
 <!--END NAVBAR-->
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb bg-dark mt-3">
-    <li class="breadcrumb-item active"><a href="luploadqr.php" style="text-decoration:none;" class="text-white">Upload QR</a></li>
-    <li class="breadcrumb-item">Update QR</li>
+    <li class="breadcrumb-item"><a href="luploadqr.php" style="text-decoration:none;" class="text-white">Upload QR</a></li>
+    <li class="breadcrumb-item active">Update QR</li>
   </ol>
 </nav>
 <p class="display-4 text-center text-white">Update Your QR Code</p>

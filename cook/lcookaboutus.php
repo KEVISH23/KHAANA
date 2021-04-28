@@ -99,7 +99,7 @@ if (!isset($_SESSION['uname'])) {
 <div class="col-md-4 col-sm-4 py-3 py-sm-0">
 
 	<div class="card" >
-		<img src="images/vs.jpeg" class="card-img-top img-fluid"  alt="...">
+		<img src="images/vs.jpeg" class="card-img-top img-fluid"  alt="..." style="height: 350px;">
 		
 		<ul class="list-group list-group-flush">
 		  <li class="list-group-item">Name :- Vatsal Sheth</li>
@@ -114,7 +114,7 @@ if (!isset($_SESSION['uname'])) {
 
 <div class="col-md-4 col-sm-4 py-3 py-sm-0">
 	<div class="card" >
-		<img src="images/kt.jpeg" class="card-img-top img-fluid "  alt="..." style="height: 350px;">	
+		<img src="images/kt.jpeg" class="card-img-top img-fluid "  alt="..." style="height: 500px;">	
 		<ul class="list-group list-group-flush">
 		  <li class="list-group-item">Name :- Kevish Thakkar</li>
 		  <li class="list-group-item">Age :- 20</li>
@@ -128,7 +128,7 @@ if (!isset($_SESSION['uname'])) {
 <div class="col-md-4 col-sm-4 py-3 py-sm-0">
 
 	<div class="card" >
-		<img src="images/as.jpeg" class="card-img-top img-fluid"  alt="..." style="height: 350px;">
+		<img src="images/akhu.jpeg" class="card-img-top img-fluid"  alt="..." style="height: 350px;">
 		
 		<ul class="list-group list-group-flush">
 		  <li class="list-group-item">Name :- Akhil Shah</li>

@@ -22,7 +22,7 @@ include ("functions.php");
     <link rel="stylesheet" href="css/lstyle.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"> 
 
-    <title>Menu</title>
+    <title>QR Code</title>
   </head>
   
   <body>

@@ -19,7 +19,7 @@ echo "<script>window.open('index.php','_self')</script>";
     <link rel="stylesheet" href="css/lstyle.css">
     <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"> 
-    <title>Menu</title>
+    <title>Orders</title>
   </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-light ">

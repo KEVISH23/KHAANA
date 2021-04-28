@@ -22,7 +22,7 @@ include ("functions.php");
     <link rel="stylesheet" href="css/lstyle.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"> 
 
-    <title>Menu</title>
+    <title>QR Code</title>
   </head>
   
   <body>
@@ -35,8 +35,8 @@ include ("functions.php");
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="lindex.php">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item ">
+        <a class="nav-link" href="lindex.php">Home</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="ldelabout.php">About Us</a>
@@ -45,7 +45,10 @@ include ("functions.php");
         <a class="nav-link" href="ldelcontact.php">Contact Us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="lorder.php">Order</a>
+        <a class="nav-link" href="ldelorder.php">Order</a>
+      </li>
+      <li class="nav-item active">
+      <a class="nav-link" href="luploadqr.php">QR Code <span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <ul class="navbar-nav ml-auto">

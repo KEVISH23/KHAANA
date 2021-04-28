@@ -117,7 +117,7 @@ h2{
 	background-repeat: no-repeat;
 	cursor: pointer;
 	transition: all 200ms ease-in;
-	filter: grayscale(1) opacity(.8);
+
   }
   
   .img-fluid:hover {
