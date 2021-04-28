@@ -200,7 +200,7 @@ function showmenu(){
 		}
 	}
 		else{
-			echo "<h3>No Menu Available</h3>";
+			#echo "<h3>No Menu Available</h3>";
 		}
 		echo "
 		</tbody>
