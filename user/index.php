@@ -3,6 +3,10 @@
 session_start();
 include ("includes.php");
 include ("functions.php");
+if (isset($_SESSION['cname'])) {
+	# code...
+	echo "<script>window.open('uindex.php','_self')</script>";
+}
 ?>
 
 <html>

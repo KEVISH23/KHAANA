@@ -2,7 +2,10 @@
 session_start();
 include ("includes.php");
 include ("functions.php");
-
+if (isset($_SESSION['dname'])) {
+	# code...
+	echo "<script>window.open('lindex.php','_self')</script>";
+}
 ?>
 <!doctype html>
 <html lang="en">
