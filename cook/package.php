@@ -197,22 +197,19 @@
       <div class="row">
       <div id="section1" class="col-sm-12 nav1 " style="padding-top:70px;padding-bottom:70px">
         <h1 style="text-align: center;">1 WEEK</h1>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p class="text-dark text-uppercase text-center">If you choose that you will provide tiffin for 1 week than we will take <span class="font-weight-bold">15%</span> of your declared price</p>
       </div>
       </div>
       <div class="row">
       <div id="section2" class="col-sm-12 nav2" style="padding-top:70px;padding-bottom:70px">
         <h1 style="text-align: center;">1 MONTH</h1>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p class="text-dark text-uppercase text-center">If you choose that you will provide tiffin for 1 Month than we will take <span class="font-weight-bold">10%</span> of your declared price</p>
       </div>
     </div>
     <div class="row">
       <div id="section3" class="col-sm-12 nav3" style="padding-top:70px;padding-bottom:70px">
         <h1 style="text-align: center;">3 MONTH</h1>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
-        <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        <p class="text-dark text-uppercase text-center">If you choose that you will provide tiffin for 3 Month than we will take <span class="font-weight-bold">5%</span> of your declared price</p>
       </div>
     </div>
       </div>
