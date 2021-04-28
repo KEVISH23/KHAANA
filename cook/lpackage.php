@@ -77,13 +77,13 @@ if (!isset($_SESSION['uname'])) {
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center" style="position:inherit;">  
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#section1">Section 1</a>
+            <a class="nav-link" href="#section1">1 WEEK</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#section2">Section 2</a>
+            <a class="nav-link" href="#section2">1 MONTH</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link"  href="#section3">Section 3</a>
+            <a class="nav-link"  href="#section3">3 MONTH</a>
           
         </ul>
       </nav>
