@@ -1,3 +1,12 @@
+<?php
+include("includes.php");
+include("functions.php");
+session_start();
+if (!isset($_SESSION['adminname'])) {
+  # code...
+  echo "<script>window.open('index.php','_self')</script>";
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -102,7 +111,7 @@
         <form>
           <div class="form-group flabel">
             <label for="inputdelivery">Enter ID</label>
-            <input type="text" class="form-control" id="inputdelivery"  placeholder="Enter Customer ID" required>
+            <input type="text" class="form-control" id="inputdelivery" name="custid"  placeholder="Enter Customer ID" required>
           </div>
           <div class="container">
             <div class="row">
@@ -128,3 +137,48 @@
 <script src="AdminIndex.js"></script>
 </body>
 </html>
+<?php
+if(isset($_POST['submit'])){
+  $cid = $_POST['custid'];
+  $q = "select * from user where user_id = $cid";
+  $r = mysqli_query($con,$q);
+  if($r){
+      $rc = mysqli_num_rows($r);
+      if($rc > 0){
+          $q1 = "select * from order_master where user_id = $cid";
+          $r1 = mysqli_query($con,$q1);
+          if($r1){
+          $rc1 = mysqli_num_rows($r1);
+          if($rc1 > 0){
+              while($row1 = mysqli_fetch_array($r1)){
+                  $menuid = $row1['menu_id'];
+                  $q2 = "select m_image,m_details,m_name,m_price from menu where m_id = $menuid";
+                  $r2 = mysqli_query($con,$q2);
+                  if($r2){
+                      while($row2 = mysqli_fetch_array($r2)){
+                          $mimage = $row2['m_image'];
+                          $mdetails = $row2['m_details'];
+                          $mname = $row2['m_name'];
+                          $mprice = $row2['m_price'];
+                          $pro = ($mprice/100)*10;
+                          $fp = $mprice + $pro;
+                          echo "<div class='card' style='width: 18rem;'>
+                            <img class='card-img-top' src='../cook/menuimages/$mimage' alt='Card image cap'>
+                            <div class='card-body'>
+                              <h2>Dish Name:- $mname</h2>
+                               <ul class='list-group list-group-flush'>
+                              <li class='list-group-item'>$mdetails</li>
+                              <li class='list-group-item'>$fp</li>
+                            </ul>
+                            </div>
+                          </div>";
+                      }
+                  }
+              }
+          }
+              
+          }
+      }
+  }
+}
+?>
