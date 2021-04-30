@@ -108,7 +108,7 @@ if (!isset($_SESSION['adminname'])) {
    <div class="container mt-5">
      <div class="row">
        <div class="col-lg-8 offset-2">
-        <form>
+        <form method="POST">
           <div class="form-group flabel">
             <label for="inputdelivery">Enter ID</label>
             <input type="text" class="form-control" id="inputdelivery" name="custid"  placeholder="Enter Customer ID" required>
@@ -116,7 +116,7 @@ if (!isset($_SESSION['adminname'])) {
           <div class="container">
             <div class="row">
               <div class="col-md-12 col-lg-12 col-sm-12 text-center viewper">
-                <button type="submit" class="btn btn-success">View Details</button>
+                <button type="submit" name="submit" class="btn btn-success">View Details</button>
               </div>
             </div>
           </div>     
@@ -138,6 +138,7 @@ if (!isset($_SESSION['adminname'])) {
 </body>
 </html>
 <?php
+global $con;
 if(isset($_POST['submit'])){
   $cid = $_POST['custid'];
   $q = "select * from user where user_id = $cid";
