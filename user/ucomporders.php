@@ -19,7 +19,7 @@ echo "<script>window.open('index.php','_self')</script>";
     <link rel="stylesheet" href="css/lstyle.css">
     <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"> 
-    <title>Orders</title>
+    <title>Completed Orders</title>
   </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-light ">
@@ -72,15 +72,15 @@ echo "<script>window.open('index.php','_self')</script>";
 <!--SIGNUP MODAL-->
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active">My Orders</li>
-    <li class="breadcrumb-item"><a href="ucomporders.php" style="text-decoration:none; color:orange">Completed Orders</a></li>
+    <li class="breadcrumb-item"><a href="uorders.php" style="text-decoration:none; color:orange">My Orders</a></li>
+    <li class="breadcrumb-item active">Completed Orders</li>
   </ol>
 </nav>
 <hr>
 </div>
 <div class="container mb-3">
      <?php
-         showorders();
+         showcomporders();
      ?>
 </div>
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -143,15 +143,11 @@ echo "<script>window.open('index.php','_self')</script>";
         console.log("edit ");
         tr = e.target.parentNode.parentNode.parentNode.parentNode;
         console.log(tr);
-        dname = tr.getElementsByTagName("td")[2].innerText;
-        ddetails = tr.getElementsByTagName("td")[3].innerText;
-        dprice = tr.getElementsByTagName("td")[4].innerText;
-        menuid = tr.getElementsByTagName("td")[6].innerText;
-        console.log(dname, ddetails,dprice,menuid);
-        dnameEdit.value = dname;
-        ddetailsEdit.value = ddetails;
-        dpriceEdit.value = dprice;
-        dmenuEdit.value = menuid;
+        dname = tr.getElementsByTagName("td")[1].innerText;
+        ddetails = tr.getElementsByTagName("td")[2].innerText;
+        dprice = tr.getElementsByTagName("td")[3].innerText;
+        menuid = tr.getElementsByTagName("td")[4].innerText;
+        
         $('#editModal').modal('toggle');
       })
     })
