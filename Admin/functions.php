@@ -1079,4 +1079,43 @@ else {
     #echo "<h3 class='display-1 text-white'>No Cook Registered</h3>";
 }
 };
+function viewfeedback(){
+    global $con;
+    $srno = 0;
+    $q = "select * from feedback";
+    $r = mysqli_query($con,$q);
+    if ($r) {
+        # code...
+        $rc = mysqli_num_rows($r);
+        if ($rc>0) {
+            # code...
+            while ($row = mysqli_fetch_array($r)) {
+                # code...
+                $srno += 1;
+                $fid = $row['feedback_id'];
+                $oid = $row['order_id'];
+                $uid = $row['user_id'];
+                $cid = $row['cook_id'];
+                $mid = $row['menu_id'];
+                $pid = $row['package_id'];
+                $desc = $row['Description'];
+                $date = $row['date'];
+                $time = $row['time'];
+                echo "		
+                <tr>
+                    <th scope='row'>$srno</th>
+                    <td>$fid</td>
+                    <td>$oid</td>
+                    <td>$uid</td>
+                    <td>$cid</td>
+                    <td>$mid</td>
+                    <td>$pid</td>
+                    <td>$desc</td>
+                    <td>$date</td>
+                    <td>$time</td>
+                </tr>";
+            }
+        }
+    }
+};
 ?>

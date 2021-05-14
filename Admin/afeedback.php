@@ -111,16 +111,19 @@ if (!isset($_SESSION['adminname'])) {
     <thead>
         <tr>
           <th scope="col">Sr.NO</th>
-          <th scope="col">Payment Id</th>
-          <th scope="col">Payorder Id</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Status</th>
-          <th scope="col">Trans. Id</th>
-          <th scope="col">Trans Date</th>
+          <th scope="col">Feedback Id</th>
+          <th scope="col">Order Id</th>
+          <th scope="col">User Id</th>
+          <th scope="col">Cook Id</th>
+          <th scope="col">Menu Id</th>
+          <th scope="col">Package Id</th>
+          <th scope="col">Feedback</th>
+          <th scope="col">Date</th>
+          <th scope="col">Time</th>
         </tr>
       </thead>
       <tbody>
-      <?php viewpay(); ?>
+      <?php viewfeedback(); ?>
       </tbody>
   </table>
     
