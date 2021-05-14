@@ -83,6 +83,12 @@ if (!isset($_SESSION['adminname'])) {
                 Packages
             </a>
     </li>
+    <li class="nav-item">
+      <a href="afeedback.php" class="nav-link text-dark">
+      <i class="fa fa-comments-o mr-3 text-primary fa-fw" aria-hidden="true"></i>
+                Feedback
+            </a>
+    </li>
   </ul>
 </div>
 <!-- End vertical navbar -->
@@ -108,11 +114,7 @@ if (!isset($_SESSION['adminname'])) {
    <div class="container mt-5">
      <div class="row">
        <div class="col-lg-8 offset-2">
-<<<<<<< HEAD
-        <form method="POST">
-=======
         <form method="post" action="admiccookorder.php">
->>>>>>> c832029df942c38a867c36ce87cab34c679bcb16
           <div class="form-group flabel">
             <label for="inputdelivery">Enter ID</label>
             <input type="text" class="form-control" id="inputdelivery" name="custid"  placeholder="Enter Customer ID" required>

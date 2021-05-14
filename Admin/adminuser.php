@@ -82,7 +82,13 @@ if (!isset($_SESSION['adminname'])) {
                 <i class="fa fa-shopping-basket mr-3 text-primary fa-fw"></i>
                 Packages
             </a>
+    </li> <li class="nav-item">
+      <a href="afeedback.php" class="nav-link text-dark">
+      <i class="fa fa-comments-o mr-3 text-primary fa-fw" aria-hidden="true"></i>
+                Feedback
+            </a>
     </li>
+
   </ul>
 </div>
 <!-- End vertical navbar -->

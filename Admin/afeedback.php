@@ -10,11 +10,12 @@ if (!isset($_SESSION['adminname'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cook Payment</title>
+    <title>Feedback</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="AdminIndex.css">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
     <script src="https://use.fontawesome.com/39ee710c49.js"></script>
 </head>
 <body>
@@ -100,74 +101,44 @@ if (!isset($_SESSION['adminname'])) {
   <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold">Toggle</small></button>
   <a href="logout.php" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-sign-out mr-2"></i><small class="text-uppercase font-weight-bold">Logout</small></a>
   <!-- Demo content -->
-  <h2 class="display-4 text-white mb-2">Cook Details</h2>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="admincook.php">Recent Cook</a></li>
-      <li class="breadcrumb-item"><a href="adminviewallcook.php">View All Cook</a></li>
-      <li class="breadcrumb-item"><a href="adminparticularcook.php">View Particular Cook</a></li>
-      <li class="breadcrumb-item active">Payment</li>
-      
-    </ol>
-  </nav>
-<!--FORM FOR DELIVERY BOY PAYMENT-->
-   <div class="container mt-5">
-     <div class="row">
-       <div class="col-lg-8 offset-2">
-        <form method="post">
-          <div class="form-group flabel">
-            <label for="inputdelivery">Enter ID</label>
-            <input type="text" class="form-control" name="cookid" id="inputdelivery"  placeholder="Enter Cook ID" required>
-          </div>
-          <div class="container">
-            <div class="row">
-              <div class="col-md-6 col-lg-6 col-sm-6">
-                <button type="submit" name="submit" class="btn btn-success btn-block">Pay</button>
-              </div>
-              <div class="col-md-6 col-lg-6 col-sm-6">
-                <button type="reset" class="btn btn-danger btn-block">Cancel</button>
-              </div>
-            </div>
-          </div>     
-        </form>
-       </div>
-     </div>
-     <div class="col offset-2"></div>
-   </div>
-   <!--QR CODE MODAL-->
-<!-- Modal -->
  
   
+  <div class="container">
+    <div class="row">
+        <h3 class="display-4 text-white mb-2">All Feedback</h3>
+   </div>
+   <table class="table text-dark text-center mt-4" id="myTable">
+    <thead>
+        <tr>
+          <th scope="col">Sr.NO</th>
+          <th scope="col">Payment Id</th>
+          <th scope="col">Payorder Id</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Status</th>
+          <th scope="col">Trans. Id</th>
+          <th scope="col">Trans Date</th>
+        </tr>
+      </thead>
+      <tbody>
+      <?php viewpay(); ?>
+      </tbody>
+  </table>
+    
+  </div>
+  <!--Modal of view feedback-->
+  <!-- Modal -->
+
 <!-- End demo content -->
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 <script src="AdminIndex.js"></script>
+<script src="//cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script>
+        $(document).ready( function () {
+        $('#myTable').DataTable();
+        } );
+</script>
 </body>
 </html>
-<?php
-if (isset($_POST['cookid'])) {
-  # code...
-  global $con;
-  $cookid = $_POST['cookid'];
-  $q = "select * from cook where cook_id = $cookid";
-  $r = mysqli_query($con,$q);
-  if ($r) {
-    # code...
-    $rc = mysqli_num_rows($r);
-    if ($rc > 0) {
-      # code...
-      cqrcode();
-    }
-    else {
-      echo "<div class='alert alert-danger alert-dismissible fade show fixed-top' role='alert'>
-        <strong>Oops!</strong>No Such Cook Exist.
-        <button type='button' class='close' data-dismiss='alert' aria-label='Close'>
-        <span aria-hidden='true'>&times;</span>
-        </button>
-        </div>";
-    }
-  }
-}
-?>
