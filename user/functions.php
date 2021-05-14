@@ -361,6 +361,8 @@ function showorders(){
 								# code...
 								$rowc = mysqli_num_rows($res);
 								if ($rowc > 0) {
+									$profit = 0;
+									$fprice = 0;
 									# code...
 									while ($rowt = mysqli_fetch_array($res)) {
 										# code...
@@ -386,13 +388,28 @@ function showorders(){
 												}
 											}
 										}
+										if ($duration == "1 week") {
+											# code...
+											$profit = ($pprice/100)*15;
+											$fprice = $pprice+$profit;
+										}
+										else if ($duration == "1 month") {
+											# code...
+											$profit = ($pprice/100)*10;
+											$fprice = $pprice+$profit;
+										}
+										else if ($duration == "3 month") {
+											# code...
+											$profit = ($pprice/100)*5;
+											$fprice = $pprice+$profit;
+										}
 									
 									echo "<tr>
 										<td scope='col'>$srno</td>
 										<td scope='col'><img src='../cook/menuimages/$mimage' alt='menuimage' style='width:100px; height:100px;'></td>
 										<td scope='col'>$mname</td>
 										<td scope='col'>$mdetails</td>
-										<td scope='col'>$pprice</td>
+										<td scope='col'>".round($fprice)."</td>
 										<td scope='col'>$duration</td>
 										<td scope='col' hidden>$orderid</td>
 										<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-danger edit' name='edit' id='$orderid'>Cancel Tiffin</button></div> </div></td>
@@ -410,6 +427,8 @@ function showorders(){
 								# code..
 								$rc = mysqli_num_rows($r);
 								if ($rc > 0) {
+									$mprofit = 0;
+									$mfprice = 0;
 									while ($row = mysqli_fetch_array($r)) {
 									
 										# code...
@@ -421,14 +440,15 @@ function showorders(){
 										$mprice = $row['m_price'];
 										$mimage = $row['m_image'];
 										$mdate = $row['m_date'];
-			
+										$mprofit = ($mprice/100)*10;
+										$mfprice = $mprice + $mprofit;
 									
 									echo "<tr>
 									<td scope='col'>$srno</td>
 									<td scope='col'><img src='../cook/menuimages/$mimage' alt='menuimage' style='width:100px; height:100px;'></td>
 									<td scope='col'>$mname</td>
 									<td scope='col'>$mdetails</td>
-									<td scope='col'>$mprice</td>
+									<td scope='col'>".round($mfprice)."</td>
 									<td scope='col'>--------</td>
 									<td scope='col' hidden>$orderid</td>
 									<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-danger edit' name='edit' id='$orderid'>Cancel Order</button></div> </div></td>
@@ -462,5 +482,148 @@ function showorders(){
 			
 		
 };
-
+function showcomporders(){
+	global $con;
+	$q1 = "select order_id from delivery_done";
+	$r1 = mysqli_query($con,$q1);
+	$uid = $_SESSION['cid'];
+	$srno = 0;
+	echo "<div class='container'>
+	<table class='table table-responsive' id='myTable'>
+	<thead>
+	  <tr class='text-white'>
+		<th scope='col'>Id</th>
+		<th scope='col'>Image</th>
+		<th scope='col'>Dish Name</th>
+		<th scope='col'>Dish Price</th>
+		<th scope='col' hidden>Menu Id</th>
+		<th scope='col'>Action</th>
+	  </tr>
+	</thead>
+	<tbody>";
+	if ($r1) {
+		# code...
+		$rc = mysqli_num_rows($r1);
+		if ($rc > 0) {
+			# code...
+			while ($row1 = mysqli_fetch_array($r1)) {
+				# code...
+				$orderid = $row1['order_id'];
+				//echo $orderid;
+				$q2 = "select menu_id,package_id from order_master where order_id = $orderid and user_id =$uid ";
+				$r2 = mysqli_query($con,$q2);
+				if ($r2) {
+					# code...
+					$rc1 = mysqli_num_rows($r2);
+					if ($rc1 > 0) {
+						# code...
+						while ($row2 = mysqli_fetch_array($r2)) {
+							# code...
+							$menuid = $row2['menu_id'];
+							$packid = $row2['package_id'];
+							if ($menuid > 0) {
+								# code...
+								$q3 = "select m_id,m_name,m_details,m_price,m_image from menu where m_id = $menuid";
+								$r3 = mysqli_query($con,$q3);
+								$profit = 0;
+								$fprice = 0;
+								if ($r3) {
+									# code...
+									$rc2 = mysqli_num_rows($r3);
+									if ($rc2 > 0) {
+										# code...
+										while ($row3 = mysqli_fetch_array($r3)) {
+											# code...
+											$srno += 1;
+											$mname = $row3['m_name'];
+											$mdetails = $row3['m_details'];
+											$mprice = $row3['m_price'];
+											$mimage = $row3['m_image'];
+											$profit = ($mprice/100)*10;
+											$fprice = $mprice + $profit;
+											echo "<tr>
+											<td scope='col'>$srno</td>
+											<td scope='col'><img src='../cook/menuimages/$mimage' alt='menuimage' style='width:100px; height:100px;'></td>
+											<td scope='col'>$mname</td>
+											<td scope='col'>".round($fprice)."</td>
+											<td scope='col' hidden>$orderid</td>
+											<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-primary edit' name='edit' id='$orderid'>Give Feedback</button></div> </div></td>
+										</tr>
+										
+										";
+										}
+									}
+								}
+								
+							}
+							elseif($packid > 0){
+									$q4 = "select menu_id,menu_name,package_price,package_days from package where package_id = $packid";
+									$r4 = mysqli_query($con,$q4);
+									$profit = 0;
+									$fprice = 0;
+									if ($r4) {
+										# code..
+										$rc3 = mysqli_num_rows($r4);
+										if ($rc3 > 0) {
+											# code...
+											while ($row4 = mysqli_fetch_array($r4)) {
+												# code...
+												$srno += 1;
+												$m_id = $row4['menu_id'];
+												$m_name = $row4['menu_name'];
+												$pprice = $row4['package_price'];
+												$duration = $row4['package_days'];
+												if ($duration == "1 week") {
+													# code...
+													$profit = ($pprice/100)*15;
+													$fprice = $pprice+$profit;
+												}
+												else if ($duration == "1 month") {
+													# code...
+													$profit = ($pprice/100)*10;
+													$fprice = $pprice+$profit;
+												}
+												else if ($duration == "3 month") {
+													# code...
+													$profit = ($pprice/100)*5;
+													$fprice = $pprice+$profit;
+												}
+												$q5 = "select m_id,m_name,m_details,m_price,m_image from menu where m_id = $m_id";
+												$r5 = mysqli_query($con,$q5);
+												if ($r5) {
+													# code...
+													$rc4 = mysqli_num_rows($r5);
+													if ($rc4 > 0) {
+														# code...
+														while ($row5 = mysqli_fetch_array($r5)) {
+															# code...
+															$srno += 1;
+															$name = $row5['m_name'];
+															$details = $row5['m_details'];
+															$price = $row5['m_price'];
+															$image = $row5['m_image'];
+														}
+													}
+												}
+												echo "<tr>
+												<td scope='col'>$srno</td>
+												<td scope='col'><img src='../cook/menuimages/$image' alt='menuimage' style='width:100px; height:100px;'></td>
+												<td scope='col'>$m_name</td>
+												<td scope='col'>".round($fprice)."</td>
+												<td scope='col' hidden>$orderid</td>
+												<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-primary edit' name='edit' id='$orderid'>Give Feedback</button></div> </div></td>
+											</tr>
+											
+											";
+											}
+										}
+									}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+};
 ?>

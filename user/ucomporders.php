@@ -19,7 +19,7 @@ echo "<script>window.open('index.php','_self')</script>";
     <link rel="stylesheet" href="css/lstyle.css">
     <link href='https://fonts.googleapis.com/css?family=Cinzel Decorative' rel='stylesheet'>
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css"> 
-    <title>Orders</title>
+    <title>Completed Orders</title>
   </head>
   <body>
   <nav class="navbar navbar-expand-lg navbar-light ">
@@ -72,15 +72,15 @@ echo "<script>window.open('index.php','_self')</script>";
 <!--SIGNUP MODAL-->
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active">My Orders</li>
-    <li class="breadcrumb-item"><a href="ucomporders.php" style="text-decoration:none; color:orange">Completed Orders</a></li>
+    <li class="breadcrumb-item"><a href="uorders.php" style="text-decoration:none; color:orange">My Orders</a></li>
+    <li class="breadcrumb-item active">Completed Orders</li>
   </ol>
 </nav>
 <hr>
 </div>
 <div class="container mb-3">
      <?php
-         showorders();
+         showcomporders();
      ?>
 </div>
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
@@ -99,20 +99,16 @@ echo "<script>window.open('index.php','_self')</script>";
             <div class="form-group">
               <label for="title">Dish Name</label>
               <input type="text" class="form-control" id="dnameEdit" name="dnameEdit" aria-describedby="emailHelp" readonly>
-            </div>
+            </div> 
             <div class="form-group">
-              <label for="title">Dish Details</label>
-              <input type="text" class="form-control" id="ddetailsEdit" name="ddetailsEdit" aria-describedby="emailHelp" readonly>
-            </div>
-            <div class="form-group">
-              <label for="title">Dish Price</label>
-              <input type="text" class="form-control" id="dpriceEdit" name="dpriceEdit" aria-describedby="emailHelp" readonly>
-            </div>
+              <label for="title">Enter Your Precious Feedback</label>
+              <input type="text" class="form-control" id="ddetailsEdit" name="ddetailsEdit" aria-describedby="emailHelp">
+            </div>  
             <div class="form-group">
               <label for="title" hidden>Dish Price</label>
               <input type="text" class="form-control" id="dmenuEdit" name="dmenuEdit" aria-describedby="emailHelp" hidden readonly>
             </div>
-            <button type="submit" name="confirm" class="btn btn-danger">Confirm Cancellation</button>
+            <button type="submit" name="confirm" class="btn btn-success">Submit</button>
             </form>
             </div>
           <div class="modal-footer d-block mr-auto">
@@ -143,14 +139,11 @@ echo "<script>window.open('index.php','_self')</script>";
         console.log("edit ");
         tr = e.target.parentNode.parentNode.parentNode.parentNode;
         console.log(tr);
-        dname = tr.getElementsByTagName("td")[2].innerText;
-        ddetails = tr.getElementsByTagName("td")[3].innerText;
-        dprice = tr.getElementsByTagName("td")[4].innerText;
-        menuid = tr.getElementsByTagName("td")[6].innerText;
-        console.log(dname, ddetails,dprice,menuid);
-        dnameEdit.value = dname;
-        ddetailsEdit.value = ddetails;
-        dpriceEdit.value = dprice;
+        dname = tr.getElementsByTagName("td")[1].innerText;
+        ddetails = tr.getElementsByTagName("td")[2].innerText;
+        dprice = tr.getElementsByTagName("td")[3].innerText;
+        menuid = tr.getElementsByTagName("td")[4].innerText;
+        dnameEdit.value = ddetails;
         dmenuEdit.value = menuid;
         $('#editModal').modal('toggle');
       })
@@ -163,17 +156,38 @@ echo "<script>window.open('index.php','_self')</script>";
 <?php
 if (isset($_POST['confirm'])) {
     global $con;
+    $userid = $_SESSION['cid'];
     $orderid = $_POST['dmenuEdit'];
-    $qry = "delete from order_master where order_id = $orderid";
+    $feedback = $_POST['ddetailsEdit'];
+    $q = "select cook_id,menu_id,user_id,package_id from order_master where order_id = $orderid";
+    $r = mysqli_query($con,$q);
+    if ($r) {
+      # code...
+      $rc = mysqli_num_rows($r);
+      if ($rc > 0) {
+        # code...
+        while ($row = mysqli_fetch_array($r)) {
+          # code...
+          $cookid = $row['cook_id'];
+          $menuid = $row['menu_id'];
+          $userid = $row['user_id'];
+          $packid = $row['package_id'];
+        }
+      }
+    }
+    date_default_timezone_set('Asia/Kolkata'); 
+    $time = date("H:i:s");
+    $date = date('Y-m-d');
+    $qry = "insert into feedback(order_id,user_id,cook_id,menu_id,package_id,description,date,time) VALUES ($orderid,$userid,$cookid,$menuid,$packid,'$feedback','$date','$time')";
     $run = mysqli_query($con,$qry);
     if ($run) {
       echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
-							<strong>Okay</strong> Order Cancelled....
+							<strong>Okay</strong>Feedback Submited....
 							<button type='button' class='close' data-dismiss='alert' aria-label='Close'>
 							<span aria-hidden='true'>&times;</span>
 							</button>
 							</div>";
-              echo "<script>window.open('uorders.php','_self')</script>";        
+              echo "<script>window.open('ucomporders.php','_self')</script>";        
     }
     else {
       echo "<div class='alert alert-success alert-dismissible fade show fixed-top' role='alert'>
@@ -182,6 +196,7 @@ if (isset($_POST['confirm'])) {
 							<span aria-hidden='true'>&times;</span>
 							</button>
 							</div>";
+              
     }
 
 }
