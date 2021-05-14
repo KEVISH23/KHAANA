@@ -361,6 +361,8 @@ function showorders(){
 								# code...
 								$rowc = mysqli_num_rows($res);
 								if ($rowc > 0) {
+									$profit = 0;
+									$fprice = 0;
 									# code...
 									while ($rowt = mysqli_fetch_array($res)) {
 										# code...
@@ -386,13 +388,28 @@ function showorders(){
 												}
 											}
 										}
+										if ($duration == "1 week") {
+											# code...
+											$profit = ($pprice/100)*15;
+											$fprice = $pprice+$profit;
+										}
+										else if ($duration == "1 month") {
+											# code...
+											$profit = ($pprice/100)*10;
+											$fprice = $pprice+$profit;
+										}
+										else if ($duration == "3 month") {
+											# code...
+											$profit = ($pprice/100)*5;
+											$fprice = $pprice+$profit;
+										}
 									
 									echo "<tr>
 										<td scope='col'>$srno</td>
 										<td scope='col'><img src='../cook/menuimages/$mimage' alt='menuimage' style='width:100px; height:100px;'></td>
 										<td scope='col'>$mname</td>
 										<td scope='col'>$mdetails</td>
-										<td scope='col'>$pprice</td>
+										<td scope='col'>".round($fprice)."</td>
 										<td scope='col'>$duration</td>
 										<td scope='col' hidden>$orderid</td>
 										<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-danger edit' name='edit' id='$orderid'>Cancel Tiffin</button></div> </div></td>
@@ -410,6 +427,8 @@ function showorders(){
 								# code..
 								$rc = mysqli_num_rows($r);
 								if ($rc > 0) {
+									$mprofit = 0;
+									$mfprice = 0;
 									while ($row = mysqli_fetch_array($r)) {
 									
 										# code...
@@ -421,14 +440,15 @@ function showorders(){
 										$mprice = $row['m_price'];
 										$mimage = $row['m_image'];
 										$mdate = $row['m_date'];
-			
+										$mprofit = ($mprice/100)*10;
+										$mfprice = $mprice + $mprofit;
 									
 									echo "<tr>
 									<td scope='col'>$srno</td>
 									<td scope='col'><img src='../cook/menuimages/$mimage' alt='menuimage' style='width:100px; height:100px;'></td>
 									<td scope='col'>$mname</td>
 									<td scope='col'>$mdetails</td>
-									<td scope='col'>$mprice</td>
+									<td scope='col'>".round($mfprice)."</td>
 									<td scope='col'>--------</td>
 									<td scope='col' hidden>$orderid</td>
 									<td scope='col'><div class='row'><div class='col-md-6 col-sm-6'><button class='btn btn-danger edit' name='edit' id='$orderid'>Cancel Order</button></div> </div></td>
